@@ -1,0 +1,152 @@
+/* ==========================================================================
+   Premium Light Security Styles
+   ========================================================================== */
+
+.security-section {
+  background-color: var(--bg-primary);
+  position: relative;
+  overflow: hidden;
+}
+
+.security-desc {
+  font-size: 1.15rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.sec-items {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.sec-item-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+}
+
+.sec-bullet {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: rgba(74, 44, 134, 0.08);
+  border: 1px solid rgba(74, 44, 134, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent-primary);
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+
+.sec-item-box h6 {
+  color: var(--dark-accent);
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.sec-item-box p {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* Security Visual rings & Orbital Shield */
+.security-visual-wrapper {
+  height: 400px;
+  position: relative;
+}
+
+.shield-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(74, 44, 134, 0.06);
+  pointer-events: none;
+}
+
+.shield-ring.ring-1 {
+  width: 220px;
+  height: 220px;
+  animation: float-slow 4s ease-in-out infinite alternate;
+}
+
+.shield-ring.ring-2 {
+  width: 300px;
+  height: 300px;
+  border-color: rgba(74, 44, 134, 0.04);
+  animation: float-slow 6s ease-in-out infinite alternate-reverse;
+}
+
+.shield-ring.ring-3 {
+  width: 380px;
+  height: 380px;
+}
+
+.core-shield-box {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  border: 1px solid var(--accent-primary);
+  box-shadow: 0 10px 40px rgba(74, 44, 134, 0.12);
+  z-index: 2;
+  animation: float-slow 5s ease-in-out infinite alternate;
+}
+
+.shield-glow-icon {
+  font-size: 2.5rem;
+  color: var(--accent-primary);
+  filter: drop-shadow(0 4px 10px rgba(74, 44, 134, 0.25));
+}
+
+/* Floating Micro Cards styling */
+.micro-sec-stat {
+  position: absolute;
+  padding: 0.85rem 1.25rem;
+  background: #FFFFFF;
+  border: 1px solid rgba(74, 44, 134, 0.08);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  z-index: 3;
+  box-shadow: 0 8px 25px rgba(74, 44, 134, 0.06);
+}
+
+.micro-sec-stat.card-top {
+  top: 15%;
+  right: 15%;
+  animation: float-slow 6s ease-in-out infinite alternate;
+}
+
+.micro-sec-stat.card-bottom {
+  bottom: 15%;
+  left: 10%;
+  animation: float-slow 5s ease-in-out infinite alternate-reverse;
+}
+
+.sec-stat-icon {
+  font-size: 1.25rem;
+}
+
+.sec-stat-icon.purple {
+  color: var(--accent-secondary);
+}
+
+.sec-stat-icon.blue {
+  color: var(--highlight-blue);
+}
+
+.sec-label {
+  display: block;
+  font-size: 0.7rem;
+  color: var(--text-muted);
+}
+
+.sec-val {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--dark-accent);
+}

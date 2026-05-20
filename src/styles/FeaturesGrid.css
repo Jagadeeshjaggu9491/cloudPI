@@ -1,0 +1,92 @@
+/* ==========================================================================
+   Premium Light Features Grid Styles
+   ========================================================================== */
+
+.features-section {
+  background-color: var(--bg-primary);
+  position: relative;
+  overflow: hidden;
+}
+
+.features-header {
+  position: relative;
+  z-index: 2;
+}
+
+/* Feature grid cards layout */
+.feature-grid-card {
+  height: 100%;
+  background: #FFFFFF;
+  border: 1px solid rgba(74, 44, 134, 0.08);
+  box-shadow: 0 10px 30px rgba(74, 44, 134, 0.04);
+  padding: 3rem 2.5rem;
+  border-radius: 20px;
+  transition: var(--transition-smooth);
+}
+
+.feature-grid-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(172, 61, 199, 0.25);
+  box-shadow: 0 20px 45px rgba(74, 44, 134, 0.1), 0 0 20px rgba(172, 61, 199, 0.1);
+}
+
+/* Colorful Icon containers */
+.feature-icon-wrapper {
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.35rem;
+  transition: var(--transition-smooth);
+}
+
+.feature-icon-wrapper.purple {
+  background: rgba(74, 44, 134, 0.08);
+  color: var(--accent-primary);
+}
+
+.feature-icon-wrapper.blue {
+  background: rgba(91, 180, 204, 0.08);
+  color: var(--highlight-blue);
+}
+
+.feature-icon-wrapper.pink {
+  background: rgba(225, 114, 204, 0.08);
+  color: var(--highlight-pink);
+}
+
+.feature-grid-card:hover .feature-icon-wrapper.purple {
+  background: var(--accent-primary);
+  color: #FFFFFF;
+  transform: scale(1.08) rotate(-5deg);
+  box-shadow: 0 8px 20px rgba(74, 44, 134, 0.3);
+}
+
+.feature-grid-card:hover .feature-icon-wrapper.blue {
+  background: var(--highlight-blue);
+  color: #FFFFFF;
+  transform: scale(1.08) rotate(-5deg);
+  box-shadow: 0 8px 20px rgba(91, 180, 204, 0.3);
+}
+
+.feature-grid-card:hover .feature-icon-wrapper.pink {
+  background: var(--highlight-pink);
+  color: #FFFFFF;
+  transform: scale(1.08) rotate(-5deg);
+  box-shadow: 0 8px 20px rgba(225, 114, 204, 0.3);
+}
+
+.feature-grid-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--dark-accent);
+  margin-bottom: 0.75rem;
+}
+
+.feature-grid-desc {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}

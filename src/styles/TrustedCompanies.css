@@ -1,0 +1,98 @@
+/* ==========================================================================
+   Premium Light Trusted Companies Styles
+   ========================================================================== */
+
+.trusted-section {
+  padding: 4rem 0;
+  background-color: #fff;
+  border-top: 1px solid rgba(74, 44, 134, 0.06);
+  border-bottom: 1px solid rgba(74, 44, 134, 0.06);
+  position: relative;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.trusted-subtitle {
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+/* Loop track wrapper */
+.marquee-wrapper {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  display: flex;
+  margin-top: 2rem;
+}
+
+.marquee-wrapper::before,
+.marquee-wrapper::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 150px;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.marquee-wrapper::before {
+  left: 0;
+  background: linear-gradient(90deg, var(--bg-secondary) 0%, transparent 100%);
+}
+
+.marquee-wrapper::after {
+  right: 0;
+  background: linear-gradient(270deg, var(--bg-secondary) 0%, transparent 100%);
+}
+
+.marquee-track {
+  display: flex;
+  gap: 2rem;
+  width: max-content;
+  animation: marquee 25s linear infinite;
+}
+
+.partner-logo-box {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.85rem 1.75rem;
+  /* background: #FFFFFF; */
+  /* border: 1px solid rgba(74, 44, 134, 0.08); */
+  border-radius: 12px;
+  /* box-shadow: 0 4px 15px rgba(74, 44, 134, 0.02); */
+  transition: var(--transition-smooth);
+  cursor: pointer;
+}
+
+.partner-logo-box:hover {
+  /* transform: translateY(-4px) scale(1.02); */
+  /* border-color: rgba(172, 61, 199, 0.25); */
+  /* box-shadow: 0 10px 25px rgba(74, 44, 134, 0.08); */
+}
+
+.partner-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 140px;
+  min-height: 48px;
+  transition: var(--transition-smooth);
+}
+
+.partner-icon img {
+  max-height: 32px;
+  width: auto;
+  display: block;
+}
+
+.partner-logo-box:hover .partner-icon {
+  filter: grayscale(0%);
+  opacity: 1;
+}

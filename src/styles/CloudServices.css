@@ -1,0 +1,145 @@
+/* ==========================================================================
+   Premium Light Cloud Services Styles
+   ========================================================================== */
+
+.services-section {
+  background-color: var(--bg-primary);
+  position: relative;
+  overflow: hidden;
+}
+
+.services-header {
+  position: relative;
+  z-index: 2;
+}
+
+.section-subtitle {
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent-primary);
+  display: block;
+  margin-bottom: 0.75rem;
+}
+
+.section-title {
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 1.15;
+  color: var(--dark-accent);
+  margin-bottom: 1.25rem;
+  letter-spacing: -0.03em;
+}
+
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 2.25rem;
+  }
+}
+
+.section-desc {
+  font-size: 1.15rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  max-width: 650px;
+}
+
+/* Service Card layouts */
+.service-card {
+  height: 100%;
+  background: #FFFFFF;
+  border: 1px solid rgba(74, 44, 134, 0.08);
+  box-shadow: 0 10px 30px rgba(74, 44, 134, 0.04);
+  padding: 3rem 2.5rem;
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  transition: var(--transition-smooth);
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(172, 61, 199, 0.25);
+  box-shadow: 0 20px 45px rgba(74, 44, 134, 0.1), 0 0 20px rgba(172, 61, 199, 0.1);
+}
+
+/* Colorful Icon Boxes */
+.service-icon-box {
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+  transition: var(--transition-smooth);
+}
+
+.service-icon-box.blue {
+  background: rgba(91, 180, 204, 0.1);
+  color: var(--highlight-blue);
+}
+
+.service-icon-box.purple {
+  background: rgba(74, 44, 134, 0.1);
+  color: var(--accent-primary);
+}
+
+.service-icon-box.pink {
+  background: rgba(225, 114, 204, 0.1);
+  color: var(--highlight-pink);
+}
+
+.service-card:hover .service-icon-box.blue {
+  background: var(--highlight-blue);
+  color: #FFFFFF;
+  transform: scale(1.08) rotate(5deg);
+  box-shadow: 0 8px 20px rgba(91, 180, 204, 0.3);
+}
+
+.service-card:hover .service-icon-box.purple {
+  background: var(--accent-primary);
+  color: #FFFFFF;
+  transform: scale(1.08) rotate(5deg);
+  box-shadow: 0 8px 20px rgba(74, 44, 134, 0.3);
+}
+
+.service-card:hover .service-icon-box.pink {
+  background: var(--highlight-pink);
+  color: #FFFFFF;
+  transform: scale(1.08) rotate(5deg);
+  box-shadow: 0 8px 20px rgba(225, 114, 204, 0.3);
+}
+
+.service-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--dark-accent);
+  margin-bottom: 1rem;
+}
+
+.service-desc {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+/* Hover Accent Bar */
+.service-hover-indicator {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary), var(--highlight-blue));
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.service-card:hover .service-hover-indicator {
+  transform: scaleX(1);
+  transform-origin: left;
+}

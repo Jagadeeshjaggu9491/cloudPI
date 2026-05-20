@@ -1,0 +1,293 @@
+.sales-section {
+
+    padding: 50px 0;
+
+    background: #f6f6f8;
+
+    overflow: hidden;
+    /* font-family: "Geist", "Geist Placeholder", sans-serif !important; */
+}
+
+/* HEADING */
+
+.sales-heading {
+
+    max-width: 760px;
+
+    margin: auto auto 80px;
+}
+
+.sales-badge {
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 10px 18px;
+
+    border-radius: 999px;
+
+    background: rgba(168, 85, 247, 0.08);
+
+    color: #7c3aed;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    margin-bottom: 28px;
+}
+
+.sales-title {
+
+    font-size: 45px;
+    font-family: "Poppins", sans-serif;
+
+    letter-spacing: -3px;
+
+    font-weight: 500;
+
+    margin-bottom: 28px;
+
+    background: linear-gradient(90deg,
+            #6B45B6 0%,
+            #AC3BC7 70%,
+            #E172CC 100%);
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+}
+
+.sales-subtitle {
+
+    font-size: 18px;
+
+    line-height: 1.9;
+
+    color: #6b7280;
+
+    max-width: 700px;
+
+    margin: auto;
+}
+
+/* GRID */
+
+.sales-grid {
+    margin-top: 60px;
+}
+
+/* CARDS */
+
+.sales-card {
+
+    position: relative;
+
+    overflow: hidden;
+
+    border-radius: 22px;
+
+    background:
+        linear-gradient(180deg,
+            #5BB4CC 0%,
+            #EBEEFF 100%);
+
+    padding: 26px;
+
+    box-shadow:
+        0 18px 40px rgba(0, 0, 0, 0.06);
+}
+
+.compact-card {
+
+    min-height: 265px;
+
+    display: flex;
+    /* flex-direction: column;
+    justify-content: space-between; */
+}
+
+.large-compact-card {
+
+    min-height: 545px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* CONTENT */
+
+.sales-card-content h3 {
+
+    font-size: 24px;
+
+    font-weight: 600;
+
+    margin-bottom: 16px;
+
+    color: #071126;
+}
+
+.sales-card-content p {
+
+    font-size: 14px;
+
+    line-height: 1.8;
+
+    color: rgba(7, 17, 38, 0.62);
+
+    /* max-width: 340px; */
+}
+
+/* IMAGES */
+
+.sales-card-image-wrap {
+
+    display: flex;
+}
+
+.top-image {
+    justify-content: flex-end;
+}
+
+.small-bottom-image {
+    justify-content: flex-end;
+}
+
+.large-image {
+
+    justify-content: center;
+
+    margin-top: auto;
+}
+
+.sales-card-image {
+
+    width: 100%;
+
+    border-radius: 14px;
+
+    box-shadow:
+        0 18px 40px rgba(0, 0, 0, 0.08);
+
+    will-change: transform;
+    border: 8px solid #ffffff6e;
+}
+
+.top-image .sales-card-image {
+    /* max-width: 210px; */
+}
+
+.small-bottom-image .sales-card-image {
+    /* max-width: 210px; */
+}
+
+.large-image .sales-card-image {
+    max-width: 470px;
+}
+
+/* STATS SECTION */
+
+.sales-stats {
+    background:
+        linear-gradient(0deg,
+            #5BB4CC 0%,
+            #EBEEFF 100%) !important;
+    margin-top: 38px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    border-radius: 22px;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(180deg,
+            #6ebad4 0%,
+            #d8dcf2 100%);
+}
+
+.sales-stat-item {
+
+    padding: 34px 26px;
+
+    border-right:
+        1px solid rgba(255, 255, 255, 0.2);
+}
+
+.sales-stat-item:last-child {
+    border-right: none;
+}
+
+.sales-stat-item h2 {
+
+    font-size: 52px;
+    font-weight: 500;
+    color: #6f42c1;
+    margin-bottom: 14px;
+}
+
+.sales-stat-item p {
+
+    font-size: 13px;
+
+    line-height: 1.7;
+
+    color: rgba(7, 17, 38, 0.62);
+
+    max-width: 180px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 992px) {
+
+    .large-compact-card {
+        min-height: auto;
+    }
+
+    .sales-stats {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .sales-stat-item {
+
+        border-right: none;
+
+        border-bottom:
+            1px solid rgba(255, 255, 255, 0.2);
+    }
+}
+
+@media (max-width: 768px) {
+
+    .sales-title {
+        font-size: 38px;
+    }
+
+    .sales-subtitle {
+        font-size: 15px;
+    }
+
+    .sales-card {
+        padding: 22px;
+    }
+
+    .sales-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .top-image .sales-card-image,
+    .small-bottom-image .sales-card-image,
+    .large-image .sales-card-image {
+        max-width: 100%;
+    }
+}

@@ -1,0 +1,122 @@
+/* ==========================================================================
+   Premium Light AI Solutions Styles
+   ========================================================================== */
+
+.ai-solutions-section {
+  background-color: var(--bg-secondary);
+  position: relative;
+  overflow: hidden;
+}
+
+.ai-solutions-desc {
+  font-size: 1.15rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.ai-features-list {
+  list-style: none;
+  padding: 0;
+}
+
+.ai-feature-txt {
+  font-size: 1rem;
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.check-icon.text-indigo {
+  color: var(--accent-primary);
+  flex-shrink: 0;
+}
+
+/* Graphics Node Mesh Coordinates */
+.ai-graph-container {
+  width: 100%;
+  height: 400px;
+  position: relative;
+}
+
+.graph-svg-canvas {
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.graph-node {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  box-shadow: 0 10px 30px rgba(74, 44, 134, 0.08);
+  transition: var(--transition-smooth);
+}
+
+.graph-node:hover {
+  transform: scale(1.1);
+  border-color: var(--accent-secondary);
+  box-shadow: 0 15px 35px rgba(172, 61, 199, 0.2);
+}
+
+/* Center node coordinates */
+.node-center {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #FFFFFF;
+  border: 1px solid rgba(74, 44, 134, 0.15);
+}
+
+.node-center:hover {
+  transform: translate(-50%, -50%) scale(1.08);
+}
+
+.node-icon {
+  font-size: 1.6rem;
+}
+
+.node-icon.text-purple { color: var(--accent-primary); }
+.node-icon.text-cyan { color: var(--highlight-blue); }
+.node-icon.text-pink { color: var(--highlight-pink); }
+
+/* Satellite micro node coordinates */
+.micro-node {
+  padding: 0.75rem 1.25rem;
+  border-radius: 12px;
+  background: #FFFFFF;
+}
+
+.node-top-left {
+  top: 15%;
+  left: 10%;
+  animation: float-slow 7s ease-in-out infinite alternate;
+}
+
+.node-top-right {
+  top: 15%;
+  right: 10%;
+  animation: float-slow 6s ease-in-out infinite alternate-reverse;
+}
+
+.node-bottom-left {
+  bottom: 15%;
+  left: 10%;
+  animation: float-slow 5s ease-in-out infinite alternate-reverse;
+}
+
+.node-bottom-right {
+  bottom: 15%;
+  right: 10%;
+  animation: float-slow 8s ease-in-out infinite alternate;
+}
+
+.node-stat-num {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 0.95rem;
+  color: var(--dark-accent);
+}
