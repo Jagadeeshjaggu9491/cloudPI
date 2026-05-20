@@ -28,8 +28,8 @@ const slideData = [
 
   {
     badge: "AI Optimization ↗",
-    titleTop: "Optimize Multi-Cloud Spend",
-    titleBottom: "Without Overprovisioning",
+    titleTop: "Manage Your Sales Process",
+    titleBottom: "With Clarity and Control",
     subtitle:
       "Get real-time recommendations, rightsizing, and predictable savings across all cloud providers.",
     primary: "See Savings",

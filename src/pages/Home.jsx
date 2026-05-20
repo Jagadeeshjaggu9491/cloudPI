@@ -11,6 +11,7 @@ import PricingPreview from '../sections/PricingPreview';
 import Testimonials from '../sections/Testimonials';
 import CTABanner from '../sections/CTABanner';
 import SalesSection from '../sections/SalesSection';
+import Footer from '../sections/Footer';
 
 export default function Home() {
   return (
@@ -25,8 +26,9 @@ export default function Home() {
       <Infrastructure />
       <Security />
       <PricingPreview />
-      <Testimonials />
+      <Testim/onials />
       <CTABanner /> */}
+      <Footer />
     </>
   );
 }
