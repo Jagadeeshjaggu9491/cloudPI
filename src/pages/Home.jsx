@@ -12,6 +12,8 @@ import Testimonials from '../sections/Testimonials';
 import CTABanner from '../sections/CTABanner';
 import SalesSection from '../sections/SalesSection';
 import Footer from '../sections/Footer';
+import VisibilitySection from '../sections/VisibilitySection';
+import GrowthStackSection from '../sections/GrowthStackSection';
 
 export default function Home() {
   return (
@@ -19,6 +21,8 @@ export default function Home() {
       <Hero />
       <TrustedCompanies />
       <SalesSection />
+      <VisibilitySection />
+      <GrowthStackSection />
       {/* <CloudServices />
       <PlatformAnalytics />
       <AISolutions />

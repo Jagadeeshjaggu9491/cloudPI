@@ -1,0 +1,247 @@
+/* VisibilitySection.css */
+
+.visibility-section {
+    padding: 120px 0;
+    background: #f5f5f5;
+    overflow: hidden;
+}
+
+.visibility-left h2 {
+    font-size: 48px;
+    line-height: 1.05;
+    font-weight: 500;
+    /* color: #b144d0; */
+    margin-bottom: 28px;
+    letter-spacing: -2px;
+}
+
+.visibility-left p {
+    color: #63627a;
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 25px;
+    max-width: 520px;
+}
+
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 28px 0;
+    border-bottom: 1px solid #e3e3e38a;
+}
+
+.feature-icon {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    color: #111;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+
+.feature-item span {
+    font-size: 16px;
+    color: #111;
+    font-weight: 500;
+}
+
+.cards-wrapper {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 24px;
+    min-height: 620px;
+}
+
+/* IMAGE CARD */
+
+.card-photo {
+    width: 320px;
+    height: 375px;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+}
+
+.card-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* PURPLE CARD */
+
+.card-purple {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 320px;
+    padding: 36px;
+    border-radius: 24px;
+    background: linear-gradient(135deg, #6440ff, #7d85ff);
+    color: white;
+    box-shadow: 0 20px 60px rgba(97, 76, 255, 0.25);
+}
+
+.card-purple h3 {
+    font-size: 24px;
+    line-height: 1.1;
+    margin-bottom: 26px;
+    font-weight: 500;
+    color: white;
+}
+
+.card-purple p {
+    font-size: 18px;
+    line-height: 1.7;
+    margin: 0;
+    opacity: 0.9;
+}
+
+/* CHART CARD */
+
+.chart-card {
+    width: 410px;
+    height: 550px;
+    border-radius: 28px;
+    padding: 0;
+    background: transparent;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    overflow: hidden;
+}
+
+.chart-card::before {
+    display: none;
+}
+
+.chart-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 28px;
+    border-radius: 24px;
+    overflow: hidden;
+}
+
+.chart-overlay img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    border-radius: 24px !important;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.dot.blue {
+    background: #2858ff;
+}
+
+.dot.cyan {
+    background: #2bb6ff;
+}
+
+.dot.light {
+    background: #e8e8e8;
+}
+
+.dot.black {
+    background: #000;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1199px) {
+    .visibility-left h2 {
+        font-size: 54px;
+    }
+
+    .chart-card {
+        width: 360px;
+    }
+}
+
+@media (max-width: 991px) {
+    .visibility-section {
+        padding: 80px 0;
+    }
+
+    .visibility-left {
+        text-align: center;
+    }
+
+    .visibility-left p {
+        margin-inline: auto;
+    }
+
+    .feature-item {
+        justify-content: center;
+    }
+
+    .cards-wrapper {
+        min-height: auto;
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+    }
+
+    .card-purple {
+        position: relative;
+        left: auto;
+        bottom: auto;
+    }
+
+    .chart-card {
+        width: 100%;
+        max-width: 450px;
+    }
+}
+
+@media (max-width: 767px) {
+    .visibility-left h2 {
+        font-size: 42px;
+    }
+
+    .feature-item span {
+        font-size: 16px;
+    }
+
+    .card-photo,
+    .card-purple,
+    .chart-card {
+        width: 100%;
+    }
+
+    .card-purple h3 {
+        font-size: 30px;
+    }
+
+    .chart-card {
+        height: auto;
+        min-height: 500px;
+        padding: 20px;
+    }
+
+    .progress-ring {
+        width: 220px;
+        height: 220px;
+    }
+
+    .ring-inner h2 {
+        font-size: 44px;
+    }
+}
