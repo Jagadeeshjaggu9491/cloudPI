@@ -1,0 +1,315 @@
+/* =========================================
+   BLOGS SECTION
+========================================= */
+
+.blogs-section {
+    padding: 50px 0;
+    background: #f7f7f8;
+    font-family: "Inter", sans-serif;
+    overflow: hidden;
+}
+
+/* =========================================
+   HEADING
+========================================= */
+
+.blogs-heading {
+    margin-bottom: 40px;
+}
+
+.blogs-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: #efecff;
+    padding: 10px 18px;
+    border-radius: 14px;
+    margin-bottom: 28px;
+}
+
+.blogs-badge svg {
+    color: rgb(107, 69, 182);
+    font-size: 15px;
+}
+
+.blogs-badge span {
+    font-size: 15px;
+    font-weight: 600;
+    color: #1f2937;
+}
+
+.blogs-heading h2 {
+    font-size: 52px;
+    font-weight: 500;
+    line-height: 1.1;
+    letter-spacing: -2px;
+    margin: 0;
+}
+
+.blogs-heading h2 span {
+    color: #9333ea;
+}
+
+/* =========================================
+   BLOG CARD
+========================================= */
+
+.blog-card {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+    background: #ffffff;
+    border: 1px solid #e9e9ee;
+    border-radius: 28px;
+    overflow: hidden;
+    height: 100%;
+    transition: all 0.45s ease;
+}
+
+.blog-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 24px 70px rgba(91, 45, 207, 0.12);
+}
+
+/* =========================================
+   BLOG IMAGE
+========================================= */
+
+.blog-image {
+    position: relative;
+    padding: 18px 18px 0;
+    overflow: hidden;
+}
+
+.blog-image img {
+    width: 100%;
+    /* height: 320px; */
+    object-fit: cover;
+    border-radius: 18px;
+    transition: all 0.55s ease;
+}
+
+/* Blur + Zoom Effect */
+
+.blog-card:hover .blog-image img {
+    transform: scale(1.06);
+    filter: blur(4px);
+}
+
+/* =========================================
+   CENTER HOVER BUTTON
+========================================= */
+
+.blog-hover-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: rgb(107, 69, 182); display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translate(-50%, -50%) scale(0.7);
+    opacity: 0;
+    transition: all 0.4s ease;
+    z-index: 3;
+    box-shadow: 0 15px 35px rgba(91, 45, 207, 0.3);
+}
+
+/* Arrow */
+
+.blog-hover-btn svg {
+    color: #ffffff;
+    font-size: 22px;
+    transform: rotate(-45deg);
+}
+
+/* Show Button on Hover */
+
+.blog-card:hover .blog-hover-btn {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+/* =========================================
+   CONTENT
+========================================= */
+
+.blog-content {
+    padding: 28px 34px 34px;
+}
+
+.blog-meta {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 26px;
+}
+
+.blog-meta span {
+    font-size: 15px;
+    color: #7a7a85;
+    font-weight: 500;
+}
+
+.blog-meta .divider {
+    width: 1px;
+    height: 24px;
+    background: #d7d7de;
+}
+
+/* =========================================
+   BLOG TITLE
+========================================= */
+
+.blog-content h3 {
+    font-size: 24px;
+    line-height: 1.4;
+    font-weight: 600;
+    color: #222222;
+    margin-bottom: 28px;
+    letter-spacing: 0;
+    transition: color 0.3s ease;
+}
+
+.blog-card:hover .blog-content h3 {
+    color: #5b2dcf;
+}
+
+/* =========================================
+   READ MORE BUTTON
+========================================= */
+
+.read-more {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #7c4dff;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+/* Greater Than Symbol */
+
+.read-more .greater-icon {
+    font-size: 24px;
+    line-height: 1;
+    font-weight: 400;
+    transition: transform 0.3s ease;
+}
+
+/* Hover */
+
+.read-more:hover {
+    color: #5b2dcf;
+}
+
+.read-more:hover .greater-icon {
+    transform: translateX(4px);
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 1199px) {
+
+    .blogs-heading h2 {
+        font-size: 52px;
+    }
+
+    .blog-content h3 {
+        font-size: 22px;
+    }
+
+    .read-more {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 991px) {
+
+    .blogs-section {
+        padding: 100px 0;
+    }
+
+    .blogs-heading {
+        margin-bottom: 60px;
+    }
+
+    .blogs-heading h2 {
+        font-size: 42px;
+    }
+
+    .blog-image img {
+        height: 280px;
+    }
+
+    .blog-content h3 {
+        font-size: 20px;
+    }
+
+    .blog-hover-btn {
+        width: 70px;
+        height: 70px;
+    }
+
+    .blog-hover-btn svg {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 767px) {
+
+    .blogs-section {
+        padding: 80px 0;
+    }
+
+    .blogs-heading h2 {
+        font-size: 32px;
+        line-height: 1.2;
+    }
+
+    .blog-content {
+        padding: 24px;
+    }
+
+    .blog-meta {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .blog-meta span {
+        font-size: 14px;
+    }
+
+    .blog-content h3 {
+        font-size: 18px;
+        margin-bottom: 24px;
+    }
+
+    .read-more {
+        font-size: 16px;
+    }
+
+    .read-more .greater-icon {
+        font-size: 22px;
+    }
+
+    .blog-image img {
+        height: 240px;
+    }
+
+    .blog-hover-btn {
+        width: 62px;
+        height: 62px;
+    }
+
+    .blog-hover-btn svg {
+        font-size: 24px;
+    }
+}

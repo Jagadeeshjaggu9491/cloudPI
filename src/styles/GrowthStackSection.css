@@ -1,192 +1,351 @@
-/* GrowthStackSection.css */
+/* =========================================================
+   GROWTH STACK SECTION
+========================================================= */
 
 .growth-stack-section {
-  padding: 110px 0;
-  background: #f5f5f5;
-  overflow: hidden;
+    padding: 120px 0;
+    background: #f5f5f5;
+    overflow: hidden;
+    position: relative;
 }
 
-/* TOP */
+/* =========================================================
+   TOP CONTENT
+========================================================= */
 
 .growth-top-content {
-  margin-bottom: 70px;
+    text-align: center;
+    margin-bottom: 70px;
+    position: relative;
+    z-index: 5;
 }
 
+/* BADGE */
+
 .growth-badge {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 8px 16px;
-  border-radius: 100px;
-  background: rgba(127, 68, 255, 0.08);
-  margin-bottom: 26px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 8px 18px;
+
+    border-radius: 100px;
+
+    background: rgba(124, 58, 237, 0.08);
+
+    margin-bottom: 24px;
 }
 
 .growth-badge span {
-  font-size: 14px;
-  font-weight: 600;
-  color: #6f32ff;
+    font-size: 14px;
+    font-weight: 600;
+    color: #6f32ff;
+    letter-spacing: 0.2px;
 }
+
+/* TITLE */
 
 .growth-title {
-  font-size: 68px;
-  font-weight: 700;
-  line-height: 1.1;
-  color: #b045d2;
-  margin-bottom: 24px;
-  letter-spacing: -2px;
+    font-size: 52px;
+    font-weight: 500;
+    line-height: 1.08;
+
+    letter-spacing: -2px;
+
+    margin-bottom: 22px;
 }
+
+/* DESCRIPTION */
 
 .growth-description {
-  max-width: 760px;
-  margin-inline: auto;
-  font-size: 19px;
-  line-height: 1.8;
-  color: #66657a;
+    max-width: 760px;
+
+    margin-inline: auto;
+
+    font-size: 18px;
+    line-height: 1.8;
+
+    color: #66657a;
 }
 
-/* MAIN CONTAINER */
+/* =========================================================
+   DASHBOARD CONTAINER
+========================================================= */
 
 .dashboard-container {
-  position: relative;
-  padding: 90px 50px 40px;
-  border-radius: 34px;
-  overflow: hidden;
+    position: relative;
+
+    padding: 95px 45px 40px;
+
+    border-radius: 42px;
+
+    overflow: hidden;
+
+    isolation: isolate;
 }
 
-/* CONTINUOUS MOVING BACKGROUND */
+/* =========================================================
+   MOVING BACKGROUND
+========================================================= */
 
 .animated-bg {
-  background-image: url(../assets/images/backgrounds/growth-bg.png);
-  background-size: 600px 100%;
-  background-position: 0 0;
-  background-repeat: repeat-x;
+    background-image: url("../assets/images/backgrounds/growth-bg.png");
+
+    background-repeat: repeat-x;
+
+    background-size: 600px 100%;
+
+    background-position: 0 0;
+
+    position: relative;
+    z-index: 1;
 }
 
-/* TABS */
+/* DARK OVERLAY */
+
+.dashboard-container::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(180deg,
+            rgba(34, 0, 84, 0.18),
+            rgba(34, 0, 84, 0.05));
+
+    z-index: 1;
+
+    pointer-events: none;
+}
+
+/* =========================================================
+   TABS
+========================================================= */
 
 .tabs-wrapper {
-  display: flex;
-  justify-content: center;
-  gap: 18px;
-  flex-wrap: wrap;
-  margin-bottom: 40px;
-  position: relative;
-  z-index: 3;
+    position: relative;
+
+    z-index: 100;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+    gap: 18px;
+
+    margin-bottom: 42px;
 }
+
+/* BUTTON */
 
 .tab-button {
-  border: 1px solid rgba(255, 255, 255, 0.6);
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(12px);
-  color: white;
-  border-radius: 14px;
-  padding: 14px 22px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 15px;
-  font-weight: 600;
-  transition: 0.35s ease;
-  cursor: pointer;
+    position: relative;
+
+    z-index: 101;
+
+    border: 1px solid rgba(255, 255, 255, 0.55);
+
+    background: rgba(255, 255, 255, 0.14);
+
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    color: #ffffff;
+
+    border-radius: 14px;
+
+    padding: 14px 24px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: all 0.35s ease;
+
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.18);
 }
+
+/* ICON */
 
 .tab-button svg {
-  font-size: 18px;
+    font-size: 18px;
+    flex-shrink: 0;
 }
+
+/* TEXT */
+
+.tab-button span {
+    white-space: nowrap;
+}
+
+/* HOVER */
 
 .tab-button:hover {
-  transform: translateY(-3px);
+    transform: translateY(-4px);
+
+    background: rgba(255, 255, 255, 0.18);
 }
+
+/* ACTIVE */
 
 .tab-button.active {
-  background: white;
-  color: #5d2fff;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    background: #ffffff;
+
+    color: #5d2fff;
+
+    border-color: #ffffff;
+
+    box-shadow: 0 14px 40px rgba(0, 0, 0, 0.22);
 }
 
-/* DASHBOARD */
+/* =========================================================
+   DASHBOARD IMAGE
+========================================================= */
 
 .dashboard-wrapper {
-  width: 100%;
-  max-width: 1120px;
-  margin-inline: auto;
-  border-radius: 28px;
-  overflow: hidden;
-  position: relative;
-  z-index: 2;
-  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.18);
+    position: relative;
+
+    z-index: 10;
+
+    width: 100%;
+    max-width: 1120px;
+
+    margin-inline: auto;
+
+    border-radius: 28px;
+
+    overflow: hidden;
+
+    box-shadow: 0 30px 90px rgba(0, 0, 0, 0.2);
 }
+
+/* IMAGE */
 
 .dashboard-wrapper img {
-  width: 100%;
-  display: block;
-  border-radius: 28px;
-  object-fit: cover;
+    width: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    border-radius: 28px;
 }
 
-/* RESPONSIVE */
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1399px) {
+    .growth-title {
+        font-size: 60px;
+    }
+}
 
 @media (max-width: 1199px) {
-  .growth-title {
-    font-size: 56px;
-  }
+    .growth-title {
+        font-size: 54px;
+    }
+
+    .dashboard-container {
+        padding: 85px 30px 30px;
+    }
 }
 
 @media (max-width: 991px) {
-  .growth-stack-section {
-    padding: 90px 0;
-  }
+    .growth-stack-section {
+        padding: 90px 0;
+    }
 
-  .dashboard-container {
-    padding: 70px 25px 25px;
-  }
+    .growth-title {
+        font-size: 46px;
+    }
 
-  .growth-title {
-    font-size: 48px;
-  }
+    .growth-description {
+        font-size: 17px;
+    }
 
-  .growth-description {
-    font-size: 17px;
-  }
+    .dashboard-container {
+        padding: 75px 22px 22px;
+
+        border-radius: 30px;
+    }
+
+    .tabs-wrapper {
+        gap: 14px;
+    }
 }
 
 @media (max-width: 767px) {
-  .growth-stack-section {
-    padding: 70px 0;
-  }
+    .growth-stack-section {
+        padding: 70px 0;
+    }
 
-  .growth-title {
-    font-size: 38px;
-    line-height: 1.2;
-  }
+    .growth-top-content {
+        margin-bottom: 50px;
+    }
 
-  .growth-description {
-    font-size: 15px;
-    line-height: 1.7;
-  }
+    .growth-title {
+        font-size: 38px;
+        line-height: 1.15;
+    }
 
-  .dashboard-container {
-    border-radius: 24px;
-    padding: 60px 16px 16px;
-  }
+    .growth-description {
+        font-size: 15px;
+        line-height: 1.7;
+    }
 
-  .tabs-wrapper {
-    gap: 12px;
-  }
+    .dashboard-container {
+        padding: 60px 14px 14px;
 
-  .tab-button {
-    width: 100%;
-    justify-content: center;
-    font-size: 14px;
-    padding: 12px 16px;
-  }
+        border-radius: 24px;
+    }
 
-  .dashboard-wrapper {
-    border-radius: 20px;
-  }
+    .tabs-wrapper {
+        gap: 12px;
 
-  .dashboard-wrapper img {
-    border-radius: 20px;
-  }
+        margin-bottom: 26px;
+    }
+
+    .tab-button {
+        width: 100%;
+
+        padding: 12px 16px;
+
+        font-size: 14px;
+    }
+
+    .dashboard-wrapper {
+        border-radius: 18px;
+    }
+
+    .dashboard-wrapper img {
+        border-radius: 18px;
+    }
+}
+
+@media (max-width: 575px) {
+    .growth-title {
+        font-size: 32px;
+    }
+
+    .growth-badge span {
+        font-size: 12px;
+    }
+
+    .growth-description {
+        font-size: 14px;
+    }
+
+    .tab-button {
+        font-size: 13px;
+
+        padding: 11px 14px;
+    }
 }

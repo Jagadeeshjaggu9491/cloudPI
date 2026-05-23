@@ -1,0 +1,579 @@
+/* PricingSection.css */
+
+.pricing-section {
+  position: relative;
+  overflow: hidden;
+  margin: 80px auto;
+  max-width: 1400px;
+  padding: 120px 0;
+  border-radius: 32px;
+  background: linear-gradient(180deg,
+      #6b45d9 0%,
+      #8894ff 100%);
+  font-family: "Inter", sans-serif;
+}
+
+.pricing-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top,
+      rgba(255, 255, 255, 0.12),
+      transparent 60%);
+  pointer-events: none;
+}
+
+.pricing-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #ffffff;
+  padding: 8px 14px;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 30px;
+}
+
+.pricing-badge svg {
+  color: #5b5ff6;
+}
+
+.pricing-title {
+  font-size: 52px;
+  font-weight: 500;
+  line-height: 1.1;
+  color: #fff;
+  margin-bottom: 60px;
+  letter-spacing: -2px;
+}
+
+.pricing-toggle {
+  display: inline-flex;
+  align-items: center;
+  background: #ffffff;
+  padding: 8px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  gap: 6px;
+}
+
+.pricing-toggle button {
+  border: none;
+  background: transparent;
+  padding: 16px 26px;
+  border-radius: 14px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #1f2937;
+  transition: all 0.3s ease;
+}
+
+.pricing-toggle button span {
+  color: #6b45d9;
+}
+
+.pricing-toggle button.active {
+  background: linear-gradient(135deg, #6440ff, #7d85ff);
+  color: #fff;
+  box-shadow: 0 10px 25px rgba(69, 89, 255, 0.3);
+}
+
+.pricing-toggle button.active span {
+  color: #fff;
+}
+
+.pricing-row {
+  margin-top: 10px;
+}
+
+.pricing-card {
+  position: relative;
+  background: #f4f4f5;
+  border-radius: 28px;
+  padding: 42px 34px;
+  height: 100%;
+  transition: all 0.4s ease;
+  overflow: hidden;
+}
+
+.pricing-card:hover {
+  transform: translateY(-12px);
+}
+
+.dark-card {
+  background: linear-gradient(145deg,
+      #121212,
+      #0b0b0d);
+  color: #fff;
+}
+
+.dark-card::before {
+  content: "";
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: linear-gradient(45deg,
+      rgba(255, 255, 255, 0.06),
+      transparent);
+  top: -200px;
+  right: -120px;
+  transform: rotate(25deg);
+  z-index: -111;
+}
+
+.popular-badge {
+  position: absolute;
+  top: 18px;
+  right: 20px;
+  background: #6b2fc9;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.pricing-card h4 {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 25px;
+}
+
+.dark-card h4 {
+  color: #fff;
+}
+
+.price-wrap {
+  display: flex;
+  align-items: flex-end;
+  gap: 6px;
+  margin-bottom: 20px;
+}
+
+.price-wrap h2 {
+  font-size: 52px;
+  font-weight: 700;
+  line-height: 1;
+  margin: 0;
+}
+
+.price-wrap span {
+  font-size: 16px;
+  color: #6b7280;
+  margin-bottom: 10px;
+}
+
+.dark-card .price-wrap span {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.plan-desc {
+  font-size: 14px;
+  line-height: 1.7;
+  margin-bottom: 15px;
+  color: #6b7280;
+}
+
+.dark-card .plan-desc {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.plan-btn {
+  width: 100%;
+  border: none;
+  padding: 18px;
+  border-radius: 16px;
+  background: linear-gradient(180deg,
+      #35366e,
+      #17173f);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+}
+
+.dark-card .plan-btn {
+  background: linear-gradient(135deg,
+      #7b3fe4,
+      #6334bb);
+}
+
+.plan-btn:hover {
+  transform: scale(1.03);
+}
+
+.feature-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.feature-list li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 22px;
+  /* font-size: px; */
+  font-weight: 500;
+  color: #5b6175;
+}
+
+.dark-card .feature-list li {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.feature-list li svg {
+  width: 18px;
+  height: 18px;
+  padding: 4px;
+  border-radius: 6px;
+  background: rgba(0, 0, 0, 0.05);
+  color: #5b6175;
+  flex-shrink: 0;
+}
+
+.dark-card .feature-list li svg {
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+}
+
+.pricing-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(10, 12, 30, 0.72);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  animation: modalOverlay 0.35s ease;
+}
+
+.pricing-modal {
+  position: relative;
+  width: min(520px, 100%);
+  border-radius: 34px;
+  overflow: hidden;
+  padding: 38px;
+  background: linear-gradient(180deg,
+      #f7f5ff 0%,
+      #ebe7ff 100%);
+  box-shadow:
+    0 35px 90px rgba(54, 33, 124, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.7);
+  animation: modalPopup 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Glow Background */
+
+.pricing-modal::before {
+  content: "";
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  background: radial-gradient(circle,
+      rgba(155, 81, 224, 0.18),
+      transparent 70%);
+  top: -180px;
+  right: -120px;
+  pointer-events: none;
+}
+
+.pricing-modal::after {
+  content: "";
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  background: radial-gradient(circle,
+      rgba(91, 95, 246, 0.14),
+      transparent 70%);
+  bottom: -120px;
+  left: -80px;
+  pointer-events: none;
+}
+
+/* CLOSE BUTTON */
+
+.pricing-modal-close {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 42px;
+  height: 42px;
+  border: none;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.8);
+  color: #3c2d68;
+  font-size: 24px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  z-index: 2;
+  backdrop-filter: blur(10px);
+}
+
+.pricing-modal-close:hover {
+  background: #6b46d9;
+  color: #fff;
+  transform: rotate(90deg);
+}
+
+/* HEADER */
+
+.pricing-modal-header {
+  position: relative;
+  z-index: 2;
+  margin-bottom: 30px;
+}
+
+.pricing-modal-header span {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: 999px;
+  background: rgba(107, 70, 217, 0.1);
+  color: #5b35c8;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+
+.pricing-modal-header h3 {
+  font-size: 42px;
+  line-height: 1.1;
+  font-weight: 800;
+  color: #241b3d;
+  margin-bottom: 14px;
+  letter-spacing: -1px;
+}
+
+.pricing-modal-header p {
+  font-size: 17px;
+  line-height: 1.7;
+  color: #5f6983;
+  margin: 0;
+}
+
+/* FORM */
+
+.pricing-modal-form {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  gap: 18px;
+}
+
+.pricing-modal-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: #352b52;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+/* INPUTS */
+
+.pricing-modal-form input,
+.pricing-modal-form textarea {
+  width: 100%;
+  border: 1px solid transparent;
+  border-radius: 18px;
+  padding: 16px 18px;
+  background: rgba(255, 255, 255, 0.72);
+  color: #111827;
+  font-size: 15px;
+  font-weight: 500;
+  outline: none;
+  transition: all 0.3s ease;
+  box-shadow:
+    inset 0 1px 2px rgba(0, 0, 0, 0.03),
+    0 4px 20px rgba(126, 87, 255, 0.06);
+}
+
+.pricing-modal-form input::placeholder,
+.pricing-modal-form textarea::placeholder {
+  color: #8b95ad;
+}
+
+.pricing-modal-form input:focus,
+.pricing-modal-form textarea:focus {
+  border-color: #7c4dff;
+  background: #ffffff;
+  box-shadow:
+    0 0 0 4px rgba(124, 77, 255, 0.12),
+    0 10px 30px rgba(91, 95, 246, 0.14);
+}
+
+.pricing-modal-form textarea {
+  min-height: 130px;
+  resize: none;
+}
+
+/* BUTTON */
+
+.pricing-modal-form button {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  border: none;
+  border-radius: 22px;
+  padding: 18px;
+  margin-top: 10px;
+  background: linear-gradient(135deg,
+      #5b2dcf 0%,
+      #c63fe8 100%);
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  cursor: pointer;
+  transition: all 0.35s ease;
+  box-shadow:
+    0 18px 35px rgba(124, 77, 255, 0.35);
+}
+
+.pricing-modal-form button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 120%;
+  height: 100%;
+  background: linear-gradient(90deg,
+      transparent,
+      rgba(255, 255, 255, 0.35),
+      transparent);
+  transition: 0.7s;
+}
+
+.pricing-modal-form button:hover::before {
+  left: 120%;
+}
+
+.pricing-modal-form button:hover {
+  transform: translateY(-4px) scale(1.01);
+  box-shadow:
+    0 25px 45px rgba(124, 77, 255, 0.45);
+}
+
+/* ANIMATIONS */
+
+@keyframes modalPopup {
+  from {
+    opacity: 0;
+    transform: translateY(40px) scale(0.92);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes modalOverlay {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+  .pricing-modal {
+    padding: 30px 24px;
+    border-radius: 28px;
+  }
+
+  .pricing-modal-header h3 {
+    font-size: 32px;
+  }
+
+  .pricing-modal-header p {
+    font-size: 15px;
+  }
+
+  .pricing-modal-form input,
+  .pricing-modal-form textarea {
+    padding: 14px 16px;
+  }
+
+  .pricing-modal-form button {
+    padding: 16px;
+    font-size: 16px;
+  }
+}
+
+/* Responsive */
+
+@media (max-width: 1199px) {
+  .pricing-title {
+    font-size: 58px;
+  }
+
+  .price-wrap h2 {
+    font-size: 56px;
+  }
+}
+
+@media (max-width: 991px) {
+  .pricing-section {
+    padding: 100px 0;
+  }
+
+  .pricing-title {
+    font-size: 46px;
+  }
+
+  .pricing-toggle {
+    flex-direction: column;
+    width: 100%;
+    max-width: 350px;
+  }
+
+  .pricing-toggle button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 767px) {
+  .pricing-section {
+    padding: 80px 0;
+  }
+
+  .pricing-title {
+    font-size: 36px;
+  }
+
+  .pricing-card {
+    padding: 32px 24px;
+  }
+
+  .price-wrap h2 {
+    font-size: 44px;
+  }
+
+  .price-wrap span {
+    font-size: 16px;
+  }
+
+  .feature-list li {
+    font-size: 16px;
+  }
+
+  .plan-btn {
+    font-size: 18px;
+  }
+}

@@ -52,6 +52,8 @@
       #E172CC 100%);
 
   -webkit-background-clip: text;
+  -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   color: transparent;
@@ -80,7 +82,7 @@
 html,
 body {
   /* background-color: var(--bg-secondary); */
-  background-color: rgba(203, 203, 203, 0.8);
+  /* background-color: rgba(203, 203, 203, 0.8); */
   color: var(--text-primary);
   font-family: var(--font-body);
   overflow-x: hidden;
@@ -192,12 +194,14 @@ a {
 .text-gradient-primary {
   background: linear-gradient(135deg, var(--accent-primary) 30%, var(--dark-accent) 100%);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .text-gradient-accent {
   background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 50%, var(--highlight-blue) 100%);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 

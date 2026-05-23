@@ -245,7 +245,9 @@
   display: grid;
   gap: 0.75rem;
 }
-
+.mega-menu-links p{
+  margin-bottom: 0px !important;
+}
 .mega-menu-links.grid-3 {
   grid-template-cols: repeat(3, minmax(0, 1fr));
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -416,7 +418,7 @@
 }
 
 .mega-cta-btn {
-  margin-top: auto;
+  margin-top: 15px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -430,6 +432,7 @@
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(172, 61, 199, 0.2);
   transition: var(--transition-smooth);
+  
 }
 
 .mega-cta-btn:hover {

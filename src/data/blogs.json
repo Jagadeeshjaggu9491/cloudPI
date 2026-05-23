@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "image": "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop",
+    "author": "David Lee",
+    "date": "Apr 22, 2025",
+    "title": "10 Ways Automation Can Transform Your Sales Workflow",
+    "url": "/blog/automation-sales-workflow"
+  },
+  {
+    "id": 2,
+    "image": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop",
+    "author": "Amina Torres",
+    "date": "Apr 22, 2025",
+    "title": "The Ultimate Guide to Improving Team Communication and Workflow",
+    "url": "/blog/team-communication-workflow"
+  },
+  {
+    "id": 3,
+    "image": "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=1200&auto=format&fit=crop",
+    "author": "Amina Torres",
+    "date": "Apr 22, 2025",
+    "title": "Why Your CRM Should Do More Than Just Manage Contacts",
+    "url": "/blog/crm-beyond-contacts"
+  }
+]

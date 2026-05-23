@@ -4,16 +4,18 @@ import TrustedCompanies from '../sections/TrustedCompanies';
 import CloudServices from '../sections/CloudServices';
 import PlatformAnalytics from '../sections/PlatformAnalytics';
 import AISolutions from '../sections/AISolutions';
-import FeaturesGrid from '../sections/FeaturesGrid';
+import FeaturesGridSection from '../sections/FeaturesGridSection';
 import Infrastructure from '../sections/Infrastructure';
 import Security from '../sections/Security';
-import PricingPreview from '../sections/PricingPreview';
-import Testimonials from '../sections/Testimonials';
+import Testimonials from '../sections/TestimonialSection';
 import CTABanner from '../sections/CTABanner';
 import SalesSection from '../sections/SalesSection';
 import Footer from '../sections/Footer';
 import VisibilitySection from '../sections/VisibilitySection';
 import GrowthStackSection from '../sections/GrowthStackSection';
+import PricingSection from '../sections/PricingSection';
+import BlogsSection from '../sections/BlogsSection';
+import FAQSection from '../sections/FAQSection';
 
 export default function Home() {
   return (
@@ -23,6 +25,7 @@ export default function Home() {
       <SalesSection />
       <VisibilitySection />
       <GrowthStackSection />
+      <FeaturesGridSection />
       {/* <CloudServices />
       <PlatformAnalytics />
       <AISolutions />
@@ -30,8 +33,13 @@ export default function Home() {
       <Infrastructure />
       <Security />
       <PricingPreview />
-      <Testim/onials />
+      
       <CTABanner /> */}
+      <PricingSection />
+      <Testimonials />
+      <BlogsSection />
+      <FAQSection />
+
       <Footer />
     </>
   );

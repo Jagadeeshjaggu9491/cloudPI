@@ -1,0 +1,476 @@
+/* =========================================================
+   FULL DARK SECTION
+========================================================= */
+
+.features-grid-section {
+    position: relative;
+    overflow: hidden;
+    padding: 120px 0;
+    background: linear-gradient(180deg, #060606 0%, #090909 40%, #050505 100%) !important;
+    isolation: isolate;
+    margin: 80px auto;
+    max-width: 1400px;
+    border-radius: 32px;    
+}
+
+/* =========================================================
+   DARK NOISE TEXTURE
+========================================================= */
+
+.noise-overlay {
+    position: absolute;
+    inset: 0;
+    background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
+    opacity: 0.14;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* =========================================================
+   PURPLE LIGHT GLOWS
+========================================================= */
+
+.features-grid-section::before {
+    content: "";
+    position: absolute;
+    width: 700px;
+    height: 700px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(168, 85, 247, 0.14), transparent 70%);
+    top: -350px;
+    left: -220px;
+    filter: blur(50px);
+    z-index: 1;
+}
+
+.features-grid-section::after {
+    content: "";
+    position: absolute;
+    width: 700px;
+    height: 700px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(217, 70, 239, 0.10), transparent 70%);
+    bottom: -350px;
+    right: -220px;
+    filter: blur(50px);
+    z-index: 1;
+}
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.features-top-content {
+    position: relative;
+    z-index: 5;
+    margin-bottom: 40px;
+}
+
+.feature-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 18px;
+    border-radius: 100px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(14px);
+    margin-bottom: 26px;
+}
+
+.feature-badge span {
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.4px;
+}
+
+.feature-heading {
+    color: #ffffff;
+    font-size: 52px;
+    font-weight: 500;
+    line-height: 1.05;
+    letter-spacing: -2px;
+    margin-bottom: 24px;
+}
+
+.feature-description {
+    max-width: 760px;
+    margin-inline: auto;
+    color: rgba(255, 255, 255, 0.72);
+    font-size: 18px;
+    line-height: 1.9;
+}
+
+/* =========================================================
+   GRID CARD
+========================================================= */
+
+.feature-card {
+    position: relative;
+    height: 100%;
+    padding: 42px 34px;
+    border-radius: 20px;
+    overflow: hidden;
+    z-index: 5;
+    background: linear-gradient(180deg, rgba(17, 17, 17, 0.96), rgba(10, 10, 10, 0.96));
+    border: 1px solid rgba(255, 82, 222, 0.9);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03), 0 10px 30px rgba(0, 0, 0, 0.45);
+    transition: border-color 0.45s ease, box-shadow 0.45s ease;
+}
+
+.feature-card:hover {
+    border-color: rgba(255, 82, 222, 1);
+    box-shadow: 0 0 35px rgba(255, 82, 222, 0.18), 0 35px 80px rgba(0, 0, 0, 0.65);
+}
+
+.feature-glow {
+    position: absolute;
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 82, 222, 0.22), transparent 70%);
+    top: 0;
+    left: 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+}
+
+.feature-card:hover .feature-glow {
+    opacity: 1;
+}
+
+/* =========================================================
+   ICON
+========================================================= */
+
+.feature-icon {
+    width: 72px !important;
+    height: 72px !important;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    transition: background 0.4s ease, border-color 0.4s ease;
+}
+
+.feature-card:hover .feature-icon {
+    background: rgba(255, 82, 222, 0.08);
+    border-color: rgba(255, 82, 222, 0.35);
+}
+
+/* =========================================================
+   TEXT
+========================================================= */
+
+.feature-card h4 {
+    color: #ffffff;
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 1.4;
+    margin-bottom: 18px;
+}
+
+.feature-card p {
+    color: rgba(255, 255, 255, 0.72);
+    font-size: 16px;
+    line-height: 1.9;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1199px) {
+    .feature-heading {
+        font-size: 58px;
+    }
+
+    .feature-card h4 {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 991px) {
+    .features-grid-section {
+        padding: 95px 0;
+    }
+
+    .feature-heading {
+        font-size: 48px;
+    }
+
+    .feature-description {
+        font-size: 17px;
+    }
+}
+
+@media (max-width: 767px) {
+    .features-grid-section {
+        padding: 75px 0;
+    }
+
+    .features-top-content {
+        margin-bottom: 55px;
+    }
+
+    .feature-heading {
+        font-size: 38px;
+        line-height: 1.15;
+    }
+
+    .feature-description {
+        font-size: 15px;
+        line-height: 1.7;
+    }
+
+    .feature-card {
+        padding: 34px 24px;
+    }
+
+    .feature-card h4 {
+        font-size: 22px;
+    }
+
+    .feature-card p {
+        font-size: 15px;
+    }
+
+    .feature-icon {
+        width: 64px;
+        height: 64px;
+    }
+}
+
+@media (max-width: 575px) {
+    .feature-heading {
+        font-size: 32px;
+    }
+
+    .feature-description {
+        font-size: 14px;
+    }
+}
+
+/* =========================================================
+   SVG ICON ANIMATIONS
+========================================================= */
+
+.animated-svg {
+    width: 40px;
+    height: 40px;
+    color: #ffffff;
+    pointer-events: none;
+}
+
+/* ==================== EXISTING ANIMATIONS ==================== */
+
+.icon-crm .user-2 {
+    animation: crmMove 1.8s ease-in-out infinite alternate;
+}
+
+@keyframes crmMove {
+    0% {
+        transform: translateY(1.5px);
+        opacity: 0.4;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.icon-chart .chart-line {
+    stroke-dasharray: 50;
+    animation: drawChartPath 2.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+@keyframes drawChartPath {
+
+    0%,
+    100% {
+        stroke-dashoffset: 50;
+    }
+
+    50% {
+        stroke-dashoffset: 0;
+    }
+}
+
+.icon-handshake .collab-pulse {
+    animation: pulseCollab 1.6s infinite ease-out;
+    transform-origin: center;
+}
+
+@keyframes pulseCollab {
+    0% {
+        r: 1.5;
+        opacity: 0.8;
+    }
+
+    100% {
+        r: 8;
+        opacity: 0;
+    }
+}
+
+.icon-security .lock-loop {
+    animation: unlockLock 1.8s ease-in-out infinite;
+    transform-origin: bottom center;
+}
+
+@keyframes unlockLock {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-3px);
+    }
+}
+
+.icon-bell {
+    animation: swingBell 2.5s ease-in-out infinite alternate;
+    transform-origin: top center;
+}
+
+.icon-bell .bell-clapper {
+    animation: swingClapper 1.25s ease-in-out infinite alternate;
+    transform-origin: top center;
+}
+
+@keyframes swingBell {
+    0% {
+        transform: rotate(-8deg);
+    }
+
+    100% {
+        transform: rotate(8deg);
+    }
+}
+
+@keyframes swingClapper {
+    0% {
+        transform: translateX(-2.5px);
+    }
+
+    100% {
+        transform: translateX(2.5px);
+    }
+}
+
+.icon-cpu .cpu-center {
+    animation: cpuPulseCenter 1.6s ease-in-out infinite alternate;
+}
+
+@keyframes cpuPulseCenter {
+    0% {
+        fill: transparent;
+        opacity: 0.3;
+    }
+
+    100% {
+        fill: rgba(255, 82, 222, 0.35);
+        opacity: 1;
+    }
+}
+
+/* ==================== NEW ANIMATIONS ==================== */
+
+.icon-analytics .bar {
+    animation: barGrow 2.2s ease-in-out infinite alternate;
+    transform-origin: bottom;
+}
+
+.bar-1 {
+    animation-delay: 0s;
+}
+
+.bar-2 {
+    animation-delay: 0.2s;
+}
+
+.bar-3 {
+    animation-delay: 0.4s;
+}
+
+@keyframes barGrow {
+    0% {
+        height: 4px;
+    }
+
+    100% {
+        height: 100%;
+    }
+}
+
+/* Workflow Icon */
+.icon-workflow .workflow-line {
+    stroke-dasharray: 40;
+    animation: drawLine 2s linear infinite;
+}
+
+.icon-workflow .workflow-arrow {
+    animation: arrowMove 2s ease-in-out infinite;
+    transform-origin: center;
+}
+
+@keyframes drawLine {
+    0% {
+        stroke-dashoffset: 40;
+    }
+
+    100% {
+        stroke-dashoffset: -40;
+    }
+}
+
+@keyframes arrowMove {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(4px);
+    }
+}
+
+/* Cloud Icon */
+.icon-cloud .cloud-main {
+    animation: cloudFloat 3.5s ease-in-out infinite alternate;
+}
+
+.icon-cloud .cloud-line {
+    animation: cloudDash 2.8s linear infinite;
+}
+
+@keyframes cloudFloat {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-4px);
+    }
+}
+
+@keyframes cloudDash {
+    0% {
+        stroke-dasharray: 12;
+        stroke-dashoffset: 0;
+    }
+
+    100% {
+        stroke-dasharray: 12;
+        stroke-dashoffset: -24;
+    }
+}
