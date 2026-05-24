@@ -16,6 +16,7 @@ import GrowthStackSection from '../sections/GrowthStackSection';
 import PricingSection from '../sections/PricingSection';
 import BlogsSection from '../sections/BlogsSection';
 import FAQSection from '../sections/FAQSection';
+import ChallengesSection from '../sections/ChallengesSection';
 
 export default function Home() {
   return (
@@ -26,6 +27,7 @@ export default function Home() {
       <VisibilitySection />
       <GrowthStackSection />
       <FeaturesGridSection />
+      <ChallengesSection />
       {/* <CloudServices />
       <PlatformAnalytics />
       <AISolutions />
