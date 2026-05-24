@@ -18,15 +18,14 @@
 }
 
 .challenge-title {
-    font-size: 64px;
+    font-size: 52px;
     line-height: 1.1;
-    font-weight: 700;
-    color: #7a39f5;
+    font-weight: 500;
     margin: 0;
 }
 
 .challenge-description {
-    font-size: 20px;
+    font-size: 18px;
     line-height: 1.8;
     color: #7b7b90;
     margin-top: 30px;
@@ -47,7 +46,7 @@
 .challenge-item {
     display: flex;
     gap: 24px;
-    padding: 40px 32px;
+    padding: 26px 30px;
     border-bottom: 1px solid #ececec;
     cursor: pointer;
     transition: all 0.35s ease;
@@ -63,43 +62,44 @@
 
 .challenge-item.active {
     background: #f7f2ff;
+    border-bottom: 3px solid #7a39f5;
 }
 
 .challenge-icon {
-    min-width: 70px;
-    width: 70px;
-    height: 70px;
+    min-width: 40px;
+    width: 40px;
+    height: 40px;
     border-radius: 18px;
     background: #f4efff;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 34px;
+    font-size: 24px;
     color: #7a39f5;
     transition: 0.3s;
 }
 
 .challenge-item.active .challenge-icon {
-    background: #7a39f5;
+    background: #7a39f5a1;
     color: #ffffff;
 }
 
-.challenge-content h4 {
-    font-size: 28px;
-    font-weight: 700;
+.challenge-content h5 {
+    /* font-size: 28px; */
+    font-weight: 500;
     color: #171725;
-    margin-bottom: 16px;
+    /* margin-bottom: 16px; */
 }
 
 .challenge-content p {
-    font-size: 18px;
+    font-size: 16px;
     line-height: 1.8;
     color: #7b7b90;
     margin: 0;
 }
 
 .challenge-image-wrapper {
-    padding: 24px;
+    padding: 30px;
     height: 100%;
     background: #fcfcff;
     display: flex;

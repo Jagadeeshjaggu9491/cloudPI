@@ -17,6 +17,8 @@ import PricingSection from '../sections/PricingSection';
 import BlogsSection from '../sections/BlogsSection';
 import FAQSection from '../sections/FAQSection';
 import ChallengesSection from '../sections/ChallengesSection';
+import HowItWorks from '../sections/HowItWorks';
+import IntegrationsSection from '../sections/IntegrationsSection';
 
 export default function Home() {
   return (
@@ -28,6 +30,7 @@ export default function Home() {
       <GrowthStackSection />
       <FeaturesGridSection />
       <ChallengesSection />
+      <HowItWorks />
       {/* <CloudServices />
       <PlatformAnalytics />
       <AISolutions />
@@ -39,6 +42,7 @@ export default function Home() {
       <CTABanner /> */}
       <PricingSection />
       <Testimonials />
+      <IntegrationsSection />
       <BlogsSection />
       <FAQSection />
 

@@ -48,7 +48,7 @@ const ChallengesSection = () => {
                     <div className="col-lg-6">
                         <span className="challenge-badge">Power Pack</span>
 
-                        <h2 className="challenge-title">
+                        <h2 className="challenge-title gradient-text">
                             How CloudPi Solves
                             <br />
                             These Challenges
@@ -79,7 +79,7 @@ const ChallengesSection = () => {
                                         <div className="challenge-icon">{item.icon}</div>
 
                                         <div className="challenge-content">
-                                            <h4>{item.title}</h4>
+                                            <h5>{item.title}</h5>
                                             <p>{item.desc}</p>
                                         </div>
                                     </div>
