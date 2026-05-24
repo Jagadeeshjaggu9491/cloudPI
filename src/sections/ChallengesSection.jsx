@@ -5,7 +5,7 @@ import "../styles/ChallengesSection.css";
 
 import {
     HiOutlineChartBar,
-    HiOutlineSpeakerphone,
+    HiOutlineMegaphone,
     HiOutlineSquares2X2,
 } from "react-icons/hi2";
 
@@ -25,7 +25,7 @@ const tabs = [
         id: 2,
         title: "Cost Assignment Based on Rules",
         desc: "Automatically assign cloud costs using intelligent rules, tags, and metadata — ensuring accurate cost allocation without manual effort.",
-        icon: <HiOutlineSpeakerphone />,
+        icon: <HiOutlineMegaphone />,
         image: dashboard2,
     },
     {
