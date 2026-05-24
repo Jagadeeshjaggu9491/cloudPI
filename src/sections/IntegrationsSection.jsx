@@ -1,34 +1,59 @@
 // IntegrationsSection.jsx
 import NetworkLines from '../assets/images/NetworkLines.png'
 import "../styles/IntegrationsSection.css";
+import CenterLogo from "../assets/images/connect-logos/cloudPI.png";
+import Jira from "../assets/images/connect-logos/jira-logo.png";
+import Azure from "../assets/images/connect-logos/azure-logo.png";
+import ServiceNow from "../assets/images/connect-logos/servicenow-logo.png";
+import OutLook from "../assets/images/connect-logos/outlook-logo.png";
+import OpenID from "../assets/images/connect-logos/openid-logo.png";
+import Okta from "../assets/images/connect-logos/okta-logo.png";
+import Gmail from "../assets/images/connect-logos/gmail-logo.png";
+import Logo3 from "../assets/images/connect-logos/logo-3.png";
 
 const leftIcons = [
     {
-        image: "/images/jira.png",
+        image: Jira,
         className: "left-1",
     },
     {
-        image: "/images/slack.png",
+        image: Azure,
         className: "left-2",
     },
     {
-        image: "/images/azure.png",
+        image: ServiceNow,
         className: "left-3",
+    },
+    {
+        image: OutLook,
+        className: "left-4",
+    },
+    {
+        image: OpenID,
+        className: "left-5",
     },
 ];
 
 const rightIcons = [
     {
-        image: "/images/gmail.png",
+        image: Okta,
         className: "right-1",
     },
     {
-        image: "/images/outlook.png",
+        image: Gmail,
         className: "right-2",
     },
     {
-        image: "/images/aws.png",
+        image: Logo3,
         className: "right-3",
+    },
+    {
+        image: Azure,
+        className: "right-4",
+    },
+    {
+        image: OutLook,
+        className: "right-5",
     },
 ];
 
@@ -46,7 +71,7 @@ const IntegrationsSection = () => {
                         Integrations
                     </div>
 
-                    <h2>
+                    <h2 className="gradient-text">
                         Connect CloudPi to the tools your
                         <br />
                         teams already use.
@@ -84,7 +109,7 @@ const IntegrationsSection = () => {
                         <div className="center-logo-inner">
 
                             <img
-                                src="/images/cloudpi-logo.png"
+                                src={CenterLogo}
                                 alt="CloudPi"
                             />
 

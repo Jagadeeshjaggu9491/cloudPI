@@ -19,6 +19,7 @@ import FAQSection from '../sections/FAQSection';
 import ChallengesSection from '../sections/ChallengesSection';
 import HowItWorks from '../sections/HowItWorks';
 import IntegrationsSection from '../sections/IntegrationsSection';
+import CTASection from '../sections/CTASection';
 
 export default function Home() {
   return (
@@ -45,7 +46,7 @@ export default function Home() {
       <IntegrationsSection />
       <BlogsSection />
       <FAQSection />
-
+      <CTASection />
       <Footer />
     </>
   );
