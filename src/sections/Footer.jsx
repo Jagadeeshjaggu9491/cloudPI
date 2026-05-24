@@ -15,7 +15,7 @@ import {
   FaTelegramPlane,
 } from "react-icons/fa";
 
-    import footerLogo from "../assets/logo.png";
+import footerLogo from "../assets/logo.png";
 
 import "../styles/Footer.css";
 
@@ -185,9 +185,9 @@ const Footer = () => {
 
                 <li>Platform Capabilities</li>
                 <li>Integrations</li>
-                <li>Workflow Automations</li>
+                <li>Intelligent Workflows</li>
                 <li>Cloud Cost Analytics</li>
-                <li>Governance</li>
+                <li>Policy Engine</li>
                 <li>Pricing</li>
 
               </ul>
@@ -235,6 +235,8 @@ const Footer = () => {
                 <li>FAQ</li>
                 <li>Case Studies</li>
                 <li>Blog</li>
+                <li>Events</li>
+                <li>Webinars</li>
 
               </ul>
 

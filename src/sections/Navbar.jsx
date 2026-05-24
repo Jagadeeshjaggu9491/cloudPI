@@ -14,9 +14,9 @@ import Logo from '../assets/logo.png'
 const PLATFORM_ITEMS = [
   { title: 'Platform Capabilities', icon: <FaBolt />, desc: 'Full-stack cloud control layer' },
   { title: 'Integrations', icon: <FaProjectDiagram />, desc: 'Connect 200+ cloud services' },
-  { title: 'Workflow Automation', icon: <FaLayerGroup />, desc: 'Event-driven task scheduling' },
+  { title: 'Intelligent Workflows', icon: <FaLayerGroup />, desc: 'Event-driven task scheduling' },
   { title: 'Multi Cloud Cost', icon: <FaCloud />, desc: 'Unified cost visibility' },
-  { title: 'Governance', icon: <FaShieldAlt />, desc: 'Compliance at enterprise scale' },
+  { title: 'Policy Engine', icon: <FaShieldAlt />, desc: 'Compliance at enterprise scale' },
   { title: 'Cost Allocation', icon: <FaDollarSign />, desc: 'Tag-based allocation & chargeback' },
   { title: 'Billing Analysis', icon: <FaChartBar />, desc: 'Deep-dive usage anomalies' },
   { title: 'Rightsizing', icon: <FaCrop />, desc: 'AI-powered resource sizing' },
@@ -277,7 +277,7 @@ export default function Navbar() {
               <Link to="/" className="mobile-nav-link" onClick={() => setMobileMenuOpen(false)}>Home</Link>
             </li>
             {[
-              { label: 'Platform', idx: 1, links: [{ label: 'Platform Capabilities', to: '/services' }, { label: 'Integrations', to: '/services' }, { label: 'Workflow Automation', to: '/services' }, { label: 'Multi Cloud Cost', to: '/services' }] },
+              { label: 'Platform', idx: 1, links: [{ label: 'Platform Capabilities', to: '/services' }, { label: 'Integrations', to: '/services' }, { label: 'Intelligent Workflows', to: '/services' }, { label: 'Multi Cloud Cost', to: '/services' }] },
               { label: 'Solutions', idx: 2, links: [{ label: 'Solutions by Role', to: '/solutions' }, { label: 'Solutions by Persona', to: '/solutions' }, { label: 'Why CloudPi', to: '/solutions' }] },
               { label: 'Company', idx: 3, links: [{ label: 'About', to: '/about' }, { label: 'Book Demo', to: '/about' }, { label: 'Security', to: '/about' }] },
               { label: 'Resources', idx: 4, links: [{ label: 'Documentation', to: '/docs' }, { label: 'FAQ', to: '/docs' }, { label: 'Case Studies', to: '/docs' }] },

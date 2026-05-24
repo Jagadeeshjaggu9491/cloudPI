@@ -4,152 +4,52 @@
   position: relative;
   overflow: hidden;
   padding-top: 150px;
-  min-height: 145vh;
-  background: #fff;
-
-}
-
-.hero-bg {
-  background: url(../assets/images/backgrounds/hero-gradient-bg.png) no-repeat center;
-}
-
-/* use your local gradient image */
-.hero-gradient-bg {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 72%;
-  z-index: 1;
-  pointer-events: none;
-}
-
-.hero-gradient-bg img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center bottom;
-}
-
-.hero-slider {
-  position: relative;
-  overflow: hidden;
-  min-height: 900px;
-}
-
-.hero-slide {
-  position: absolute;
-  inset: 0;
-  opacity: 0;
-  visibility: hidden;
-  width: 100%;
-  transform: translateX(30px);
-  transition: opacity 0.45s ease, transform 0.45s ease, visibility 0.45s ease;
-  pointer-events: none;
-}
-
-.hero-slide.active {
-  opacity: 1;
-  visibility: visible;
-  transform: translateX(0);
-  pointer-events: auto;
-  z-index: 2;
-}
-
-.slider-controls {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  right: 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  pointer-events: none;
-  transform: translateY(-50%);
-  z-index: 10;
-}
-
-.slider-arrow {
-  pointer-events: auto;
-  width: 52px;
-  height: 52px;
-  border-radius: 999px;
-  border: none;
-  background: rgba(255, 255, 255, 0.88);
-  color: #4f46e5;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.55rem;
-  cursor: pointer;
-  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.12);
-  transition: transform 0.2s ease, background 0.2s ease;
-}
-
-.slider-arrow:hover {
-  transform: scale(1.05);
+  /* Leaves room for the navbar */
   background: #ffffff;
 }
 
-.hero-buttons {
-  margin-top: 45px;
+.hero-container {
   display: flex;
-  justify-content: center;
-  gap: 20px;
-  position: relative;
-  z-index: 5;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
 }
 
-.hero-btn-primary {
-  background: linear-gradient(135deg,
-      #7c3aed,
-      #6d28d9);
-  border: none;
-  padding: 18px 38px;
-  border-radius: 18px;
-  font-size: 18px;
-  font-weight: 600;
-  color: #fff;
-  box-shadow: 0 15px 40px rgba(124, 58, 237, 0.22);
-}
-
-.hero-btn-secondary {
-  background: #fff;
-  border: 1px solid #ddd;
-  padding: 18px 38px;
-  border-radius: 18px;
-  font-size: 18px;
-  font-weight: 600;
-}
-
-/* content */
-
-.hero-content {
-  position: relative;
-  z-index: 5;
-  text-align: center;
-}
-
+/* Eyebrow Badge Pill */
 .hero-badge {
   display: inline-flex;
   align-items: center;
-  padding: 8px 18px;
-  border-radius: 40px;
-  border: 1px solid rgba(124, 58, 237, 0.15);
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(12px);
-  color: #5b21b6;
-  font-size: 12px;
-  font-weight: 600;
-  margin-bottom: 30px;
+  padding: 8px 20px;
+  border-radius: 999px;
+  border: 1px solid rgba(168, 85, 247, 0.16);
+  background: #ffffff;
+  color: #7c3aed;
+  /* Rich purple */
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 24px;
+  box-shadow: 0 4px 12px rgba(124, 58, 237, 0.04);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  letter-spacing: -0.1px;
 }
 
+.hero-badge:hover {
+  border-color: rgba(124, 58, 237, 0.3);
+  box-shadow: 0 4px 16px rgba(124, 58, 237, 0.08);
+  transform: translateY(-1px);
+}
+
+/* Premium Typography matching Framer mockup */
 .hero-title {
-  font-size: 60px;
+  font-size: 72px;
   font-weight: 500;
-  /* line-height: 0.95; */
-  letter-spacing: -4px;
-  margin-bottom: 30px;
+  line-height: 1.15;
+  letter-spacing: -2px;
+  margin-bottom: 24px;
+  text-align: center;
+
+  /* Vibrant purple-pink gradient matching the mockup */
   background: linear-gradient(0deg,
       #6B45B6 0%,
       #AC3BC7 70%,
@@ -162,149 +62,336 @@
 }
 
 .hero-subtitle {
-  max-width: 500px;
-  margin: auto;
-  font-size: 16px;
-  line-height: 1.7;
-  color: #73738a;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  max-width: 620px;
+  margin: 0 auto 36px auto;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #64748b;
+  /* Sleek slate-gray text */
+  text-align: center;
 }
 
+/* Hero Button Container */
 .hero-buttons {
-  margin-top: 45px;
   display: flex;
   justify-content: center;
-  gap: 20px;
-  position: relative;
-  z-index: 5;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
 }
 
+/* Primary Button: Book a Demo */
 .hero-btn-primary {
-  background: linear-gradient(135deg,
-      #7c3aed,
-      #6d28d9);
+  background: #581c87;
+  /* Deep royal purple from mockup */
   border: none;
-  padding: 18px 38px;
-  border-radius: 18px;
-  font-size: 18px;
+  padding: 14px 28px;
+  border-radius: 12px;
+  font-size: 16px;
   font-weight: 600;
-  box-shadow: 0 15px 40px rgba(124, 58, 237, 0.22);
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 20px rgba(88, 28, 135, 0.25);
+  font-family: inherit;
 }
 
+.hero-btn-primary:hover {
+  background: #4c1d95;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(88, 28, 135, 0.35);
+}
+
+/* Secondary Button: Start Your Trail ↗ */
 .hero-btn-secondary {
-  background: #fff;
-  border: 1px solid #ddd;
-  padding: 18px 38px;
-  border-radius: 18px;
-  font-size: 18px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  /* Soft border */
+  padding: 14px 28px;
+  border-radius: 12px;
+  font-size: 16px;
   font-weight: 600;
+  color: #0f172a;
+  /* Slate 900 for modern high contrast */
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+  font-family: inherit;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* dashboard */
+.hero-btn-secondary:hover {
+  background: #f8fafc;
+  border-color: #cbd5e1;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+}
 
+/* Dashboard Glow and Stripe Container */
+.dashboard-glow-container {
+  position: relative;
+  width: 100%;
+  padding: 40px 0px 40px 0px;
+  /* margin-top: 30px; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: visible;
+  border-radius: 0px 0px 25px 25px;
+
+  /* Custom grid: radial purple/indigo glow layered with thin vertical stripes */
+  background-image: url("../assets/images/hero-slider-bg.png");
+  background-size: cover;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+/* Smooth fade transition from the white hero body to the striped background */
+.dashboard-glow-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+  background: linear-gradient(to bottom, #ffffff 0%, transparent 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Dashboard Wrapper */
 .dashboard-wrapper {
   position: relative;
-  z-index: 4;
-  margin-top: 90px;
-
+  z-index: 2;
+  width: 100%;
+  max-width: 1060px;
   display: flex;
   justify-content: center;
+  perspective: 1200px;
+  transform-style: preserve-3d;
 
-  perspective: 1500px;
-
-  overflow: visible;
+  /* Initial 3D tilt ("sleeped" state) applied to the wrapper */
+  transform: perspective(1200px) rotateX(18deg) scale(0.9);
+  transform-origin: top center;
+  will-change: transform;
 }
 
+/* Dashboard Image styling - NO hardcoded heights, only smooth responsive width */
 .dashboard-image {
   width: 100%;
-  max-width: 1180px;
-
-  border-radius: 34px;
-
-  transform:
-    perspective(1600px) rotateX(12deg) scale(0.82);
-
-  transform-origin: center top;
-
-  will-change: transform;
-
+  height: auto;
+  /* Natural scaling */
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  outline: 1px solid rgba(0, 0, 0, 0.04);
   box-shadow:
-    0 60px 120px rgba(124, 58, 237, 0.2),
-    0 25px 60px rgba(0, 0, 0, 0.08);
+    0 30px 70px -15px rgba(99, 102, 241, 0.22),
+    0 0 100px -20px rgba(168, 85, 247, 0.15),
+    0 15px 35px -10px rgba(0, 0, 0, 0.06);
+  background: #ffffff;
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* RESPONSIVE */
-
-@media (max-width: 1400px) {
-  .hero-title {
-    font-size: 82px;
-  }
+/* Layout logic to overlay slides without layout collapses or fixed heights */
+.dashboard-image.absolute {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: auto;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 1;
 }
+
+.dashboard-image.relative {
+  position: relative;
+  width: 100%;
+  height: auto;
+  opacity: 1;
+  pointer-events: auto;
+  z-index: 2;
+}
+
+/* Glassmorphic Chevron Slider Arrows with Circular Blurred backgrounds */
+.slider-nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  color: #0f172a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.25);
+}
+
+.slider-nav-btn.prev-btn {
+  left: 10px;
+}
+
+.slider-nav-btn.next-btn {
+  right: 10px;
+}
+
+.slider-nav-btn:hover {
+  background: rgba(255, 255, 255, 0.5);
+  border-color: rgba(255, 255, 255, 0.85);
+  color: #7c3aed;
+  /* Brand purple */
+  box-shadow:
+    0 15px 35px rgba(124, 58, 237, 0.15),
+    0 0 1px rgba(0, 0, 0, 0.1);
+  transform: translateY(-50%) scale(1.08);
+}
+
+.slider-nav-btn:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+/* Carousel Indicators (Moved underneath the image) */
+.hero-carousel-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 36px;
+  margin-bottom: 48px;
+  width: 100%;
+}
+
+.hero-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: #cbd5e1;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero-dot.active {
+  width: 24px;
+  background: #7c3aed;
+  /* Active pill */
+}
+
+.hero-dot:hover:not(.active) {
+  background: #94a3b8;
+}
+
+/* RESPONSIVE DESIGN */
 
 @media (max-width: 1200px) {
   .hero-title {
-    font-size: 72px;
+    font-size: 60px;
+    letter-spacing: -1.5px;
   }
 
   .hero-subtitle {
-    font-size: 20px;
+    font-size: 17px;
+    max-width: 560px;
+  }
+
+  .slider-nav-btn.prev-btn {
+    left: 20px;
+  }
+
+  .slider-nav-btn.next-btn {
+    right: 20px;
   }
 }
 
 @media (max-width: 992px) {
   .hero-section {
-    min-height: auto;
-    padding-top: 130px;
+    padding-top: 120px;
   }
 
   .hero-title {
-    font-size: 58px;
-    letter-spacing: -2px;
-  }
-
-  .hero-subtitle {
-    font-size: 18px;
-  }
-
-  .dashboard-wrapper {
-    margin-top: 70px;
-  }
-
-  .dashboard-image {
-    transform:
-      perspective(1400px) rotateX(10deg) scale(0.9);
-  }
-}
-
-@media (max-width: 768px) {
-  .hero-title {
-    font-size: 44px;
-    line-height: 1.1;
+    font-size: 50px;
+    letter-spacing: -1px;
   }
 
   .hero-subtitle {
     font-size: 16px;
-    line-height: 1.8;
+    max-width: 500px;
+    margin-bottom: 28px;
+  }
+
+  .dashboard-glow-container {
+    padding: 60px 16px 80px 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    padding-top: 100px;
+  }
+
+  .hero-title {
+    font-size: 38px;
+    letter-spacing: -0.5px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+  }
+
+  .hero-subtitle {
+    font-size: 15px;
+    line-height: 1.5;
+    margin-bottom: 24px;
   }
 
   .hero-buttons {
     flex-direction: column;
-    align-items: center;
+    width: 100%;
+    gap: 12px;
   }
 
   .hero-btn-primary,
   .hero-btn-secondary {
     width: 100%;
     max-width: 280px;
+    padding: 12px 24px;
+    font-size: 15px;
+  }
+
+  .dashboard-glow-container {
+    padding: 40px 12px 60px 12px;
   }
 
   .dashboard-image {
-    border-radius: 22px;
-
-    transform:
-      perspective(1000px) rotateX(8deg) scale(1);
+    border-radius: 12px;
   }
 
-  .hero-gradient-bg {
-    height: 52%;
+  .slider-nav-btn {
+    width: 44px;
+    height: 44px;
+    font-size: 18px;
+  }
+
+  .slider-nav-btn.prev-btn {
+    left: 10px;
+  }
+
+  .slider-nav-btn.next-btn {
+    right: 10px;
   }
 }
