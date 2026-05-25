@@ -46,7 +46,7 @@
 }
 
 .gradient-text {
-  background: linear-gradient(90deg,
+  background: linear-gradient(0deg,
       #6B45B6 0%,
       #AC3BC7 70%,
       #E172CC 100%);

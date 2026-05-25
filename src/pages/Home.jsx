@@ -29,11 +29,11 @@ export default function Home() {
       <TrustedCompanies />
       <SalesSection />
       <VisibilitySection />
-      <GrowthStackSection />
+      {/* <GrowthStackSection /> */}
       <FeaturesGridSection />
       <ChallengesSection />
       <WhyChooseSection />
-      <HowItWorks />
+      {/* <HowItWorks /> */}
       {/* <CloudServices />
       <PlatformAnalytics />
       <AISolutions />
