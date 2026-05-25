@@ -1,6 +1,6 @@
 // WhyChooseSection.jsx
 
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "../styles/WhyChooseSection.css";
 import {
     HiArrowSmRight,
@@ -10,107 +10,234 @@ import {
 import {
     HiOutlineSparkles,
 } from "react-icons/hi";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const items = [
     {
         number: "01",
-        title: "Improve your cost optimization execution rate by 300%",
-        challenge:
-            "Recommendations stay trapped in Slack threads and forgotten tickets. Savings never reach the bill.",
-        solution:
-            "Three execution modes matched to risk: Autonomous, Approval-Gated, and Ticket-Driven.",
-        outcome:
-            "70% execution rate vs 18% industry average",
+        title: (
+            <>
+                Improve your cost optimization execution rate by <span className="why-purple-text">300%</span>
+            </>
+        ),
+        subtitle: (
+            <>
+                From <span className="why-purple-text">insight to action</span> — three execution modes matched to risk, so savings actually reach the bill.
+            </>
+        ),
+        challengeHeader: "Everybody gets insights. Nobody takes action.",
+        challengeBody: "Recommendations stay trapped in Slack threads and forgotten tickets. Savings never reach the bill — and your CFO stops trusting the number.",
+        solutionHeader: "Workflows that execute, not just recommend",
+        solutionBody: "Three execution modes matched to risk: Autonomous for low-risk resources, Approval-Gated for production, and Ticket-Driven for complex changes.",
+        outcome: "70% execution rate vs 18% industry average",
     },
     {
         number: "02",
-        title: "Improve accountability at scale across your organization",
-        challenge:
-            "Resources accumulate with no team claiming them. Nobody fixes what nobody owns.",
-        solution:
-            "CloudPi maps cloud accounts to your real org structure and assigns ownership automatically.",
-        outcome:
-            "Clear ownership from day one",
+        title: (
+            <>
+                Improve accountability at scale across your <span className="why-purple-text">entire organization</span>
+            </>
+        ),
+        subtitle: (
+            <>
+                From <span className="why-purple-text">shared and unowned</span> to <span className="why-purple-text">mapped and accountable</span> — every resource tied to a real team.
+            </>
+        ),
+        challengeHeader: "Shared infrastructure has no owner. Costs grow unchecked.",
+        challengeBody: "Resources accumulate with no team claiming them. Nobody fixes what nobody owns.",
+        solutionHeader: "Business Hierarchy that maps ownership to every resource",
+        solutionBody: "CloudPi maps cloud accounts to your real org — business unit, team, project, environment. Every resource has a rightful owner. Every team sees its spend.",
+        outcome: "Clear ownership from day one",
     },
     {
         number: "03",
-        title: "Achieve day-one cost allocation — even without tagging",
-        challenge:
-            "Finance needs allocation now. Engineering will get to tagging later.",
-        solution:
-            "CloudPi allocates 85% of costs using non-tag signals from day one.",
-        outcome:
-            "85% cost allocation in day 1",
+        title: (
+            <>
+                Achieve <span className="why-purple-text">day-one cost allocation</span> — even without tagging
+            </>
+        ),
+        subtitle: (
+            <>
+                From <span className="why-purple-text">"we'll fix tagging first"</span> to <span className="why-purple-text">85% allocated in day one</span> using non-tag signals.
+            </>
+        ),
+        challengeHeader: "We can't allocate costs until we fix tagging.",
+        challengeBody: "Finance needs allocation now. Engineering will get to tagging next quarter. So you wait — and FinOps can't prove value.",
+        solutionHeader: "Zero tagging prerequisite — 85% allocation in day one",
+        solutionBody: "CloudPi allocates 85% of cloud costs on day one using five non-tag signals. Tags improve precision later — they don't gate the process.",
+        outcome: "85% cost allocation in day 1, no tags required",
     },
     {
         number: "04",
-        title: "Achieve TRUE Savings — verified against your actual bill",
-        challenge:
-            "Most dashboards count estimated savings that never impact billing.",
-        solution:
-            "Every savings claim is verified directly against billing data.",
-        outcome:
-            "Billing-verified savings reporting",
+        title: (
+            <>
+                Achieve <span className="why-purple-text">TRUE Savings</span> — verified against your actual bill
+            </>
+        ),
+        subtitle: (
+            <>
+                From <span className="why-purple-text">dashboard estimates</span> to <span className="why-purple-text">billing-verified outcomes</span> — three tiers, every dollar attributed.
+            </>
+        ),
+        challengeHeader: "Your dashboard says $400K saved. Your CFO doesn't believe it.",
+        challengeBody: "Most savings numbers count recommendations never acted on and use list prices instead of contracted rates. Looks good on a dashboard, means nothing on the bill.",
+        solutionHeader: "TRUE Savings — billing-verified and auditable",
+        solutionBody: "Every claim is compared against actual billing data, reported in three tiers: Hard (bill went down), Rate (lower contracted price), and Avoidance (cost prevented).",
+        outcome: "Verified against actual billing data — not estimates",
     },
 ];
 
 const WhyChooseSection = () => {
 
     const [active, setActive] = useState(0);
+    const sectionRef = useRef(null);
+    const whyListRef = useRef(null);
+
+    useEffect(() => {
+        let mm = gsap.matchMedia();
+
+        mm.add("(min-width: 992px)", () => {
+            // Stacked Cards Pinning Timeline on Desktop
+            const tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: sectionRef.current,
+                    start: "top 12%",      // Pin once section is near top of viewport
+                    end: "+=2800",          // Scroll distance for the entire stacking process
+                    scrub: 1,               // Smooth linking to scroll
+                    pin: true,              // Pin the section
+                    anticipatePin: 1,
+                }
+            });
+
+            // Gather all the stackable card elements
+            const cards = gsap.utils.toArray(".why-card-column");
+
+            // Set initial state for subsequent cards offscreen to the right
+            cards.forEach((card, index) => {
+                if (index > 0) {
+                    gsap.set(card, { 
+                        xPercent: 130, 
+                        rotate: 3,
+                        transformOrigin: "center center"
+                    });
+                }
+            });
+
+            // Create staggered overlapping tweens
+            cards.forEach((card, index) => {
+                if (index > 0) {
+                    // Slide in the next card from the right
+                    tl.to(card, {
+                        xPercent: 0,
+                        rotate: 0,
+                        duration: 1,
+                        ease: "power2.out"
+                    });
+
+                    // Layer and shrink/fade the previous card to show depth
+                    tl.to(cards[index - 1], {
+                        scale: 0.94,
+                        opacity: 0.75,
+                        y: -30,
+                        duration: 0.7,
+                        ease: "power1.inOut"
+                    }, "-=1.0"); // Overlaps perfectly for a simultaneous sliding and sinking look
+                }
+            });
+        });
+
+        mm.add("(max-width: 991px)", () => {
+            // Simple slide-up stagger entries on Mobile
+            gsap.from(".why-badge, .why-top-left h2, .why-top-right p", {
+                y: 30,
+                opacity: 0,
+                duration: 0.8,
+                stagger: 0.15,
+                ease: "power3.out",
+                scrollTrigger: {
+                    trigger: sectionRef.current,
+                    start: "top 80%",
+                }
+            });
+
+            if (whyListRef.current) {
+                gsap.from(whyListRef.current.children, {
+                    y: 50,
+                    opacity: 0,
+                    duration: 1,
+                    stagger: 0.15,
+                    ease: "power4.out",
+                    scrollTrigger: {
+                        trigger: whyListRef.current,
+                        start: "top 85%",
+                    }
+                });
+            }
+        });
+
+        return () => mm.revert();
+    }, []);
 
     return (
-        <section className="why-section">
+        <section className="why-section" ref={sectionRef}>
 
             <div className="container">
 
-                {/* TOP */}
+                <div className="why-container-wrapper">
 
-                <div className="why-top">
+                    {/* TOP (Sticky Left on Desktop) */}
 
-                    <div className="row align-items-end gy-4">
+                    <div className="why-top">
 
-                        {/* LEFT */}
+                        <div className="row align-items-end gy-4">
 
-                        <div className="col-lg-8">
+                            {/* LEFT */}
 
-                            <div className="why-top-left">
+                            <div className="col-lg-8">
 
-                                <div className="why-badge">
+                                <div className="why-top-left">
 
-                                    <span className="why-badge-icon">
-                                        <HiOutlineSparkles />
-                                    </span>
+                                    <div className="why-badge">
 
-                                    <span>
-                                        Why CloudPi
-                                    </span>
+                                        <span className="why-badge-icon">
+                                            <HiOutlineSparkles />
+                                        </span>
+
+                                        <span>
+                                            Why CloudPi
+                                        </span>
+
+                                    </div>
+
+                                    <h2 className="gradient-text">
+                                        Four challenges.
+                                        <br />
+
+                                        Four answers.
+                                        <br />
+
+                                        One governed system.
+                                    </h2>
 
                                 </div>
 
-                                <h2 className="gradient-text">
-                                    Four challenges.
-                                    <br />
-
-                                    Four answers.
-                                    <br />
-
-                                    One governed system.
-                                </h2>
-
                             </div>
 
-                        </div>
+                            {/* RIGHT */}
 
-                        {/* RIGHT */}
+                            <div className="col-lg-4">
 
-                        <div className="col-lg-4">
+                                <div className="why-top-right">
 
-                            <div className="why-top-right">
+                                    <p>
+                                        The problems keeping enterprise cloud costs uncontrolled —
+                                        and how CloudPi solves each.
+                                    </p>
 
-                                <p>
-                                    The problems keeping enterprise cloud costs uncontrolled —
-                                    and how CloudPi solves each.
-                                </p>
+                                </div>
 
                             </div>
 
@@ -118,102 +245,110 @@ const WhyChooseSection = () => {
 
                     </div>
 
-                </div>
+                    {/* ACCORDION (Stacking Cards on Desktop) */}
 
-                {/* ACCORDION */}
+                    <div className="why-list">
 
-                <div className="why-list">
+                        <div className="row g-4" ref={whyListRef}>
 
+                            {items.map((item, index) => {
 
-                    <div className="row g-4">
+                                const isActive = active === index;
 
-                        {items.map((item, index) => {
-
-                            const isActive = active === index;
-
-                            return (
-
-                                <div
-                                    className="col-lg-6"
-                                    key={index}
-                                >
+                                return (
 
                                     <div
-                                        className={`why-item ${isActive ? "active" : ""}`}
+                                        className="col-lg-12 why-card-column"
+                                        key={index}
                                     >
 
-                                        {/* TOP ROW */}
-
                                         <div
-                                            className="why-row"
-                                            onClick={() => setActive(isActive ? null : index)}
+                                            className={`why-item ${isActive ? "active" : ""}`}
                                         >
 
-                                            <div className="why-left">
+                                            {/* TOP ROW */}
 
-                                                <div className="why-number">
-                                                    {item.number}
-                                                </div>
+                                            <div
+                                                className="why-row"
+                                                onClick={() => setActive(isActive ? null : index)}
+                                            >
 
-                                                <h3>
-                                                    {item.title}
-                                                </h3>
+                                                <div className="why-left">
 
-                                            </div>
-
-                                            <div className="why-action">
-
-                                                {isActive ? (
-                                                    <HiMinus />
-                                                ) : (
-                                                    <HiPlus />
-                                                )}
-
-                                            </div>
-
-                                        </div>
-
-                                        {/* CONTENT */}
-
-                                        <div className="why-content">
-
-                                            <div className="why-content-inner">
-
-                                                <div className="why-grid">
-
-                                                    <div className="why-block">
-
-                                                        <span>
-                                                            Challenge
-                                                        </span>
-
-                                                        <p>
-                                                            {item.challenge}
-                                                        </p>
-
+                                                    <div className="why-number">
+                                                        {item.number}
                                                     </div>
 
-                                                    <div className="why-block">
-
-                                                        <span>
-                                                            Solution
-                                                        </span>
-
-                                                        <p>
-                                                            {item.solution}
+                                                    <div className="why-title-group">
+                                                        <h3>
+                                                            {item.title}
+                                                        </h3>
+                                                        <p className="why-subtitle">
+                                                            {item.subtitle}
                                                         </p>
-
                                                     </div>
 
                                                 </div>
 
-                                                <div className="why-outcome mb-3">
+                                                <div className="why-action">
 
-                                                    <HiArrowSmRight />
+                                                    {isActive ? (
+                                                        <HiMinus />
+                                                    ) : (
+                                                        <HiPlus />
+                                                    )}
 
-                                                    <p className="mb-0">
-                                                        {item.outcome}
-                                                    </p>
+                                                </div>
+
+                                            </div>
+
+                                            {/* CONTENT */}
+
+                                            <div className="why-content">
+
+                                                <div className="why-content-inner">
+
+                                                    <div className="why-grid">
+
+                                                        <div className="why-block challenge-block">
+
+                                                            <span>
+                                                                Challenge
+                                                            </span>
+
+                                                            <h4>{item.challengeHeader}</h4>
+
+                                                            <p>
+                                                                {item.challengeBody}
+                                                            </p>
+
+                                                        </div>
+
+                                                        <div className="why-block solution-block">
+
+                                                            <span>
+                                                                Solution
+                                                            </span>
+
+                                                            <h4>{item.solutionHeader}</h4>
+
+                                                            <p>
+                                                                {item.solutionBody}
+                                                            </p>
+
+                                                        </div>
+
+                                                    </div>
+
+                                                    <div className="why-outcome mb-3">
+
+                                                        <HiArrowSmRight />
+
+                                                        <p className="mb-0">
+                                                            {item.outcome}
+                                                        </p>
+
+                                                    </div>
 
                                                 </div>
 
@@ -223,10 +358,10 @@ const WhyChooseSection = () => {
 
                                     </div>
 
-                                </div>
+                                );
+                            })}
 
-                            );
-                        })}
+                        </div>
 
                     </div>
 
