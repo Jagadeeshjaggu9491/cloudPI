@@ -271,7 +271,7 @@
     right: 40px;
 }
 
-/* FLOAT */
+/* FLOAT
 
 @keyframes floatIcon {
 
@@ -286,7 +286,7 @@
     100% {
         transform: translateY(0px);
     }
-}
+} */
 
 /* RESPONSIVE */
 
