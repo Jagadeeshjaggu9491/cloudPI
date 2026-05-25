@@ -167,12 +167,10 @@
 
     border-radius: 100px;
 
-    background: linear-gradient(
-        90deg,
-        transparent,
-        rgba(143, 73, 255, 0.95),
-        transparent
-    );
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(143, 73, 255, 0.95),
+            transparent);
 
     filter: blur(0.4px);
 
@@ -265,15 +263,12 @@
 }
 
 .work-content h4 {
-    font-size: 34px;
+    font-size: 20px;
     line-height: 1.18;
-    font-weight: 700;
-
-    letter-spacing: -1.3px;
-
+    font-weight: 500;
+    /* letter-spacing: -1.3px; */
     color: #1f1f3d;
-
-    margin-bottom: 16px;
+    margin-bottom: 10px;
 }
 
 .work-content p {

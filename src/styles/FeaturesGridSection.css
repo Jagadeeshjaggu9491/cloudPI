@@ -20,8 +20,9 @@
 .noise-overlay {
     position: absolute;
     inset: 0;
-    background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
-    opacity: 0.14;
+    background-image: url("../assets//images/backgrounds/bg-noise.webp");
+    background-position: 0 0;
+    opacity: 1;
     z-index: 1;
     pointer-events: none;
 }
@@ -141,7 +142,7 @@
     border-radius: 20px;
     overflow: hidden;
     z-index: 5;
-    background: linear-gradient(180deg, rgba(17, 17, 17, 0.96), rgba(10, 10, 10, 0.96));
+    /* background: #000; */
     border: 1px solid rgba(255, 82, 222, 0.9);
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03), 0 10px 30px rgba(0, 0, 0, 0.45);
     transition: border-color 0.45s ease, box-shadow 0.45s ease;
@@ -181,7 +182,7 @@
     align-items: center;
     justify-content: center;
     margin-bottom: 30px;
-    background: rgba(255, 255, 255, 0.03);
+    background: #000;
     border: 1px solid rgba(255, 255, 255, 0.06);
     transition: background 0.4s ease, border-color 0.4s ease;
 }
@@ -500,5 +501,90 @@
     100% {
         stroke-dasharray: 12;
         stroke-dashoffset: -24;
+    }
+
+}
+
+/* Rocket Icon */
+
+.icon-rocket {
+    animation: rocketFloat 2.5s ease-in-out infinite alternate;
+    transform-origin: center;
+}
+
+.icon-rocket path:nth-child(1) {
+    animation: rocketFlame 1s ease-in-out infinite alternate;
+}
+
+.icon-rocket path:nth-child(2) {
+    animation: rocketTrail 1.8s linear infinite;
+}
+
+.icon-rocket path:nth-child(3) {
+    animation: rocketBody 2.2s ease-in-out infinite alternate;
+}
+
+.icon-rocket path:nth-child(4) {
+    animation: rocketTrailMove 1.5s linear infinite;
+}
+
+@keyframes rocketFloat {
+
+    0% {
+        transform: translateY(0px) rotate(-2deg);
+    }
+
+    100% {
+        transform: translateY(-6px) rotate(2deg);
+    }
+}
+
+@keyframes rocketFlame {
+
+    0% {
+        opacity: 0.5;
+        transform: scale(0.9);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1.15);
+    }
+}
+
+@keyframes rocketTrail {
+
+    0% {
+        stroke-dasharray: 20;
+        stroke-dashoffset: 20;
+    }
+
+    100% {
+        stroke-dasharray: 20;
+        stroke-dashoffset: -20;
+    }
+}
+
+@keyframes rocketBody {
+
+    0% {
+        transform: translateX(0px);
+    }
+
+    100% {
+        transform: translateX(1.5px);
+    }
+}
+
+@keyframes rocketTrailMove {
+
+    0% {
+        opacity: 0.4;
+        transform: translate(-1px, 1px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(2px, -2px);
     }
 }

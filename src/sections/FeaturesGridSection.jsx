@@ -1,8 +1,9 @@
 // FeaturesGridSection.jsx
 import { useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { FaRocket } from "react-icons/fa";
+import { FaRocket, FaArrowRight } from "react-icons/fa";
 import "../styles/FeaturesGridSection.css";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -92,16 +93,89 @@ const FeaturesGridSection = () => {
         </svg>
     );
 
+    const RocketIcon = () => (
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="40"
+            height="40"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            className="animated-svg icon-rocket"
+        >
+            <path d="M4.5 16.5c-1.5 1.5-2 4.5-2 4.5s3-.5 4.5-2l2-2-2.5-2.5-2 2z" />
+            <path d="M14 10l-4-4" />
+            <path d="M16 8c1.5-1.5 2-4.5 2-4.5S15 4 13.5 5.5L10 9l5 5 1-1z" />
+            <path d="M9 15l-4 4" />
+        </svg>
+    );
+
     const features = [
-        { icon: <CRMIcon />, title: "Smart contact management", description: "Leads are spread across spreadsheets, notes, and inboxes, making it impossible to see the full customer journey." },
-        { icon: <ChartIcon />, title: "AI sales forecasting", description: "Predict future revenue with precision using advanced AI that learns from your team's performance and deal history." },
-        { icon: <HandshakeIcon />, title: "Team collaboration tools", description: "Share notes, assign tasks, and collaborate across departments ensuring everyone moves in sync." },
-        { icon: <SecurityIcon />, title: "Data security & permissions", description: "Protect sensitive data with role-based access, encryption, and detailed activity logs built for enterprise reliability." },
-        { icon: <BellIcon />, title: "Real-time alerts & notifications", description: "Stay ahead of every opportunity with instant alerts for new lead activity, deal progress, and important changes." },
-        { icon: <CPUIcon />, title: "AI-powered insights", description: "Identify trends, uncover opportunities, and reduce risk with smart recommendations built into your workflow." },
-        { icon: <AnalyticsIcon />, title: "Advanced analytics dashboard", description: "Monitor performance metrics, conversion rates, and business KPIs through beautiful real-time dashboards." },
-        { icon: <WorkflowIcon />, title: "Workflow automation", description: "Automate repetitive tasks, follow-ups, approvals, and notifications to improve team productivity." },
-        { icon: <CloudIcon />, title: "Cloud integrations", description: "Connect seamlessly with Slack, Google Workspace, HubSpot, Salesforce, and other enterprise platforms." },
+        {
+            icon: <HandshakeIcon />,
+            title: "Business Hierarchy",
+            description:
+                "Organize your cloud into structured units so every team owns and manages their spend. Map spend to business units, portfolios, and cost centers.",
+        },
+
+        {
+            icon: <RocketIcon />,
+            title: "Cost Assignment",
+            description:
+                "Assign every cloud dollar to the right project using rule-based mappings. Assign spend to projects, teams, or cost centers.",
+        },
+
+        {
+            icon: <ChartIcon />,
+            title: "Financial Planning",
+            description:
+                "ML-driven models compare projected vs actual spend. Surface variance trends before overruns occur.",
+        },
+
+        {
+            icon: <SecurityIcon />,
+            title: "Zero Tagging",
+            description:
+                "Allocate cloud costs accurately even when resource tags are missing. Map spend to projects accurately without relying on tags.",
+        },
+
+        {
+            icon: <AnalyticsIcon />,
+            title: "Billing Analysis",
+            description:
+                "Break down cloud spend into clear, actionable insights across your entire estate. Analyze costs across AWS, Azure, and GCP.",
+        },
+
+        {
+            icon: <WorkflowIcon />,
+            title: "Workflow Automations",
+            description:
+                "Automate optimization and governance actions with event-driven precision based on policies and cost signals.",
+        },
+
+        {
+            icon: <CPUIcon />,
+            title: "Dashboards & FinOps KPIs",
+            description:
+                "Monitor real-time performance with executive-ready dashboards built around industry-standard KPIs.",
+        },
+
+        {
+            icon: <ChartIcon />,
+            title: "Tag Governance & Security",
+            description:
+                "Maintain data integrity and platform security with automated policies and robust access controls.",
+        },
+
+        {
+            icon: <CloudIcon />,
+            title: "Cloud & Enterprise Integrations",
+            description:
+                "Seamlessly connect your entire cloud ecosystem for unified visibility and automation across systems.",
+        },
     ];
 
     useEffect(() => {
@@ -131,13 +205,6 @@ const FeaturesGridSection = () => {
                 },
             });
 
-            // Noise Background Animation
-            gsap.to(".noise-overlay", {
-                backgroundPosition: "300px 300px",
-                duration: 25,
-                repeat: -1,
-                ease: "linear",
-            });
         }, sectionRef);
 
         return () => ctx.revert();
@@ -160,6 +227,13 @@ const FeaturesGridSection = () => {
                     <p className="feature-description">
                         Qarin combines AI, automation, and CRM tools into a single platform helping teams manage customers, track deals, and scale operations without complexity.
                     </p>
+                    {/* CTA / Action */}
+                    <div className="navbar-actions d-none d-lg-flex justify-content-center gap-3 my-4">
+                        {/* <Link to="/contact" className="btn-contact">Contact Sales</Link> */}
+                        <Link to="/get-started" className="btn-premium btn-premium-primary">
+                            <span>Get Started <FaArrowRight size={11} /></span>
+                        </Link>
+                    </div>
                 </div>
 
                 {/* Features Grid */}
