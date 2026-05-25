@@ -32,72 +32,60 @@ const Footer = () => {
   const bottomRef = useRef(null);
 
   useEffect(() => {
-
     const ctx = gsap.context(() => {
-
-      // FOOTER FADE IN
-      gsap.from(footerRef.current, {
-        opacity: 0,
-        y: 120,
-        duration: 1.4,
-        ease: "power4.out",
-
+      // Create a single unified timeline for the footer
+      const tl = gsap.timeline({
         scrollTrigger: {
           trigger: footerRef.current,
-          start: "top 90%",
+          start: "top 90%", // Safely triggers when footer enters the viewport
+          toggleActions: "play none none none",
         },
       });
 
-      // TOP CONTENT
-      gsap.from(topContentRef.current.children, {
+      // 1. Fade/slide in the overall footer background
+      tl.from(footerRef.current, {
         opacity: 0,
-        y: 50,
-        stagger: 0.15,
-        duration: 1,
+        y: 60,
+        duration: 1.0,
         ease: "power3.out",
-
-        scrollTrigger: {
-          trigger: topContentRef.current,
-          start: "top 85%",
-        },
       });
 
-      // FOOTER LINKS
-      linksRef.current.forEach((item, index) => {
-
-        gsap.from(item, {
+      // 2. Stagger top content (brand description and newsletter form)
+      if (topContentRef.current) {
+        tl.from(topContentRef.current.children, {
           opacity: 0,
-          y: 40,
-          duration: 1,
-          delay: index * 0.12,
+          y: 35,
+          stagger: 0.12,
+          duration: 0.8,
           ease: "power3.out",
+        }, "-=0.6");
+      }
 
-          scrollTrigger: {
-            trigger: item,
-            start: "top 92%",
-          },
-        });
+      // 3. Stagger the link columns
+      const validLinks = linksRef.current.filter(Boolean);
+      if (validLinks.length > 0) {
+        tl.from(validLinks, {
+          opacity: 0,
+          y: 25,
+          stagger: 0.1,
+          duration: 0.7,
+          ease: "power3.out",
+        }, "-=0.5");
+      }
 
-      });
-
-      // BOTTOM AREA
-      gsap.from(bottomRef.current.children, {
-        opacity: 0,
-        y: 30,
-        stagger: 0.12,
-        duration: 1,
-        ease: "power3.out",
-
-        scrollTrigger: {
-          trigger: bottomRef.current,
-          start: "top 95%",
-        },
-      });
-
+      // 4. Stagger the bottom copyright and social icons
+      if (bottomRef.current) {
+        tl.from(bottomRef.current.children, {
+          opacity: 0,
+          y: 20,
+          stagger: 0.1,
+          duration: 0.7,
+          ease: "power3.out",
+        }, "-=0.5");
+      }
     }, footerRef);
 
     return () => ctx.revert();
-
   }, []);
 
   return (

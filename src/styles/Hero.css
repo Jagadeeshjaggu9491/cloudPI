@@ -83,51 +83,152 @@
 
 /* Primary Button: Book a Demo */
 .hero-btn-primary {
-  background: #581c87;
-  /* Deep royal purple from mockup */
-  border: none;
+  position: relative;
+  margin: 0;
   padding: 14px 28px;
-  border-radius: 12px;
-  font-size: 16px;
-  font-weight: 600;
-  color: #ffffff;
+  outline: none;
+  text-decoration: none;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
   cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 4px 20px rgba(88, 28, 135, 0.25);
+  border: none;
+  text-transform: uppercase;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 16px;
+  color: #ffffff;
   font-family: inherit;
+  z-index: 0;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.02, 0.01, 0.47, 1);
+  background: linear-gradient(0deg, #4E2780 0%, #6B45B6 100%);
+  /* box-shadow: 0 4px 20px -5px rgba(78, 39, 128, 0.4); */
 }
 
 .hero-btn-primary:hover {
-  background: #4c1d95;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(88, 28, 135, 0.35);
+  animation: sh0 0.5s ease-in-out both;
+  color: #ffffff;
+  /* box-shadow: 0 8px 30px rgba(78, 39, 128, 0.35), 0 0 15px rgba(107, 69, 182, 0.25); */
+}
+
+.hero-btn-primary span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: transform 0.3s ease;
+}
+
+.hero-btn-primary:hover span {
+  animation: storm 0.7s ease-in-out both;
+  animation-delay: 0.06s;
+}
+
+.hero-btn-primary::before,
+.hero-btn-primary::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: #ffffff;
+  opacity: 0;
+  transition: transform 0.15s cubic-bezier(0.02, 0.01, 0.47, 1), opacity 0.15s cubic-bezier(0.02, 0.01, 0.47, 1);
+  z-index: -1;
+  transform: translate(100%, -25%) translate3d(0, 0, 0);
+}
+
+.hero-btn-primary:hover::before,
+.hero-btn-primary:hover::after {
+  opacity: 0.15;
+  transition: transform 0.2s cubic-bezier(0.02, 0.01, 0.47, 1), opacity 0.2s cubic-bezier(0.02, 0.01, 0.47, 1);
+}
+
+.hero-btn-primary:hover::before {
+  transform: translate3d(50%, 0, 0) scale(0.9);
+}
+
+.hero-btn-primary:hover::after {
+  transform: translate(50%, 0) scale(1.1);
 }
 
 /* Secondary Button: Start Your Trail ↗ */
 .hero-btn-secondary {
-  background: #ffffff;
-  border: 1px solid #e2e8f0;
-  /* Soft border */
+  position: relative;
+  margin: 0;
   padding: 14px 28px;
-  border-radius: 12px;
-  font-size: 16px;
-  font-weight: 600;
-  color: #0f172a;
-  /* Slate 900 for modern high contrast */
-  cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
-  font-family: inherit;
+  outline: none;
+  text-decoration: none;
   display: inline-flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  border: 1px solid rgba(78, 39, 128, 0.35);
+  text-transform: uppercase;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 16px;
+  color: #4E2780;
+  font-family: inherit;
+  z-index: 0;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.02, 0.01, 0.47, 1);
+  background: rgba(255, 255, 255, 0.7);
+  /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03); */
 }
 
 .hero-btn-secondary:hover {
-  background: #f8fafc;
-  border-color: #cbd5e1;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+  animation: sh0 0.5s ease-in-out both;
+  background: rgba(255, 255, 255, 0.9);
+  border-color: #6B45B6;
+  color: #6B45B6;
+  /* box-shadow: 0 8px 25px rgba(78, 39, 128, 0.12); */
+}
+
+.hero-btn-secondary span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: transform 0.3s ease;
+}
+
+.hero-btn-secondary:hover span {
+  animation: storm 0.7s ease-in-out both;
+  animation-delay: 0.06s;
+}
+
+.hero-btn-secondary::before,
+.hero-btn-secondary::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: #6B45B6;
+  opacity: 0;
+  transition: transform 0.15s cubic-bezier(0.02, 0.01, 0.47, 1), opacity 0.15s cubic-bezier(0.02, 0.01, 0.47, 1);
+  z-index: -1;
+  transform: translate(100%, -25%) translate3d(0, 0, 0);
+}
+
+.hero-btn-secondary:hover::before,
+.hero-btn-secondary:hover::after {
+  opacity: 0.15;
+  transition: transform 0.2s cubic-bezier(0.02, 0.01, 0.47, 1), opacity 0.2s cubic-bezier(0.02, 0.01, 0.47, 1);
+}
+
+.hero-btn-secondary:hover::before {
+  transform: translate3d(50%, 0, 0) scale(0.9);
+}
+
+.hero-btn-secondary:hover::after {
+  transform: translate(50%, 0) scale(1.1);
 }
 
 /* Dashboard Glow and Stripe Container */

@@ -193,9 +193,9 @@ const HeroSection = () => {
           </p>
 
           {/* Buttons */}
-          <div ref={buttonsRef} className="hero-buttons">
-            <button className="hero-btn-primary">{currentSlide.primary}</button>
-            <button className="hero-btn-secondary">{currentSlide.secondary}</button>
+          <div ref={buttonsRef} className="hero-buttons py-3">
+            <button className="hero-btn-primary"><span>{currentSlide.primary}</span></button>
+            <button className="hero-btn-secondary"><span>{currentSlide.secondary}</span></button>
           </div>
         </div>
 

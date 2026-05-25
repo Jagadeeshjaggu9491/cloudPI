@@ -46,10 +46,10 @@ export default function CTABanner() {
 
           <div className="cta-actions flex items-center justify-center gap-4">
             <button className="btn-premium btn-premium-primary">
-              Deploy Instance <FaArrowRight size={12} />
+              <span>Deploy Instance <FaArrowRight size={12} /></span>
             </button>
             <button className="btn-premium btn-premium-secondary">
-              <FaCalendarAlt size={12} style={{ marginRight: '6px' }} /> Schedule Demo
+              <span><FaCalendarAlt size={12} style={{ marginRight: '6px' }} /> Schedule Demo</span>
             </button>
           </div>
         </div>

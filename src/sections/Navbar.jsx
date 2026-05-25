@@ -248,7 +248,7 @@ export default function Navbar() {
             <div className="navbar-actions d-none d-lg-flex">
               {/* <Link to="/contact" className="btn-contact">Contact Sales</Link> */}
               <Link to="/get-started" className="btn-premium btn-premium-primary">
-                Get Started <FaArrowRight size={11} />
+                <span>Get Started <FaArrowRight size={11} /></span>
               </Link>
             </div>
 
@@ -300,10 +300,10 @@ export default function Navbar() {
           </ul>
           <div className="mobile-actions mt-5 flex flex-col gap-3">
             <Link to="/get-started" className="btn-premium btn-premium-primary text-center" onClick={() => setMobileMenuOpen(false)}>
-              Get Started <FaArrowRight size={11} />
+              <span>Get Started <FaArrowRight size={11} /></span>
             </Link>
             <Link to="/contact" className="btn-premium btn-premium-secondary text-center" onClick={() => setMobileMenuOpen(false)}>
-              Contact Sales
+              <span>Contact Sales</span>
             </Link>
           </div>
         </div>
