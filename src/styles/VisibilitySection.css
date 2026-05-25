@@ -80,9 +80,9 @@
     width: 320px;
     padding: 26px;
     border-radius: 24px;
-    background: linear-gradient(90deg,
-            #4E2780 0%,
-            #6B45B6 100%);
+    background: linear-gradient(180deg,
+            rgb(107, 69, 182) 0%,
+            rgb(133, 153, 255) 100%);
     color: white;
     box-shadow: 0 20px 60px rgba(97, 76, 255, 0.25);
 }
@@ -109,7 +109,7 @@
     height: 550px;
     border-radius: 28px;
     padding: 36px;
-    background: url("../assets/images/visibility-bg.png") no-repeat center/cover;
+    background: url("../assets/images/visibility-bg.png") no-repeat center;
     position: relative;
     overflow: hidden;
 }

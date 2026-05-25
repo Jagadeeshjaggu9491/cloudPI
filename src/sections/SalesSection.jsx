@@ -1,10 +1,11 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-
+import BadgeIcon from "../assets/favicon.png"
 import topCardImg from "../assets/images/dashboard-1.png";
 import leftBottomImg from "../assets/images/dashboard-1.png";
 import rightCardImg from "../assets/images/about-realtime.png";
+import WhiteFavIcon from "../assets/cloudpi-favicon-white.png"
 
 import "../styles/SalesSection.css";
 
@@ -105,6 +106,7 @@ const SalesSection = () => {
                 >
 
                     <div className="sales-badge">
+                        <img src={BadgeIcon} alt="CloudPi Badge" />
                         Meet CloudPi
                     </div>
 
@@ -160,7 +162,7 @@ const SalesSection = () => {
 
                         {/* CARD 2 */}
                         <div className="sales-card compact-card">
-                            <div className="row g-0 align-items-center">
+                            <div className="row g-2 align-items-center">
 
                                 <div className="col-7 sales-card-content">
 
@@ -225,6 +227,7 @@ const SalesSection = () => {
 
                 {/* STATS */}
                 <div className="sales-stats" ref={statsRef}>
+                    <img src={WhiteFavIcon} alt="CloudPi Icon" className="stats-icon" />
 
                     <div className="sales-stat-item">
                         <h2>#1</h2>

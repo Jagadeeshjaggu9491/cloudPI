@@ -10,7 +10,7 @@ import {
 } from "react-icons/fi";
 
 import "../styles/GrowthStackSection.css";
-
+import BadgeIcon from "../assets/favicon.png"
 import GrowthOne from "../assets/images/dashboard-1.png"
 import GrowthTwo from "../assets/images/dashboard-3.png"
 import GrowthThree from "../assets/images/dashboard-4.png"
@@ -20,21 +20,21 @@ gsap.registerPlugin(ScrollTrigger);
 const tabs = [
     {
         id: 1,
-        title: "Cost Breakdown",
+        title: "Cost Assignment Based on Rules",
         icon: <FiPieChart />,
         image:
             GrowthOne,
     },
     {
         id: 2,
-        title: "Reports & Insights",
+        title: "Business Hierarchy Mapping",
         icon: <FiBarChart2 />,
         image:
             GrowthTwo,
     },
     {
         id: 3,
-        title: "Task Management",
+        title: "TRUE Automated Savings",
         icon: <FiCheckSquare />,
         image:
             GrowthThree,
@@ -125,8 +125,9 @@ const GrowthStackSection = () => {
                 {/* TOP CONTENT */}
 
                 <div className="text-center growth-top-content">
-                    <div className="growth-badge">
-                        <span>Growth Engine by Qarin</span>
+                    <div className="sales-badge">
+                        <img src={BadgeIcon} alt="CloudPi Badge" />
+                        Growth Engine by CloudPi
                     </div>
 
                     <h2 className="growth-title gradient-text">

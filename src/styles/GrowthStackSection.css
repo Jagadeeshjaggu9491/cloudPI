@@ -3,7 +3,7 @@
 ========================================================= */
 
 .growth-stack-section {
-    padding: 120px 0;
+    padding: 50px 0;
     background: #f5f5f5;
     overflow: hidden;
     position: relative;
@@ -144,9 +144,9 @@
 
     z-index: 101;
 
-    border: 1px solid rgba(255, 255, 255, 0.55);
+    border: 2px solid #ffffff93;
 
-    background: rgba(255, 255, 255, 0.14);
+    background: rgb(107, 69, 182);
 
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
@@ -155,15 +155,15 @@
 
     border-radius: 14px;
 
-    padding: 14px 24px;
+    padding: 12px 20px;
 
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
 
-    font-size: 15px;
-    font-weight: 600;
+    font-size: 14px;
+    font-weight: 500;
 
     cursor: pointer;
 
@@ -198,7 +198,7 @@
 .tab-button.active {
     background: #ffffff;
 
-    color: #5d2fff;
+    color: rgb(107, 69, 182);
 
     border-color: #ffffff;
 

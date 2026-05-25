@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import "../styles/ChallengesSection.css";
+import { FaBolt } from "react-icons/fa";
 
 import {
     HiOutlineChartBar,
@@ -46,7 +47,11 @@ const ChallengesSection = () => {
                 {/* Top */}
                 <div className="row align-items-start mb-5">
                     <div className="col-lg-6">
-                        <span className="challenge-badge">Power Pack</span>
+                        <div className="challenge-badge">
+                            <FaBolt className="challenge-badge-icon" />
+
+                            <span>Power Pack</span>
+                        </div>
 
                         <h2 className="challenge-title gradient-text">
                             How CloudPi Solves

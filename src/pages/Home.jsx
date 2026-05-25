@@ -20,6 +20,7 @@ import ChallengesSection from '../sections/ChallengesSection';
 import HowItWorks from '../sections/HowItWorks';
 import IntegrationsSection from '../sections/IntegrationsSection';
 import CTASection from '../sections/CTASection';
+import WhyChooseSection from '../sections/WhyChooseSection';
 
 export default function Home() {
   return (
@@ -31,6 +32,7 @@ export default function Home() {
       <GrowthStackSection />
       <FeaturesGridSection />
       <ChallengesSection />
+      <WhyChooseSection />
       <HowItWorks />
       {/* <CloudServices />
       <PlatformAnalytics />

@@ -18,6 +18,27 @@
 }
 
 .sales-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 18px;
+    border-radius: 50px;
+    background: #fff;
+    font-weight: 600;
+    font-size: 12px;
+}
+
+.sales-badge img {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+    display: block;
+    background-color: #ac6dd54d;
+    padding: 4px;
+    border-radius: 8px;
+}
+
+.sales-badge {
 
     display: inline-flex;
 
@@ -30,9 +51,9 @@
 
     background: rgba(168, 85, 247, 0.08);
 
-    color: #7c3aed;
+    /* color: #7c3aed; */
 
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 600;
 
     margin-bottom: 28px;
@@ -98,6 +119,7 @@
 
     box-shadow:
         0 18px 40px rgba(0, 0, 0, 0.06);
+    border: 1px solid gainsboro;
 }
 
 .compact-card {
@@ -123,17 +145,14 @@
 .sales-card-content h3 {
 
     font-size: 24px;
-
-    font-weight: 600;
-
+    font-weight: 500;
     margin-bottom: 16px;
-
-    color: #071126;
+    color: #fff;
 }
 
 .sales-card-content p {
 
-    font-size: 14px;
+    font-size: 16px;
 
     line-height: 1.8;
 
@@ -160,8 +179,12 @@
 .large-image {
 
     justify-content: center;
-
-    margin-top: auto;
+    /* margin-top: auto; */
+    position: absolute;
+    bottom: -22px;
+    right: -65px;
+    border: 20px solid #ffffff6e;
+    border-radius: 35px
 }
 
 .sales-card-image {
@@ -174,51 +197,61 @@
         0 18px 40px rgba(0, 0, 0, 0.08);
 
     will-change: transform;
-    border: 8px solid #ffffff6e;
+    /* border: 8px solid #ffffff6e; */
 }
 
 .top-image .sales-card-image {
-    /* max-width: 210px; */
+    border: 8px solid #ffffff6e;
 }
 
 .small-bottom-image .sales-card-image {
-    /* max-width: 210px; */
+    border: 8px solid #ffffff6e;
 }
 
 .large-image .sales-card-image {
-    max-width: 470px;
+    max-width: 570px;
 }
 
 /* STATS SECTION */
 
 .sales-stats {
-    background:
-        linear-gradient(0deg,
-            #5BB4CC 0%,
-            #EBEEFF 100%) !important;
-    margin-top: 38px;
+    position: relative;
+    /* IMPORTANT */
 
-    display: grid;
-
-    grid-template-columns:
-        repeat(4, 1fr);
-
-    border-radius: 22px;
-
-    overflow: hidden;
-
-    background:
-        linear-gradient(180deg,
+    background: linear-gradient(180deg,
             #6ebad4 0%,
             #d8dcf2 100%);
+
+    margin-top: 38px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    border-radius: 22px;
+    overflow: hidden;
 }
 
+/* WHITE CENTER ICON */
+
+.stats-icon {
+    position: absolute;
+    top: -110px;
+    right: -35px;
+    width: 270px;
+    height: auto;
+    opacity: 0.38;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* STAT ITEMS */
+
 .sales-stat-item {
+    position: relative;
+    z-index: 2;
 
-    padding: 34px 26px;
+    padding: 40px 30px;
 
-    border-right:
-        1px solid rgba(255, 255, 255, 0.2);
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .sales-stat-item:last-child {
@@ -226,68 +259,44 @@
 }
 
 .sales-stat-item h2 {
-
     font-size: 52px;
     font-weight: 500;
-    color: #6f42c1;
     margin-bottom: 14px;
 }
 
 .sales-stat-item p {
-
-    font-size: 13px;
-
     line-height: 1.7;
-
     color: rgba(7, 17, 38, 0.62);
-
     max-width: 180px;
 }
 
 /* RESPONSIVE */
 
 @media (max-width: 992px) {
-
-    .large-compact-card {
-        min-height: auto;
+    .sales-stats {
+        grid-template-columns: repeat(2, 1fr);
     }
 
-    .sales-stats {
-
-        grid-template-columns:
-            repeat(2, 1fr);
+    .stats-icon {
+        width: 240px;
+        top: -80px;
+        right: -20px;
     }
 
     .sales-stat-item {
-
         border-right: none;
-
-        border-bottom:
-            1px solid rgba(255, 255, 255, 0.2);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     }
 }
 
 @media (max-width: 768px) {
-
-    .sales-title {
-        font-size: 38px;
-    }
-
-    .sales-subtitle {
-        font-size: 15px;
-    }
-
-    .sales-card {
-        padding: 22px;
-    }
-
     .sales-stats {
         grid-template-columns: 1fr;
     }
 
-    .top-image .sales-card-image,
-    .small-bottom-image .sales-card-image,
-    .large-image .sales-card-image {
-        max-width: 100%;
+    .stats-icon {
+        width: 180px;
+        top: -40px;
+        right: -10px;
     }
 }

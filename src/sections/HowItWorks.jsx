@@ -2,6 +2,10 @@
 
 import React from "react";
 import "../styles/HowItWorks.css";
+import { HiOutlineLightningBolt } from "react-icons/hi";
+import HowItWorks1 from "../assets/images/how-1.png";
+import HowItWorks2 from "../assets/images/how-2.png";
+import HowItWorks3 from "../assets/images/how-3.png";
 
 const HowItWorks = () => {
     return (
@@ -13,11 +17,11 @@ const HowItWorks = () => {
                 <div className="how-top text-center">
 
                     <div className="how-badge">
-                        <span className="badge-icon"></span>
-                        How it works
+                        <HiOutlineLightningBolt className="badge-icon" />
+                        <span>How it works</span>
                     </div>
 
-                    <h2>
+                    <h2 className="gradient-text">
                         How CloudPi Solves
                         <br />
                         These Challenges
@@ -53,7 +57,7 @@ const HowItWorks = () => {
 
                             <div className="work-image">
                                 <img
-                                    src="/images/work-1.png"
+                                    src={HowItWorks1}
                                     alt="Work"
                                 />
                             </div>
@@ -82,7 +86,7 @@ const HowItWorks = () => {
 
                             <div className="work-image">
                                 <img
-                                    src="/images/work-2.png"
+                                    src={HowItWorks2}
                                     alt="Work"
                                 />
                             </div>
@@ -112,7 +116,7 @@ const HowItWorks = () => {
 
                             <div className="work-image">
                                 <img
-                                    src="/images/work-3.png"
+                                    src={HowItWorks3}
                                     alt="Work"
                                 />
                             </div>

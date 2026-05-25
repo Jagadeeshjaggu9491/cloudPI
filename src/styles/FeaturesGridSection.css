@@ -10,7 +10,7 @@
     isolation: isolate;
     margin: 80px auto;
     max-width: 1400px;
-    border-radius: 32px;    
+    border-radius: 32px;
 }
 
 /* =========================================================
@@ -70,19 +70,47 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    gap: 10px;
+
     padding: 8px 18px;
+
     border-radius: 100px;
+
     background: rgba(255, 255, 255, 0.04);
+
     border: 1px solid rgba(255, 255, 255, 0.08);
+
     backdrop-filter: blur(14px);
+
     margin-bottom: 26px;
 }
 
 .feature-badge span {
     color: #ffffff;
+
     font-size: 13px;
+
     font-weight: 600;
+
     letter-spacing: 0.4px;
+
+    line-height: 1;
+}
+
+.feature-badge .feature-icon {
+    width: 20px !important;
+    height: 20px !important;
+    margin-bottom: 0 !important;
+    color: #7a39f5;
+    border-radius: 0px !important;
+    border: none !important;
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-shrink: 0;
 }
 
 .feature-heading {

@@ -2,7 +2,7 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-
+import { FaRocket } from "react-icons/fa";
 import "../styles/FeaturesGridSection.css";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -151,6 +151,7 @@ const FeaturesGridSection = () => {
                 {/* Header */}
                 <div className="text-center features-top-content">
                     <div className="feature-badge">
+                        <FaRocket className="feature-icon" />
                         <span>Key Features</span>
                     </div>
                     <h2 className="feature-heading">
