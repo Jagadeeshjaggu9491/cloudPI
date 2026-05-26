@@ -111,9 +111,14 @@ const SalesSection = () => {
                         Meet CloudPi
                     </div>
 
-                    <AnimatedHeading
+                    {/* <AnimatedHeading
                         text={"Everything you need to\nmanage and grow sales"}
                         className="sales-title"
+                    /> */}
+
+                    <AnimatedHeading
+                        text={"Everything you need to\nmanage and grow sales"}
+                        className="challenge-title gradient-text"
                     />
 
                     <p className="sales-subtitle">
