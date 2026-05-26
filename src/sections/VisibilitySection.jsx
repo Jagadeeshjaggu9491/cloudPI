@@ -1,20 +1,25 @@
 // VisibilitySection.jsx
 
 import { useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { FiCheck } from "react-icons/fi";
+import { FaArrowRight } from "react-icons/fa";
 import "../styles/VisibilitySection.css";
 import AnimatedHeading from "../components/AnimatedHeading";
-import VisibilityChart from "../assets/images/visibility-chart.png";
+import VisibilityChart from "../assets/images/home-cloud-cost-challange.png";
 import VisibilityImg from "../assets/images/visibility-img.jpg";
+import BadgeIcon from "../assets/favicon.png"
+
 
 gsap.registerPlugin(ScrollTrigger);
 
 const features = [
-    "Track activity patterns across your entire sales workflow",
-    "Connect effort, timing, and outcomes in one view",
-    "Make data-informed decisions without manual reporting",
+    "Manual cloud cost optimization leads to errors, inefficiencies, and wasted engineering time.",
+    "Cloud cost tools stop at recommendations, not execution.",
+    "Cost-saving recommendations remain stuck in dashboards without execution.",
+    "Optimization is manual — there’s no automated way to enforce cost savings."
 ];
 
 const VisibilitySection = () => {
@@ -96,17 +101,19 @@ const VisibilitySection = () => {
             <div className="container">
                 <div className="row align-items-center gy-5">
                     {/* LEFT CONTENT */}
-                    <div className="col-lg-5">
+                    <div className="col-lg-6">
                         <div className="visibility-left">
+                            <div className="sales-badge">
+                                <img src={BadgeIcon} alt="CloudPi Badge" />
+                                CLOUD COST CHALLENGE
+                            </div>
                             <AnimatedHeading
-                                text={"Visibility into every\nsales action"}
+                                text={"Cloud Cost Optimization\nStops at Insights — Not Execution"}
                                 className="gradient-text"
                             />
 
                             <p>
-                                Qarin highlights when and where sales activity is most
-                                effective, giving teams the context they need to improve
-                                efficiency and drive consistent results.
+                                Cloud spending is increasing rapidly as organizations scale across AWS, Azure, and GCP. While cost optimization tools provide recommendations, most organizations struggle to actually implement them — leading to continuous waste and missed savings.
                             </p>
 
                             <div className="features-wrapper">
@@ -120,11 +127,18 @@ const VisibilitySection = () => {
                                     </div>
                                 ))}
                             </div>
+                            {/* CTA / Action */}
+                            <div className="navbar-actions d-none d-lg-flex justify-content-start gap-3 my-4">
+                                {/* <Link to="/contact" className="btn-contact">Contact Sales</Link> */}
+                                <Link to="/get-started" className="btn-premium btn-premium-primary">
+                                    <span>See How CloudPi Automates Savings <FaArrowRight size={11} /></span>
+                                </Link>
+                            </div>
                         </div>
                     </div>
 
                     {/* RIGHT SIDE */}
-                    <div className="col-lg-7">
+                    <div className="col-lg-6">
                         <div className="row align-items-center gy-4">
                             <div className="col-6">
                                 {/* IMAGE CARD */}
@@ -137,17 +151,17 @@ const VisibilitySection = () => {
 
                                 {/* PURPLE CARD */}
                                 <div className="card-purple">
-                                    <h3>72% Increase in operational efficiency</h3>
+                                    <h3>Only 15–25%</h3>
 
                                     <p>
-                                        From customers who used Qarin for at least 12 months.
+                                        of cost-saving recommendations are actually implemented by engineering teams — leaving most savings unrealized.
                                     </p>
                                 </div>
                             </div>
                             <div className="col-6">
                                 {/* CHART CARD */}
                                 <div className="chart-card d-flex align-items-center justify-content-center">
-                                   <img src={VisibilityChart} alt="chart" />
+                                    <img src={VisibilityChart} alt="chart" />
                                 </div>
                             </div>
                         </div>

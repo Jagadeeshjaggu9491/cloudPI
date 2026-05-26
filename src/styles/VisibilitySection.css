@@ -7,7 +7,7 @@
 }
 
 .visibility-left h2 {
-    font-size: 52px;
+    font-size: 42px;
     line-height: 1.05;
     font-weight: 500;
     margin-bottom: 28px;
@@ -16,9 +16,9 @@
 
 .visibility-left p {
     color: #63627a;
-    font-size: 18px;
+    font-size: 16px;
     line-height: 1.8;
-    margin-bottom: 35px;
+    margin-bottom: 15px;
     max-width: 520px;
 }
 
@@ -31,19 +31,20 @@
     border-bottom: 1px solid #e3e3e396
 }
 
-.feature-item .feature-icon {
+.visibility-left .feature-item .feature-icon {
     width: 24px !important;
     height: 24px !important;
-    border-radius: 50%;
-    color: #111;
+    /* border-radius: 50%; */
+    color: #4A2C86;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    /* align-items: center; */
+    /* justify-content: center; */
     font-size: 18px;
     margin-bottom: 0px !important;
+    /* background-color: #dd6cde2b;
 }
 
-.feature-item span {
+.visibility-left .feature-item span {
     /* font-size: 20px; */
     color: #111;
     font-weight: 500;
@@ -88,9 +89,8 @@
 }
 
 .card-purple h3 {
-    /* font-size: 38px; */
+    font-size: 38px;
     line-height: 1.1;
-    margin-bottom: 26px;
     font-weight: 500;
     color: white;
 }

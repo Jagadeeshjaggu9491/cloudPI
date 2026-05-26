@@ -174,7 +174,7 @@
    ICON
 ========================================================= */
 
-.feature-icon {
+.features-grid-section .feature-card .feature-icon {
     width: 72px !important;
     height: 72px !important;
     border-radius: 18px;

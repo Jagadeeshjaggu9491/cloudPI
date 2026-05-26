@@ -21,6 +21,7 @@ import HowItWorks from '../sections/HowItWorks';
 import IntegrationsSection from '../sections/IntegrationsSection';
 import CTASection from '../sections/CTASection';
 import WhyChooseSection from '../sections/WhyChooseSection';
+import IndustryInsights from '../sections/IndustryInsights';
 
 export default function Home() {
   return (
@@ -33,6 +34,7 @@ export default function Home() {
       <FeaturesGridSection />
       <ChallengesSection />
       <WhyChooseSection />
+      <IndustryInsights />
       {/* <HowItWorks /> */}
       {/* <CloudServices />
       <PlatformAnalytics />

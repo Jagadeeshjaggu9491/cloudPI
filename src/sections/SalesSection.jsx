@@ -2,9 +2,7 @@ import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import BadgeIcon from "../assets/favicon.png"
-import topCardImg from "../assets/images/dashboard-1.png";
-import leftBottomImg from "../assets/images/dashboard-1.png";
-import rightCardImg from "../assets/images/about-realtime.png";
+import rightCardImg from "../assets/images/home-cloud-cost.png";
 import WhiteFavIcon from "../assets/cloudpi-favicon-white.png"
 import AnimatedHeading from "../components/AnimatedHeading";
 
@@ -108,90 +106,23 @@ const SalesSection = () => {
 
                     <div className="sales-badge">
                         <img src={BadgeIcon} alt="CloudPi Badge" />
-                        Meet CloudPi
+                        THE SOLUTION
                     </div>
 
                     <AnimatedHeading
-                        text={"Everything you need to\nmanage and grow sales"}
-                        className="sales-title"
+                        text={"How CloudPi Optimizes\nYour Cloud Costs"}
+                        className="sales-title gradient-text"
                     />
 
                     <p className="sales-subtitle">
-                        Qarin brings analytics, activity tracking,
-                        and deal insights into one unified dashboard,
-                        helping teams understand performance,
-                        spot opportunities, and move faster
-                        with confidence.
+                        CloudPi provides intelligent visibility and automation to help organizations control cloud spending across AWS, Azure, and Google Cloud. Instead of manually analyzing complex billing reports, CloudPi continuously monitors infrastructure usage and recommends cost-saving optimizations.
                     </p>
 
                 </div>
 
-                <div className="row g-3 sales-grid">
+                <div className="row g-3 sales-grid align-items-center">
 
                     {/* LEFT COLUMN */}
-                    <div className="col-lg-6 d-flex flex-column gap-3">
-
-                        {/* CARD 1 */}
-                        <div className="sales-card compact-card">
-                            <div className="row g-0 align-items-center">
-
-                                <div className="col-7 sales-card-content">
-
-                                    <h3>Time tracking breakdown</h3>
-
-                                    <p>
-                                        Track how time is spent across meetings,
-                                        calls, and tasks to understand productivity
-                                        and improve sales performance.
-                                    </p>
-
-                                </div>
-
-                                <div className="col-5 sales-card-image-wrap top-image">
-
-                                    <img
-                                        src={topCardImg}
-                                        alt=""
-                                        className="img-fluid sales-card-image"
-                                    />
-
-                                </div>
-
-                            </div>
-                        </div>
-
-                        {/* CARD 2 */}
-                        <div className="sales-card compact-card">
-                            <div className="row g-2 align-items-center">
-
-                                <div className="col-7 sales-card-content">
-
-                                    <h3>Activity tracking & insights</h3>
-
-                                    <p>
-                                        Visualize when sales activity is strongest
-                                        with clear insights that help teams focus
-                                        on the moments that matter most.
-                                    </p>
-
-                                </div>
-
-                                <div className="col-5 sales-card-image-wrap small-bottom-image">
-
-                                    <img
-                                        src={leftBottomImg}
-                                        alt=""
-                                        className="img-fluid sales-card-image"
-                                    />
-
-                                </div>
-
-                            </div>
-                        </div>
-
-                    </div>
-
-                    {/* RIGHT COLUMN */}
                     <div className="col-lg-6">
 
                         <div className="sales-card large-compact-card">
@@ -222,6 +153,88 @@ const SalesSection = () => {
                         </div>
 
                     </div>
+
+                    {/* RIGHT COLUMN */}
+                    <div className="col-lg-6">
+
+                        <div className="cloud-feature-grid">
+
+                            {/* CARD 1 */}
+                            <div className="cloud-feature-card">
+
+                                <div className="feature-icon">
+                                    <i className="bi bi-search"></i>
+                                </div>
+
+                                <div className="feature-content">
+                                    <h3>Unified Cloud Visibility</h3>
+
+                                    <p>
+                                        Get a single dashboard for AWS, Azure,
+                                        and GCP spending.
+                                    </p>
+                                </div>
+
+                            </div>
+
+                            {/* CARD 2 */}
+                            <div className="cloud-feature-card">
+
+                                <div className="feature-icon">
+                                    <i className="bi bi-lightning-charge-fill"></i>
+                                </div>
+
+                                <div className="feature-content">
+                                    <h3>True Automated Savings</h3>
+
+                                    <p>
+                                        Automatically detect idle resources
+                                        and oversized workloads.
+                                    </p>
+                                </div>
+
+                            </div>
+
+                            {/* CARD 3 */}
+                            <div className="cloud-feature-card">
+
+                                <div className="feature-icon">
+                                    <i className="bi bi-bar-chart-fill"></i>
+                                </div>
+
+                                <div className="feature-content">
+                                    <h3>Cost Allocation & Accountability</h3>
+
+                                    <p>
+                                        Track assigned vs unassigned costs
+                                        across teams and cloud services.
+                                    </p>
+                                </div>
+
+                            </div>
+
+                            {/* CARD 4 */}
+                            <div className="cloud-feature-card">
+
+                                <div className="feature-icon">
+                                    <i className="bi bi-gear-fill"></i>
+                                </div>
+
+                                <div className="feature-content">
+                                    <h3>Automated Governance</h3>
+
+                                    <p>
+                                        Set budgets, alerts, and policies
+                                        to prevent overspending.
+                                    </p>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
 
                 </div>
 
