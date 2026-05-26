@@ -5,36 +5,43 @@ import "../styles/ChallengesSection.css";
 import { FaBolt } from "react-icons/fa";
 import AnimatedHeading from "../components/AnimatedHeading";
 
-import {
-    HiOutlineChartBar,
-    HiOutlineMegaphone,
-    HiOutlineSquares2X2,
-} from "react-icons/hi2";
-
+import { BarChart3, PiggyBank, Shield, Cloud } from "lucide-react";
 import dashboard1 from "../assets/images/dashboard-1.png";
 import dashboard2 from "../assets/images/dashboard-2.png";
 import dashboard3 from "../assets/images/dashboard-3.png";
+import { number } from "motion";
 
 const tabs = [
     {
         id: 1,
-        title: "Business Hierarchy Mapping",
-        desc: "CloudPi structures your cloud environment into a clear hierarchy of organizations, business units, and projects — enabling complete ownership visibility.",
-        icon: <HiOutlineChartBar />,
+        number: "3x",
+        title: "Faster Cost Visibility",
+        desc: "Real-time dashboards provide instant visibility into cloud costs.",
+        icon: <BarChart3 size={24} />,
         image: dashboard1,
     },
     {
         id: 2,
-        title: "Cost Assignment Based on Rules",
-        desc: "Automatically assign cloud costs using intelligent rules, tags, and metadata — ensuring accurate cost allocation without manual effort.",
-        icon: <HiOutlineMegaphone />,
+        number: "50%",
+        title: "Higher Savings Realization",
+        desc: "Automation helps teams capture more recommended savings before waste grows.",
+        icon: <PiggyBank size={24} />,
         image: dashboard2,
     },
     {
         id: 3,
-        title: "TRUE Automated Savings",
-        desc: "CloudPi continuously monitors usage and applies automation to optimize costs in real-time — turning insights into actual savings.",
-        icon: <HiOutlineSquares2X2 />,
+        number: "50+",
+        title: "Governance Policies",
+        desc: "Automated policies prevent anomalies and unexpected cost spikes.",
+        icon: <Shield size={24} />,
+        image: dashboard3,
+    },
+    {
+        id: 4,
+        number: "100%",
+        title: "Multi-Cloud Coverage",
+        desc: "Unified cost visibility across AWS, Azure,Google Cloud and DataBricks.",
+        icon: <Cloud size={24} />,
         image: dashboard3,
     },
 ];
@@ -51,19 +58,18 @@ const ChallengesSection = () => {
                         <div className="challenge-badge">
                             <FaBolt className="challenge-badge-icon" />
 
-                            <span>Power Pack</span>
+                            <span>Business Impact</span>
                         </div>
 
                         <AnimatedHeading
-                            text={"How CloudPi Solves\nThese Challenges"}
+                            text={"Cloud Cost Optimization\nMade Simple"}
                             className="challenge-title gradient-text"
                         />
                     </div>
 
                     <div className="col-lg-5 offset-lg-1">
                         <p className="challenge-description">
-                            CloudPi brings structure, visibility, and automation to cloud
-                            cost management across your organization.
+                            CloudPi enables engineering and FinOps teams to gain complete visibility into cloud spending, optimize infrastructure usage, and enforce governance policies across AWS, Azure, and Google Cloud environments.
                         </p>
                     </div>
                 </div>
@@ -81,12 +87,15 @@ const ChallengesSection = () => {
                                             }`}
                                         onClick={() => setActiveTab(index)}
                                     >
-                                        <div className="challenge-icon">{item.icon}</div>
-
+                                        <div className="challenge-metric">{item.number}</div>
+                                        <div className="challenge-divider"></div>
+                                        
                                         <div className="challenge-content">
                                             <h5>{item.title}</h5>
                                             <p>{item.desc}</p>
                                         </div>
+
+                                        <div className="challenge-icon-circle">{item.icon}</div>
                                     </div>
                                 ))}
                             </div>
