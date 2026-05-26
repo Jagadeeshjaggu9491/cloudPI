@@ -115,7 +115,7 @@ const SalesSection = () => {
                     />
 
                     <p className="sales-subtitle">
-                        CloudPi provides intelligent visibility and automation to help organizations control cloud spending across AWS, Azure, and Google Cloud. Instead of manually analyzing complex billing reports, CloudPi continuously monitors infrastructure usage and recommends cost-saving optimizations.
+                        CloudPi provides intelligent visibility and automation to help organizations control cloud spending across AWS, Azure, and Google Cloud.
                     </p>
 
                 </div>
@@ -129,14 +129,11 @@ const SalesSection = () => {
 
                             <div className="sales-card-content">
 
-                                <h3>Real-time sales statistics</h3>
+                                {/* <h3>Real-time sales statistics</h3> */}
 
-                                <p>
-                                    Monitor active deals and revenue trends
-                                    in real time, so you always know where
-                                    your pipeline stands and what needs
-                                    attention next.
-                                </p>
+                                {/* <p>
+                                    Instead of manually analyzing complex billing reports, CloudPi continuously monitors infrastructure usage and recommends cost-saving optimizations.
+                                </p> */}
 
                             </div>
 
@@ -148,7 +145,11 @@ const SalesSection = () => {
                                     className="img-fluid sales-card-image"
                                 />
 
+
                             </div>
+                            <p className="mt-4">
+                                Instead of manually analyzing complex billing reports, CloudPi continuously monitors infrastructure usage and recommends cost-saving optimizations.
+                            </p>
 
                         </div>
 

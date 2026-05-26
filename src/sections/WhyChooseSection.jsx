@@ -14,6 +14,25 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import AnimatedHeading from "../components/AnimatedHeading";
 
+import { 
+    AlertTriangle, 
+    CheckCircle2, 
+    ChevronsRight, 
+    TrendingUp, 
+    Bot, 
+    ShieldCheck, 
+    Ticket, 
+    Building2, 
+    Users2, 
+    FolderGit2, 
+    Signal, 
+    Zap, 
+    RefreshCw, 
+    DollarSign, 
+    Percent, 
+    Shield 
+} from "lucide-react";
+
 gsap.registerPlugin(ScrollTrigger);
 
 const items = [
@@ -34,6 +53,26 @@ const items = [
         solutionHeader: "Workflows that execute, not just recommend",
         solutionBody: "Three execution modes matched to risk: Autonomous for low-risk resources, Approval-Gated for production, and Ticket-Driven for complex changes.",
         outcome: "70% execution rate vs 18% industry average",
+        subItems: [
+            {
+                title: "Autonomous",
+                desc: "Low-risk resources",
+                icon: <Bot size={18} />,
+                color: "green",
+            },
+            {
+                title: "Approval-Gated",
+                desc: "Production",
+                icon: <ShieldCheck size={18} />,
+                color: "purple",
+            },
+            {
+                title: "Ticket-Driven",
+                desc: "Complex changes",
+                icon: <Ticket size={18} />,
+                color: "blue",
+            },
+        ],
     },
     {
         number: "02",
@@ -52,6 +91,26 @@ const items = [
         solutionHeader: "Business Hierarchy that maps ownership to every resource",
         solutionBody: "CloudPi maps cloud accounts to your real org — business unit, team, project, environment. Every resource has a rightful owner. Every team sees its spend.",
         outcome: "Clear ownership from day one",
+        subItems: [
+            {
+                title: "Business Unit",
+                desc: "Department level",
+                icon: <Building2 size={18} />,
+                color: "purple",
+            },
+            {
+                title: "Team",
+                desc: "Engineering & Product",
+                icon: <Users2 size={18} />,
+                color: "blue",
+            },
+            {
+                title: "Project",
+                desc: "App & Microservice",
+                icon: <FolderGit2 size={18} />,
+                color: "green",
+            },
+        ],
     },
     {
         number: "03",
@@ -70,6 +129,26 @@ const items = [
         solutionHeader: "Zero tagging prerequisite — 85% allocation in day one",
         solutionBody: "CloudPi allocates 85% of cloud costs on day one using five non-tag signals. Tags improve precision later — they don't gate the process.",
         outcome: "85% cost allocation in day 1, no tags required",
+        subItems: [
+            {
+                title: "Non-Tag Signals",
+                desc: "Account & Region",
+                icon: <Signal size={18} />,
+                color: "blue",
+            },
+            {
+                title: "Day-One Allocation",
+                desc: "85% out-of-the-box",
+                icon: <Zap size={18} />,
+                color: "green",
+            },
+            {
+                title: "Auto-Updates",
+                desc: "Zero tag upkeep",
+                icon: <RefreshCw size={18} />,
+                color: "purple",
+            },
+        ],
     },
     {
         number: "04",
@@ -88,6 +167,26 @@ const items = [
         solutionHeader: "TRUE Savings — billing-verified and auditable",
         solutionBody: "Every claim is compared against actual billing data, reported in three tiers: Hard (bill went down), Rate (lower contracted price), and Avoidance (cost prevented).",
         outcome: "Verified against actual billing data — not estimates",
+        subItems: [
+            {
+                title: "Hard Savings",
+                desc: "Actual bill reduction",
+                icon: <DollarSign size={18} />,
+                color: "green",
+            },
+            {
+                title: "Rate Savings",
+                desc: "Contracted discounts",
+                icon: <Percent size={18} />,
+                color: "purple",
+            },
+            {
+                title: "Cost Avoidance",
+                desc: "Pre-empted charges",
+                icon: <Shield size={18} />,
+                color: "blue",
+            },
+        ],
     },
 ];
 
@@ -308,9 +407,13 @@ const WhyChooseSection = () => {
 
                                                         <div className="why-block challenge-block">
 
-                                                            <span>
-                                                                Challenge
-                                                            </span>
+                                                            <div className="why-block-header">
+                                                                <div className="why-header-icon-circle challenge-icon-bg">
+                                                                    <AlertTriangle size={14} />
+                                                                </div>
+                                                                <span>Challenge</span>
+                                                                <div className="why-header-line"></div>
+                                                            </div>
 
                                                             <h4>{item.challengeHeader}</h4>
 
@@ -318,13 +421,30 @@ const WhyChooseSection = () => {
                                                                 {item.challengeBody}
                                                             </p>
 
+                                                            <div className="why-outcome-badge">
+                                                                <div className="why-outcome-icon-circle">
+                                                                    <TrendingUp size={14} />
+                                                                </div>
+                                                                <span className="mb-0">
+                                                                    {item.outcome}
+                                                                </span>
+                                                            </div>
+
+                                                        </div>
+
+                                                        <div className="why-arrow-separator">
+                                                            <ChevronsRight size={22} />
                                                         </div>
 
                                                         <div className="why-block solution-block">
 
-                                                            <span>
-                                                                Solution
-                                                            </span>
+                                                            <div className="why-block-header">
+                                                                <div className="why-header-icon-circle solution-icon-bg">
+                                                                    <CheckCircle2 size={14} />
+                                                                </div>
+                                                                <span>Solution</span>
+                                                                <div className="why-header-line"></div>
+                                                            </div>
 
                                                             <h4>{item.solutionHeader}</h4>
 
@@ -332,17 +452,21 @@ const WhyChooseSection = () => {
                                                                 {item.solutionBody}
                                                             </p>
 
+                                                            <div className="why-subitems-row">
+                                                                {item.subItems?.map((sub, i) => (
+                                                                    <div className="why-subitem-col" key={i}>
+                                                                        <div className={`why-subitem-icon-circle ${sub.color}`}>
+                                                                            {sub.icon}
+                                                                        </div>
+                                                                        <div className="why-subitem-text">
+                                                                            <h6>{sub.title}</h6>
+                                                                            <span>{sub.desc}</span>
+                                                                        </div>
+                                                                    </div>
+                                                                ))}
+                                                            </div>
+
                                                         </div>
-
-                                                    </div>
-
-                                                    <div className="why-outcome mb-3">
-
-                                                        <HiArrowSmRight />
-
-                                                        <p className="mb-0">
-                                                            {item.outcome}
-                                                        </p>
 
                                                     </div>
 
