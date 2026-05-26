@@ -5,55 +5,61 @@ import AnimatedHeading from "../components/AnimatedHeading";
 import CenterLogo from "../assets/images/connect-logos/cloudPI.png";
 import Jira from "../assets/images/connect-logos/jira-logo.png";
 import Azure from "../assets/images/connect-logos/azure-logo.png";
+import AzureDevOps from "../assets/images/connect-logos/azure-dev.png";
 import ServiceNow from "../assets/images/connect-logos/servicenow-logo.png";
-import OutLook from "../assets/images/connect-logos/outlook-logo.png";
 import OpenID from "../assets/images/connect-logos/openid-logo.png";
 import Okta from "../assets/images/connect-logos/okta-logo.png";
-import Gmail from "../assets/images/connect-logos/gmail-logo.png";
-import Logo3 from "../assets/images/connect-logos/logo-3.png";
+import SMTP from "../assets/images/connect-logos/smtp.png";
+import SAML from "../assets/images/connect-logos/saml.png";
+import OAuth from "../assets/images/connect-logos/oauth.png";
 
 const leftIcons = [
     {
-        image: Jira,
+        image: ServiceNow,
+        title: "ServiceNow",
         className: "left-1",
     },
     {
-        image: Azure,
+        image: Jira,
+        title: "Jira",
         className: "left-2",
     },
     {
-        image: ServiceNow,
+        image: AzureDevOps,
+        title: "Azure DevOps",
         className: "left-3",
     },
     {
-        image: OutLook,
+        image: SMTP,
+        title: "SMTP",
         className: "left-4",
-    },
-    {
-        image: OpenID,
-        className: "left-5",
-    },
+    }
 ];
 
 const rightIcons = [
     {
         image: Okta,
+        title: "Okta",
         className: "right-1",
     },
     {
-        image: Gmail,
+        image: Azure,
+        title: "Azure AD",
         className: "right-2",
     },
     {
-        image: Logo3,
+        image: SAML,
+        title: "SAML",
         className: "right-3",
     },
     {
-        image: Azure,
+        image: OAuth,
+        title: "OAuth",
         className: "right-4",
     },
     {
-        image: OutLook,
+        image: OpenID,
+        title: "OpenID Connect",
         className: "right-5",
     },
 ];
@@ -127,10 +133,11 @@ const IntegrationsSection = () => {
 
                                 <img
                                     src={item.image}
-                                    alt=""
+                                    alt={item.title}
                                 />
 
                             </div>
+                            <span className="integration-icon-title">{item.title}</span>
                         </div>
                     ))}
 
@@ -144,10 +151,11 @@ const IntegrationsSection = () => {
 
                                 <img
                                     src={item.image}
-                                    alt=""
+                                    alt={item.title}
                                 />
 
                             </div>
+                            <span className="integration-icon-title">{item.title}</span>
                         </div>
                     ))}
 

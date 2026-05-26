@@ -5,6 +5,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import {
   FaFacebookF,
   FaInstagram,
+  FaYoutube,
 } from "react-icons/fa";
 
 import {
@@ -229,7 +230,7 @@ const Footer = () => {
               <ul>
 
                 <li>User Guide</li>
-                <li>Multimedia</li>
+                <li>Press Releases</li>
                 <li>FAQ</li>
                 <li>Case Studies</li>
                 <li>Blog</li>
@@ -281,7 +282,7 @@ const Footer = () => {
                 <FaFacebookF />
               </a>
 
-              <a href="#">
+              <a href="https://www.instagram.com/cloudpi_ai/" target="_blank">
                 <FaInstagram />
               </a>
 
@@ -289,8 +290,8 @@ const Footer = () => {
                 <RiTwitterXLine />
               </a>
 
-              <a href="#">
-                <FaTelegramPlane />
+              <a href="https://www.youtube.com/@cloudpiai" target="_blank">
+                <FaYoutube />
               </a>
 
             </div>

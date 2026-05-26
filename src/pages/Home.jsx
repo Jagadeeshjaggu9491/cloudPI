@@ -28,12 +28,12 @@ export default function Home() {
     <>
       <Hero />
       <TrustedCompanies />
-      <VisibilitySection />
-      <SalesSection />
+      <WhyChooseSection />
+      {/* <VisibilitySection />
+      <SalesSection /> */}
       {/* <GrowthStackSection /> */}
       <FeaturesGridSection />
       <ChallengesSection />
-      <WhyChooseSection />
       <IndustryInsights />
       {/* <HowItWorks /> */}
       {/* <CloudServices />
