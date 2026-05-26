@@ -47,6 +47,11 @@ const slideData = [
   },
 ];
 
+const SLIDE_AUTOPLAY_DELAY = 8500;
+const TEXT_FADE_OUT_DURATION = 0.65;
+const TEXT_FADE_IN_DURATION = 0.85;
+const TEXT_SWAP_DELAY = 0.18;
+
 const HeroSection = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [displayIndex, setDisplayIndex] = useState(0);
@@ -127,41 +132,44 @@ const HeroSection = () => {
     if (isTransitioning.current || newIndex === activeIndex) return;
     isTransitioning.current = true;
 
-    // Fade out current text slightly upwards
+    gsap.killTweensOf(textContainerRef.current);
+
     gsap.to(textContainerRef.current, {
       opacity: 0,
-      y: -15,
-      duration: 0.4,
-      ease: "power2.in",
+      y: -18,
+      filter: "blur(8px)",
+      duration: TEXT_FADE_OUT_DURATION,
+      ease: "power2.inOut",
       onComplete: () => {
-        // Switch indices
         setActiveIndex(newIndex);
         setDisplayIndex(newIndex);
 
-        // Slide in and fade in the next text from below
-        gsap.fromTo(
-          textContainerRef.current,
-          { opacity: 0, y: 15 },
-          {
-            opacity: 1,
-            y: 0,
-            duration: 0.6,
-            ease: "power2.out",
-            onComplete: () => {
-              isTransitioning.current = false;
-            },
-          }
-        );
+        gsap.delayedCall(TEXT_SWAP_DELAY, () => {
+          gsap.fromTo(
+            textContainerRef.current,
+            { opacity: 0, y: 18, filter: "blur(8px)" },
+            {
+              opacity: 1,
+              y: 0,
+              filter: "blur(0px)",
+              duration: TEXT_FADE_IN_DURATION,
+              ease: "power3.out",
+              onComplete: () => {
+                isTransitioning.current = false;
+              },
+            }
+          );
+        });
       },
     });
   }, [activeIndex]);
 
-  // 4. Auto-play Slide Interval (6 seconds)
+  // 4. Auto-play Slide Interval
   useEffect(() => {
     const timer = setInterval(() => {
       const next = (activeIndex + 1) % slideData.length;
       changeSlide(next);
-    }, 6000);
+    }, SLIDE_AUTOPLAY_DELAY);
 
     return () => clearInterval(timer);
   }, [activeIndex, changeSlide]);

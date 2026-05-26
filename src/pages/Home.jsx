@@ -45,7 +45,7 @@ export default function Home() {
       <PricingPreview />
       
       <CTABanner /> */}
-      <PricingSection />
+      {/* <PricingSection /> */}
       <Testimonials />
       <IntegrationsSection />
       <BlogsSection />

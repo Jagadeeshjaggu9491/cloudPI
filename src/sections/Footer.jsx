@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useCallback, useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -30,6 +30,15 @@ const Footer = () => {
   const linksRef = useRef([]);
 
   const bottomRef = useRef(null);
+
+  const handleFooterMouseMove = useCallback((event) => {
+    const footer = footerRef.current;
+    if (!footer) return;
+
+    const rect = footer.getBoundingClientRect();
+    footer.style.setProperty("--footer-glow-x", `${event.clientX - rect.left}px`);
+    footer.style.setProperty("--footer-glow-y", `${event.clientY - rect.top}px`);
+  }, []);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -91,7 +100,8 @@ const Footer = () => {
   return (
     <footer
       className="footer-section"
-    // ref={footerRef}
+      ref={footerRef}
+      onMouseMove={handleFooterMouseMove}
     >
 
       <div className="container">
@@ -167,7 +177,7 @@ const Footer = () => {
               }
             >
 
-              <h5>PLATFORM</h5>
+              <h5 className="gradient-text">PLATFORM</h5>
 
               <ul>
 
@@ -190,7 +200,7 @@ const Footer = () => {
               }
             >
 
-              <h5>COMPANY</h5>
+              <h5 className="gradient-text">COMPANY</h5>
 
               <ul>
 
@@ -214,12 +224,12 @@ const Footer = () => {
               }
             >
 
-              <h5>RESOURCES</h5>
+              <h5 className="gradient-text">RESOURCES</h5>
 
               <ul>
 
                 <li>User Guide</li>
-                <li>Videos</li>
+                <li>Multimedia</li>
                 <li>FAQ</li>
                 <li>Case Studies</li>
                 <li>Blog</li>
@@ -238,7 +248,7 @@ const Footer = () => {
               }
             >
 
-              <h5>COMPARE</h5>
+              <h5 className="gradient-text">COMPARE</h5>
 
               <ul>
 

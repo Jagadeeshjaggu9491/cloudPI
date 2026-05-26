@@ -37,16 +37,6 @@ const faqs = [
         answer:
             "Onboarding starts with infrastructure discovery, cloud integration setup, workflow mapping, and team enablement sessions.",
     },
-    {
-        question: "How does onboarding usually begin?",
-        answer:
-            "Onboarding starts with infrastructure discovery, cloud integration setup, workflow mapping, and team enablement sessions.",
-    },
-    {
-        question: "How does onboarding usually begin?",
-        answer:
-            "Onboarding starts with infrastructure discovery, cloud integration setup, workflow mapping, and team enablement sessions.",
-    },
 ];
 
 export default function FAQSection() {
@@ -59,7 +49,7 @@ export default function FAQSection() {
     return (
         <section className="faq-section">
             <div className="container">
-                <div className="row gy-5 align-items-start">
+                <div className="row gy-5 align-items-center">
 
                     {/* LEFT SIDE */}
 
