@@ -18,6 +18,7 @@ const SplitText = ({
   to = { opacity: 1, y: 0 },
   threshold = 0.1,
   rootMargin = "-100px",
+  display = "inline-block",
   textAlign,
   tag = "p",
   onLetterAnimationComplete,
@@ -155,7 +156,7 @@ const SplitText = ({
   const Tag = tag || "p";
   const style = {
     overflow: "hidden",
-    display: "inline-block",
+    display,
     whiteSpace: typeof text === "string" && text.includes("\n") ? "pre-line" : "normal",
     wordWrap: "break-word",
     willChange: "transform, opacity",

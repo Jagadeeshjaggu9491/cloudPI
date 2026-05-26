@@ -5,6 +5,7 @@ const AnimatedHeading = ({
   children,
   className = "",
   tag = "h2",
+  display = "block",
   textAlign,
   delay = 28,
   duration = 1.05,
@@ -22,6 +23,7 @@ const AnimatedHeading = ({
     to={to}
     threshold={0.12}
     rootMargin="-80px"
+    display={display}
     textAlign={textAlign}
     tag={tag}
   >
