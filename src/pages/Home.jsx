@@ -28,8 +28,8 @@ export default function Home() {
     <>
       <Hero />
       <TrustedCompanies />
-      <SalesSection />
       <VisibilitySection />
+      <SalesSection />
       {/* <GrowthStackSection /> */}
       <FeaturesGridSection />
       <ChallengesSection />

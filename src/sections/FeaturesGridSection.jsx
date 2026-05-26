@@ -223,11 +223,12 @@ const FeaturesGridSection = () => {
                         <span>Key Features</span>
                     </div>
                     <AnimatedHeading
-                        text={"Core features that power\nyour workflow"}
+                        // text={"Core features that power\nyour workflow"}
+                        text={"CloudPi FEATURES"}
                         className="feature-heading"
                     />
                     <p className="feature-description">
-                        Qarin combines AI, automation, and CRM tools into a single platform helping teams manage customers, track deals, and scale operations without complexity.
+                        Everything you need to organize, allocate, optimize and control cloud costs.
                     </p>
                     {/* CTA / Action */}
                     <div className="navbar-actions d-none d-lg-flex justify-content-center gap-3 my-4">

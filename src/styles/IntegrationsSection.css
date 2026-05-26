@@ -44,12 +44,10 @@
 }
 
 .integration-top h2 {
-    font-size: 52px;
+    font-size: 42px;
     line-height: 1.05;
 
     font-weight: 500;
-
-    letter-spacing: -3px;
 
     margin-bottom: 28px;
 
@@ -313,7 +311,6 @@
 
     .integration-top h2 {
         font-size: 48px;
-        letter-spacing: -2px;
     }
 
     .integration-top p {

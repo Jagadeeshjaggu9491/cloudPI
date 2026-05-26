@@ -111,7 +111,6 @@ h6 {
   font-family: var(--font-heading);
   font-weight: 700;
   color: var(--dark-accent);
-  letter-spacing: -0.02em;
 }
 
 a {

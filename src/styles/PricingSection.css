@@ -41,12 +41,11 @@
 }
 
 .pricing-title {
-  font-size: 52px;
+  font-size: 42px;
   font-weight: 500;
   line-height: 1.1;
   color: #fff;
   margin-bottom: 60px;
-  letter-spacing: -2px;
 }
 
 .pricing-toggle {
@@ -352,7 +351,6 @@
   font-weight: 800;
   color: #241b3d;
   margin-bottom: 14px;
-  letter-spacing: -1px;
 }
 
 .pricing-modal-header p {

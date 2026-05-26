@@ -53,11 +53,9 @@
 }
 
 .how-top h2 {
-    font-size: 52px;
+    font-size: 42px;
     line-height: 1.04;
     font-weight: 500;
-
-    letter-spacing: -3px;
 
     margin-bottom: 30px;
 }
@@ -335,7 +333,6 @@
 
     .how-top h2 {
         font-size: 48px;
-        letter-spacing: -2px;
     }
 
     .how-top p {
@@ -369,7 +366,6 @@
     .how-top h2 {
         font-size: 38px;
         line-height: 1.15;
-        letter-spacing: -1px;
     }
 
     .how-top p {

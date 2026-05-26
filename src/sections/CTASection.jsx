@@ -3,6 +3,7 @@
 import "../styles/CTASection.css";
 
 import BgImage from "../assets/images/backgrounds/cta-bg.png";
+import NoiseImage from "../assets/images/backgrounds/bg-noise.webp";
 import LeftCard from "../assets/images/cta/left-card.png";
 import RightCard from "../assets/images/cta/left-card.png";
 import AnimatedHeading from "../components/AnimatedHeading";
@@ -20,6 +21,7 @@ const CTASection = () => {
                     className="cta-wrapper"
                     style={{
                         backgroundImage: `url(${BgImage})`,
+                        "--cta-noise-image": `url(${NoiseImage})`,
                     }}
                 >
 

@@ -56,7 +56,6 @@
   color: var(--dark-accent);
   margin-top: 1rem;
   margin-bottom: 1.5rem;
-  letter-spacing: -0.03em;
 }
 
 @media (max-width: 768px) {

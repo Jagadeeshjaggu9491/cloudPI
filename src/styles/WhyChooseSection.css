@@ -66,11 +66,9 @@
 }
 
 .why-top h2 {
-    font-size: 52px;
+    font-size: 42px;
     line-height: 1.02;
     font-weight: 500;
-
-    letter-spacing: -3px;
 
     margin-bottom: 0;
 
@@ -95,7 +93,7 @@
 @media (max-width: 1199px) {
 
     .why-top h2 {
-        font-size: 48px;
+        font-size: 42px;
     }
 }
 
@@ -108,8 +106,6 @@
     .why-top h2 {
         font-size: 42px;
         line-height: 1.08;
-
-        letter-spacing: -2px;
 
         margin-bottom: 18px;
     }
@@ -140,8 +136,6 @@
     .why-top h2 {
         font-size: 34px;
         line-height: 1.12;
-
-        letter-spacing: -1px;
     }
 
     .why-top p {
@@ -267,8 +261,6 @@
     font-size: 38px;
     line-height: 1.18;
     font-weight: 600;
-
-    letter-spacing: -1.6px;
 
     color: #1f1f3d;
 
@@ -399,7 +391,7 @@
 @media (max-width: 1199px) {
 
     .why-top h2 {
-        font-size: 68px;
+        font-size: 52px;
     }
 
     .why-row h3 {
@@ -418,8 +410,7 @@
     }
 
     .why-top h2 {
-        font-size: 52px;
-        letter-spacing: -2px;
+        font-size: 42px;
     }
 
     .why-row {
@@ -557,9 +548,8 @@
     }
 
     .why-top h2 {
-        font-size: 58px;
+        font-size: 42px;
         line-height: 1.1;
-        letter-spacing: -2.5px;
     }
 
     .why-list {

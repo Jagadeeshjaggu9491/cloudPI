@@ -67,10 +67,16 @@ export default function FAQSection() {
                         <div className="faq-left-content">
 
                             {/* Badge */}
+                            <div className="why-badge">
 
-                            <div className="faq-badge">
-                                <FaQuestionCircle />
-                                <span>FAQs</span>
+                                <span className="why-badge-icon me-2">
+                                    <FaQuestion />
+                                </span>
+
+                                <span>
+                                    FAQs
+                                </span>
+
                             </div>
 
                             {/* Heading */}
@@ -121,8 +127,8 @@ export default function FAQSection() {
                                 <div
                                     key={index}
                                     className={`faq-item ${activeIndex === index
-                                            ? "active"
-                                            : ""
+                                        ? "active"
+                                        : ""
                                         }`}
                                 >
 
@@ -136,8 +142,8 @@ export default function FAQSection() {
 
                                         <div
                                             className={`faq-icon ${activeIndex === index
-                                                    ? "rotate"
-                                                    : ""
+                                                ? "rotate"
+                                                : ""
                                                 }`}
                                         >
                                             <FaChevronDown />
@@ -148,8 +154,8 @@ export default function FAQSection() {
 
                                     <div
                                         className={`faq-answer ${activeIndex === index
-                                                ? "show"
-                                                : ""
+                                            ? "show"
+                                            : ""
                                             }`}
                                     >
                                         <div className="faq-answer-inner">

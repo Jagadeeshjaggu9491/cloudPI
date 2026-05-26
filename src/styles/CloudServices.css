@@ -30,7 +30,6 @@
   line-height: 1.15;
   color: var(--dark-accent);
   margin-bottom: 1.25rem;
-  letter-spacing: -0.03em;
 }
 
 @media (max-width: 768px) {

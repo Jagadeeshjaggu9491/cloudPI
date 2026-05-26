@@ -18,9 +18,8 @@
 }
 
 .insights-title {
-    font-size: 45px;
+    font-size: 42px;
     font-family: "Poppins", sans-serif;
-    letter-spacing: -3px;
     font-weight: 500;
     margin-bottom: 24px;
 }
@@ -92,7 +91,6 @@
     font-weight: 600;
     color: #dc2626;
     margin-bottom: 10px;
-    letter-spacing: -1px;
 }
 
 .insight-desc {
@@ -128,7 +126,6 @@
 
     .insights-title {
         font-size: 30px;
-        letter-spacing: -2px;
     }
 
     .insight-stat-card {

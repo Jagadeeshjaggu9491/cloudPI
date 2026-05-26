@@ -111,7 +111,7 @@ const SalesSection = () => {
 
                     <AnimatedHeading
                         text={"Everything you need to\nmanage and grow sales"}
-                        className="sales-title"
+                        className="sales-title gradient-text"
                     />
 
                     <p className="sales-subtitle">
@@ -239,7 +239,7 @@ const SalesSection = () => {
                 </div>
 
                 {/* STATS */}
-                <div className="sales-stats" ref={statsRef}>
+                <div className="sales-stats" ref={statsRef} style={{ display: "none" }}>
                     <img src={WhiteFavIcon} alt="CloudPi Icon" className="stats-icon" />
 
                     <div className="sales-stat-item">
