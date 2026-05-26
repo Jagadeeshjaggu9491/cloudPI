@@ -70,7 +70,7 @@ export default function FAQSection() {
                             <div className="why-badge">
 
                                 <span className="why-badge-icon me-2">
-                                    <FaQuestion />
+                                    <FaQuestionCircle />
                                 </span>
 
                                 <span>
