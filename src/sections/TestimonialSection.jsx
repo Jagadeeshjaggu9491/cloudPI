@@ -14,9 +14,9 @@ const testimonials = [
     image:
       "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=800&auto=format&fit=crop",
     quote:
-      "Qarin keeps our growing team aligned and productive. From task tracking to smart insights, everything just works, it feels like the future of sales",
-    name: "David Lee",
-    role: "Head of Operations",
+      "Automation helped us enforce governance policies across all our cloud environments.",
+    name: "Akki Vishnu Vardhan",
+    role: "Marketing Lead",
     company: "Foresight",
     revenue: "364%",
     efficiency: "21X",
@@ -26,9 +26,9 @@ const testimonials = [
     image:
       "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=800&auto=format&fit=crop",
     quote:
-      "Qarin completely transformed how our small firm operates. After implementing the platform, our sales grew by 30%.",
-    name: "Stefan Persson",
-    role: "Product Manager",
+      "We gained complete visibility into AWS and Azure costs within days of implementing CloudPi.",
+    name: "Maria Lopez",
+    role: "Cloud Engineer",
     company: "swift",
     revenue: "248%",
     efficiency: "15X",
@@ -71,7 +71,7 @@ export default function Testimonials() {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: "top 5%",      // Pin once section is near top of viewport
+          start: "top -5%",      // Pin once section is near top of viewport
           end: "+=1000",         // Scroll distance for the cards overlap
           scrub: 1,              // Link animation to scroll position
           pin: true,             // Pin the container

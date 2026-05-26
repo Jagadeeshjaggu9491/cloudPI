@@ -110,8 +110,8 @@ const SalesSection = () => {
                     </div>
 
                     <AnimatedHeading
-                        text={"How CloudPi Optimizes\nYour Cloud Costs"}
-                        className="sales-title gradient-text"
+                        text={"Everything you need to\nmanage and grow sales"}
+                        className="sales-title"
                     />
 
                     <p className="sales-subtitle">

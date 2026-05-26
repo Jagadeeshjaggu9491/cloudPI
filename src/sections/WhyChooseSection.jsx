@@ -105,7 +105,7 @@ const WhyChooseSection = () => {
             const tl = gsap.timeline({
                 scrollTrigger: {
                     trigger: sectionRef.current,
-                    start: "top -10%",      // Pin once section is near top of viewport
+                    start: "top -40%",      // Pin once section is near top of viewport
                     end: "+=2800",          // Scroll distance for the entire stacking process
                     scrub: 1,               // Smooth linking to scroll
                     pin: true,              // Pin the section
