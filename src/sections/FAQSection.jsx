@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import "../styles/FAQSection.css";
+import AnimatedHeading from "../components/AnimatedHeading";
 
 import {
     FaChevronDown,
@@ -74,7 +75,7 @@ export default function FAQSection() {
 
                             {/* Heading */}
 
-                            <h2 className="gradient-text">Got Questions?</h2>
+                            <AnimatedHeading text="Got Questions?" className="gradient-text" />
 
                             {/* Description */}
 

@@ -6,6 +6,7 @@ import topCardImg from "../assets/images/dashboard-1.png";
 import leftBottomImg from "../assets/images/dashboard-1.png";
 import rightCardImg from "../assets/images/about-realtime.png";
 import WhiteFavIcon from "../assets/cloudpi-favicon-white.png"
+import AnimatedHeading from "../components/AnimatedHeading";
 
 import "../styles/SalesSection.css";
 
@@ -110,11 +111,10 @@ const SalesSection = () => {
                         Meet CloudPi
                     </div>
 
-                    <h2 className="sales-title">
-                        Everything you need to
-                        <br />
-                        manage and grow sales
-                    </h2>
+                    <AnimatedHeading
+                        text={"Everything you need to\nmanage and grow sales"}
+                        className="sales-title"
+                    />
 
                     <p className="sales-subtitle">
                         Qarin brings analytics, activity tracking,

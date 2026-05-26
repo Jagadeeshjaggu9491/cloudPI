@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { FaNetworkWired, FaServer, FaChartPie, FaGlobe, FaSlidersH, FaShieldAlt } from 'react-icons/fa';
+import AnimatedHeading from '../components/AnimatedHeading';
 import '../styles/FeaturesGrid.css';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -90,9 +91,9 @@ export default function FeaturesGrid() {
       <div className="container">
         <div className="features-header text-center mb-5 pb-lg-3">
           <span className="section-subtitle">Core Infrastructure Features</span>
-          <h2 className="section-title text-gradient-primary">
+          <AnimatedHeading className="section-title text-gradient-primary">
             Built for High-Scale <span className="text-gradient-accent">Compute Grids</span>
-          </h2>
+          </AnimatedHeading>
           <p className="section-desc mx-auto">
             Secure bare-metal nodes, sub-millisecond edge routes, and real-time cost-controls tailored to enterprise requirements.
           </p>

@@ -3,6 +3,7 @@
 import React from "react";
 import "../styles/HowItWorks.css";
 import { HiOutlineLightningBolt } from "react-icons/hi";
+import AnimatedHeading from "../components/AnimatedHeading";
 import HowItWorks1 from "../assets/images/how-1.png";
 import HowItWorks2 from "../assets/images/how-2.png";
 import HowItWorks3 from "../assets/images/how-3.png";
@@ -21,11 +22,10 @@ const HowItWorks = () => {
                         <span>How it works</span>
                     </div>
 
-                    <h2 className="gradient-text">
-                        How CloudPi Solves
-                        <br />
-                        These Challenges
-                    </h2>
+                    <AnimatedHeading
+                        text={"How CloudPi Solves\nThese Challenges"}
+                        className="gradient-text"
+                    />
 
                     <p>
                         CloudPi brings structure, visibility, and automation

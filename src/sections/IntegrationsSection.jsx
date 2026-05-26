@@ -1,6 +1,7 @@
 // IntegrationsSection.jsx
 import NetworkLines from '../assets/images/NetworkLines.png'
 import "../styles/IntegrationsSection.css";
+import AnimatedHeading from "../components/AnimatedHeading";
 import CenterLogo from "../assets/images/connect-logos/cloudPI.png";
 import Jira from "../assets/images/connect-logos/jira-logo.png";
 import Azure from "../assets/images/connect-logos/azure-logo.png";
@@ -71,11 +72,10 @@ const IntegrationsSection = () => {
                         Integrations
                     </div>
 
-                    <h2 className="gradient-text">
-                        Connect CloudPi to the tools your
-                        <br />
-                        teams already use.
-                    </h2>
+                    <AnimatedHeading
+                        text={"Connect CloudPi to the tools your\nteams already use."}
+                        className="gradient-text"
+                    />
 
                     <p>
                         CloudPi integrations are built to turn cloud cost
@@ -84,7 +84,7 @@ const IntegrationsSection = () => {
                         controlled access.
                     </p>
 
-                    <button className="integration-btn">
+                    <button className="hero-btn-primary">
                         Explore all integration
                     </button>
 

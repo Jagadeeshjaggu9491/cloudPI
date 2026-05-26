@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { FaServer, FaMicrochip, FaDatabase } from 'react-icons/fa';
+import AnimatedHeading from '../components/AnimatedHeading';
 import '../styles/Infrastructure.css';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -71,9 +72,9 @@ export default function Infrastructure() {
           {/* Left Column - Content */}
           <div className="col-lg-5 mb-5 mb-lg-0" ref={leftRef}>
             <span className="section-subtitle">Bare-Metal Orchestrator</span>
-            <h2 className="section-title text-gradient-primary">
+            <AnimatedHeading className="section-title text-gradient-primary">
               Global Bare-Metal <span className="text-gradient-accent">GPU Infrastructure</span>
-            </h2>
+            </AnimatedHeading>
             <p className="infra-desc mb-4">
               Our isolated nodes communicate over private optical mesh systems, delivering pure physical bare-metal computing resources without hypervisor layers.
             </p>

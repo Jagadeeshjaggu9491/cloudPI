@@ -1,7 +1,12 @@
-// Testimonials.jsx
+// TestimonialSection.jsx
 
 import { useEffect, useRef } from "react";
 import "../styles/TestimonialSection.css";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import AnimatedHeading from "../components/AnimatedHeading";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const testimonials = [
   {
@@ -31,60 +36,141 @@ const testimonials = [
 ];
 
 export default function Testimonials() {
+  const sectionRef = useRef(null);
   const cardsRef = useRef([]);
 
-  useEffect(() => {
-    const animateNumber = (element, targetValue) => {
-      const numericTarget = parseInt(targetValue.replace(/\D/g, ""), 10) || 0;
-      const suffix = targetValue.replace(/\d/g, "");
-      const duration = 900;
-      const startTime = performance.now();
+  const animateNumber = (element, targetValue) => {
+    if (!element || element.dataset.animated) return;
+    element.dataset.animated = "true";
 
-      const tick = (now) => {
-        const progress = Math.min((now - startTime) / duration, 1);
-        const current = Math.floor(progress * numericTarget);
-        element.textContent = `${current}${suffix}`;
+    const numericTarget = parseInt(targetValue.replace(/\D/g, ""), 10) || 0;
+    const suffix = targetValue.replace(/\d/g, "");
+    const duration = 900;
+    const startTime = performance.now();
 
-        if (progress < 1) {
-          requestAnimationFrame(tick);
-        } else {
-          element.textContent = `${numericTarget}${suffix}`;
-        }
-      };
+    const tick = (now) => {
+      const progress = Math.min((now - startTime) / duration, 1);
+      const current = Math.floor(progress * numericTarget);
+      element.textContent = `${current}${suffix}`;
 
-      requestAnimationFrame(tick);
+      if (progress < 1) {
+        requestAnimationFrame(tick);
+      } else {
+        element.textContent = `${numericTarget}${suffix}`;
+      }
     };
 
-    const handleIntersection = (entries, observer) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting && !entry.target.dataset.animated) {
-          const revenueEl = entry.target.querySelector(".revenue-count");
-          const efficiencyEl = entry.target.querySelector(".efficiency-count");
+    requestAnimationFrame(tick);
+  };
 
-          if (revenueEl) {
-            animateNumber(revenueEl, revenueEl.dataset.target);
-          }
-          if (efficiencyEl) {
-            animateNumber(efficiencyEl, efficiencyEl.dataset.target);
-          }
+  useEffect(() => {
+    let mm = gsap.matchMedia();
 
-          entry.target.dataset.animated = "true";
-          observer.unobserve(entry.target);
+    mm.add("(min-width: 992px)", () => {
+      // Desktop: Pin testimonials section and stack/slide cards in sequence
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 5%",      // Pin once section is near top of viewport
+          end: "+=1000",         // Scroll distance for the cards overlap
+          scrub: 1,              // Link animation to scroll position
+          pin: true,             // Pin the container
+          anticipatePin: 1,
         }
       });
-    };
 
-    const observer = new IntersectionObserver(handleIntersection, {
-      threshold: 0.4,
+      const cards = cardsRef.current.filter(Boolean);
+
+      // Initial state: subsequent cards are offscreen below
+      cards.forEach((card, index) => {
+        if (index > 0) {
+          gsap.set(card, {
+            yPercent: 130,
+            rotate: 0,
+            transformOrigin: "center center"
+          });
+        }
+      });
+
+      // Animate first card's counters when section enters the screen
+      ScrollTrigger.create({
+        trigger: sectionRef.current,
+        start: "top 80%",
+        onEnter: () => {
+          const firstCard = cards[0];
+          if (firstCard) {
+            const revenueEl = firstCard.querySelector(".revenue-count");
+            const efficiencyEl = firstCard.querySelector(".efficiency-count");
+            if (revenueEl) animateNumber(revenueEl, revenueEl.dataset.target);
+            if (efficiencyEl) animateNumber(efficiencyEl, efficiencyEl.dataset.target);
+          }
+        }
+      });
+
+      // Build overlapping stack timelines
+      cards.forEach((card, index) => {
+        if (index > 0) {
+          // Slide in subsequent cards from the bottom
+          tl.to(card, {
+            yPercent: 0,
+            rotate: 0,
+            duration: 1,
+            ease: "power2.out",
+            onStart: () => {
+              const revenueEl = card.querySelector(".revenue-count");
+              const efficiencyEl = card.querySelector(".efficiency-count");
+              if (revenueEl) animateNumber(revenueEl, revenueEl.dataset.target);
+              if (efficiencyEl) animateNumber(efficiencyEl, efficiencyEl.dataset.target);
+            }
+          });
+
+          // Layer and scale/fade down previous card to convey depth
+          tl.to(cards[index - 1], {
+            scale: 0.94,
+            opacity: 0.75,
+            y: -30,
+            duration: 0.7,
+            ease: "power1.inOut"
+          }, "-=1.0");
+        }
+      });
     });
 
-    cardsRef.current.filter(Boolean).forEach((card) => observer.observe(card));
+    mm.add("(max-width: 991px)", () => {
+      // Mobile: Standard slide-up entry animations
+      const cards = cardsRef.current.filter(Boolean);
 
-    return () => observer.disconnect();
+      cards.forEach((card) => {
+        gsap.from(card, {
+          y: 50,
+          opacity: 0,
+          duration: 1,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: card,
+            start: "top 85%",
+          }
+        });
+
+        // Trigger counters when each card enters viewport on mobile
+        ScrollTrigger.create({
+          trigger: card,
+          start: "top 80%",
+          onEnter: () => {
+            const revenueEl = card.querySelector(".revenue-count");
+            const efficiencyEl = card.querySelector(".efficiency-count");
+            if (revenueEl) animateNumber(revenueEl, revenueEl.dataset.target);
+            if (efficiencyEl) animateNumber(efficiencyEl, efficiencyEl.dataset.target);
+          }
+        });
+      });
+    });
+
+    return () => mm.revert();
   }, []);
 
   return (
-    <section className="testimonials-section">
+    <section className="testimonials-section" ref={sectionRef}>
       <div className="container">
         {/* Top Content */}
         <div className="text-center top-content">
@@ -104,15 +190,20 @@ export default function Testimonials() {
             4.9/5 Average Rating from 120+ Cloud Engineers
           </p>
 
-          <h2 className="main-heading gradient-text">
-            Loved by Cloud & FinOps Teams
-          </h2>
+          <AnimatedHeading
+            text="Loved by Cloud & FinOps Teams"
+            className="main-heading gradient-text"
+          />
         </div>
 
         {/* Cards */}
         <div className="testimonial-wrapper">
           {testimonials.map((item, index) => (
-            <div className="testimonial-card" key={item.id} ref={(el) => (cardsRef.current[index] = el)}>
+            <div
+              className="testimonial-card"
+              key={item.id}
+              ref={(el) => (cardsRef.current[index] = el)}
+            >
               <div className="row g-0 align-items-stretch h-100">
                 {/* Image */}
                 <div className="col-lg-3">

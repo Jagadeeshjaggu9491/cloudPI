@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { FaCloud, FaMicrochip, FaCodeBranch, FaServer, FaShieldAlt, FaChartBar } from 'react-icons/fa';
+import AnimatedHeading from '../components/AnimatedHeading';
 import '../styles/CloudServices.css';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -90,9 +91,9 @@ export default function CloudServices() {
       <div className="container">
         <div className="services-header text-center mb-5 pb-lg-3">
           <span className="section-subtitle">Premium Cloud Solutions</span>
-          <h2 className="section-title text-gradient-primary">
+          <AnimatedHeading className="section-title text-gradient-primary">
             Engineered for <span className="text-gradient-accent">Scale & Speed</span>
-          </h2>
+          </AnimatedHeading>
           <p className="section-desc mx-auto">
             Experience absolute control over computing power. Run next-generation workflows securely without configuration overhead.
           </p>

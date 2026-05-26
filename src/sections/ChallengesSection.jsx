@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import "../styles/ChallengesSection.css";
 import { FaBolt } from "react-icons/fa";
+import AnimatedHeading from "../components/AnimatedHeading";
 
 import {
     HiOutlineChartBar,
@@ -53,11 +54,10 @@ const ChallengesSection = () => {
                             <span>Power Pack</span>
                         </div>
 
-                        <h2 className="challenge-title gradient-text">
-                            How CloudPi Solves
-                            <br />
-                            These Challenges
-                        </h2>
+                        <AnimatedHeading
+                            text={"How CloudPi Solves\nThese Challenges"}
+                            className="challenge-title gradient-text"
+                        />
                     </div>
 
                     <div className="col-lg-5 offset-lg-1">

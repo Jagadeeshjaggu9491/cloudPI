@@ -12,6 +12,7 @@ import {
 } from "react-icons/hi";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import AnimatedHeading from "../components/AnimatedHeading";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -104,7 +105,7 @@ const WhyChooseSection = () => {
             const tl = gsap.timeline({
                 scrollTrigger: {
                     trigger: sectionRef.current,
-                    start: "top 12%",      // Pin once section is near top of viewport
+                    start: "top -10%",      // Pin once section is near top of viewport
                     end: "+=2800",          // Scroll distance for the entire stacking process
                     scrub: 1,               // Smooth linking to scroll
                     pin: true,              // Pin the section
@@ -118,8 +119,8 @@ const WhyChooseSection = () => {
             // Set initial state for subsequent cards offscreen to the right
             cards.forEach((card, index) => {
                 if (index > 0) {
-                    gsap.set(card, { 
-                        xPercent: 130, 
+                    gsap.set(card, {
+                        xPercent: 130,
                         rotate: 3,
                         transformOrigin: "center center"
                     });
@@ -212,15 +213,10 @@ const WhyChooseSection = () => {
 
                                     </div>
 
-                                    <h2 className="gradient-text">
-                                        Four challenges.
-                                        <br />
-
-                                        Four answers.
-                                        <br />
-
-                                        One governed system.
-                                    </h2>
+                                    <AnimatedHeading
+                                        text={"Four challenges.\nFour answers.\nOne governed system."}
+                                        className="gradient-text"
+                                    />
 
                                 </div>
 

@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 import "../styles/BlogsSection.css";
 import { FaArrowRight, FaRegFileAlt } from "react-icons/fa";
 import blogs from "../data/blogs.json";
+import AnimatedHeading from "../components/AnimatedHeading";
 
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -59,9 +60,9 @@ export default function BlogsSection() {
                         <span>Blogs</span>
                     </div>
 
-                    <h2 className="gradient-text">
+                    <AnimatedHeading className="gradient-text">
                         From the <span>CloudPi</span> Blog
-                    </h2>
+                    </AnimatedHeading>
                 </div>
 
                 {/* Blog Cards */}

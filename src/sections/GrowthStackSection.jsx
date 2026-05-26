@@ -8,6 +8,7 @@ import {
     FiBarChart2,
     FiCheckSquare,
 } from "react-icons/fi";
+import AnimatedHeading from "../components/AnimatedHeading";
 
 import "../styles/GrowthStackSection.css";
 import BadgeIcon from "../assets/favicon.png"
@@ -130,9 +131,10 @@ const GrowthStackSection = () => {
                         Growth Engine by CloudPi
                     </div>
 
-                    <h2 className="growth-title gradient-text">
-                        AI-Powered growth stack
-                    </h2>
+                    <AnimatedHeading
+                        text="AI-Powered growth stack"
+                        className="growth-title gradient-text"
+                    />
 
                     <p className="growth-description">
                         Qarin brings intelligence, automation, and customer

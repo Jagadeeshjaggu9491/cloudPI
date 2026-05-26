@@ -1,7 +1,8 @@
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { HiOutlineChevronLeft, HiOutlineChevronRight } from "react-icons/hi2";
+import SplitText from "../components/SplitText";
 import dashboardImgOne from "../assets/images/dashboard-1.png";
 import dashboardImgTwo from "../assets/images/dashboard-2.png";
 import dashboardImgThree from "../assets/images/dashboard-3.png";
@@ -122,7 +123,7 @@ const HeroSection = () => {
   }, []);
 
   // 3. Premium Text Cross-fade Transition
-  const changeSlide = (newIndex) => {
+  const changeSlide = useCallback((newIndex) => {
     if (isTransitioning.current || newIndex === activeIndex) return;
     isTransitioning.current = true;
 
@@ -153,7 +154,7 @@ const HeroSection = () => {
         );
       },
     });
-  };
+  }, [activeIndex]);
 
   // 4. Auto-play Slide Interval (6 seconds)
   useEffect(() => {
@@ -163,7 +164,7 @@ const HeroSection = () => {
     }, 6000);
 
     return () => clearInterval(timer);
-  }, [activeIndex]);
+  }, [activeIndex, changeSlide]);
 
   const currentSlide = slideData[displayIndex];
 
@@ -178,14 +179,23 @@ const HeroSection = () => {
           </div>
 
           {/* Title */}
-          <h1 ref={titleRef} className="hero-title">
-            {currentSlide.title.split("\n").map((line, idx) => (
-              <span key={idx}>
-                {line}
-                {idx < currentSlide.title.split("\n").length - 1 && <br />}
-              </span>
-            ))}
-          </h1>
+          <div ref={titleRef} className="hero-title-wrap">
+            <SplitText
+              key={currentSlide.title}
+              text={currentSlide.title}
+              className="hero-title"
+              delay={35}
+              duration={1.1}
+              ease="power3.out"
+              splitType="chars"
+              from={{ opacity: 0, y: 40 }}
+              to={{ opacity: 1, y: 0 }}
+              threshold={0.1}
+              rootMargin="-100px"
+              textAlign="center"
+              tag="h1"
+            />
+          </div>
 
           {/* Subtitle */}
           <p ref={subtitleRef} className="hero-subtitle">

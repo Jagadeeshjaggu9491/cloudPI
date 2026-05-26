@@ -15,7 +15,7 @@ import {
   FaTelegramPlane,
 } from "react-icons/fa";
 
-import footerLogo from "../assets/logo.png";
+import footerLogo from "../assets/logo-white.png";
 
 import "../styles/Footer.css";
 
@@ -91,7 +91,7 @@ const Footer = () => {
   return (
     <footer
       className="footer-section"
-      ref={footerRef}
+    // ref={footerRef}
     >
 
       <div className="container">

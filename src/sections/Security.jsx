@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { FaShieldAlt, FaKey, FaLock, FaGlobe } from 'react-icons/fa';
+import AnimatedHeading from '../components/AnimatedHeading';
 import '../styles/Security.css';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -85,9 +86,9 @@ export default function Security() {
           {/* Right Column - Security Text */}
           <div className="col-lg-5" ref={textRef}>
             <span className="section-subtitle">Zero Trust Framework</span>
-            <h2 className="section-title text-gradient-primary">
+            <AnimatedHeading className="section-title text-gradient-primary">
               Hardened Enterprise <span className="text-gradient-accent">Security Shield</span>
-            </h2>
+            </AnimatedHeading>
             <p className="security-desc mb-4">
               Your company data remains fully encrypted at rest, in transit, and during compute execution. We adhere to rigorous ISO 27001, SOC 2 Type II, and GDPR compliance architectures.
             </p>

@@ -205,6 +205,48 @@ a {
   -webkit-text-fill-color: transparent;
 }
 
+.split-parent .split-line {
+  overflow: hidden;
+}
+
+.split-parent .split-word,
+.split-parent .split-char {
+  display: inline-block;
+  will-change: transform, opacity;
+}
+
+.gradient-text .split-word,
+.gradient-text .split-char,
+.text-gradient .split-word,
+.text-gradient .split-char {
+  background-image: linear-gradient(0deg,
+      #6B45B6 0%,
+      #AC3BC7 70%,
+      #E172CC 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.text-gradient-primary .split-word,
+.text-gradient-primary .split-char {
+  background-image: linear-gradient(135deg, var(--accent-primary) 30%, var(--dark-accent) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.text-gradient-accent .split-word,
+.text-gradient-accent .split-char {
+  background-image: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 50%, var(--highlight-blue) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
 /* Glowing premium buttons */
 .btn-premium {
   position: relative;

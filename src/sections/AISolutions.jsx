@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { FaCheckCircle, FaBrain, FaRegCompass, FaBolt } from 'react-icons/fa';
+import AnimatedHeading from '../components/AnimatedHeading';
 import '../styles/AISolutions.css';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -102,9 +103,9 @@ export default function AISolutions() {
           {/* Right Column - Text parameters */}
           <div className="col-lg-5" ref={textRef}>
             <span className="section-subtitle">Cognitive Cloud Controls</span>
-            <h2 className="section-title text-gradient-primary">
+            <AnimatedHeading className="section-title text-gradient-primary">
               Orchestrate High-Performance <span className="text-gradient-accent">AI Infrastructures</span>
-            </h2>
+            </AnimatedHeading>
             <p className="ai-solutions-desc mb-4">
               Our automated cognitive engine intercepts multi-tenant servers, adjusting active CPU scaling properties and storage nodes based on live predictive traffic patterns.
             </p>

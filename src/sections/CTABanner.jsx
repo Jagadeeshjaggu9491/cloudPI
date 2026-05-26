@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { FaArrowRight, FaCalendarAlt } from 'react-icons/fa';
+import AnimatedHeading from '../components/AnimatedHeading';
 import '../styles/CTABanner.css';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -36,10 +37,10 @@ export default function CTABanner() {
           <div className="cta-glow glow-2"></div>
 
           <span className="section-subtitle text-gradient-accent">LAUNCH TODAY</span>
-          <h2 className="cta-title">
+          <AnimatedHeading className="cta-title">
             Supercharge Your Cloud <br />
-            <span>Compute Operations</span>
-          </h2>
+            <span className="cta-title-accent">Compute Operations</span>
+          </AnimatedHeading>
           <p className="cta-subtitle">
             Get H100 GPUs instances running inside secure enclaves within minutes. Scalable pricing with absolute billing cost protections.
           </p>

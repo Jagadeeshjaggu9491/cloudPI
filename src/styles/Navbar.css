@@ -95,22 +95,6 @@
 }
 
 /* Invisible hover bridge to prevent mega menu from disappearing when moving mouse over the gap */
-.nav-item::after {
-  content: '';
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
-  height: 25px;
-  background: transparent;
-  pointer-events: none;
-  z-index: 10;
-}
-
-.nav-item:hover::after {
-  pointer-events: auto;
-}
-
 .nav-link {
   font-family: var(--font-heading);
   font-weight: 600;
@@ -125,6 +109,26 @@
   align-items: center;
   gap: 0.35rem;
   transition: var(--transition-smooth);
+  position: relative;
+  /* Added relative positioning to anchor the bridge! */
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 35px;
+  /* Securely covers the 15px gap + margin spacing */
+  background: transparent;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.nav-item:hover .nav-link::after {
+  pointer-events: auto;
+  /* Active only during hover to avoid link blocking when closed */
 }
 
 .nav-link:hover,
@@ -233,6 +237,7 @@
 
 .mega-menu-content {
   display: flex;
+  align-items: flex-start;
   gap: 2.5rem;
   padding: 2.5rem;
   position: relative;
@@ -245,9 +250,11 @@
   display: grid;
   gap: 0.75rem;
 }
-.mega-menu-links p{
+
+.mega-menu-links p {
   margin-bottom: 0px !important;
 }
+
 .mega-menu-links.grid-3 {
   grid-template-cols: repeat(3, minmax(0, 1fr));
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -303,7 +310,7 @@
 }
 
 .mega-link-item:hover .icon-box {
-  background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 100%);
+  background: linear-gradient(135deg, #5BB4CC 0%, #8599FF 100%);
   color: #FFFFFF;
   transform: scale(1.08) rotate(4deg);
   box-shadow: 0 8px 20px rgba(172, 61, 199, 0.25);
@@ -432,7 +439,7 @@
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(172, 61, 199, 0.2);
   transition: var(--transition-smooth);
-  
+
 }
 
 .mega-cta-btn:hover {

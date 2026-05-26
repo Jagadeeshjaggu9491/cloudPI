@@ -23,8 +23,11 @@ const PLATFORM_ITEMS = [
   { title: 'Dashboards & Reports', icon: <FaChartPie />, desc: 'Real-time custom reporting' },
 ];
 
-const SOLUTION_ITEMS = ['Solutions by Role', 'Solutions by Persona', 'Why CloudPi'];
-const SOLUTION_ICONS = [<FaUserTie />, <FaUsers />, <FaQuestion />];
+const SOLUTION_ITEMS = [
+  { title: 'Solutions by Role', icon: <FaUserTie />, desc: 'Custom tools designed for FinOps, Engineering, and Finance.' },
+  { title: 'Solutions by Persona', icon: <FaUsers />, desc: 'Aligned with executives, managers, and system operators.' },
+  { title: 'Why CloudPi', icon: <FaQuestion />, desc: 'Four core challenges, four answers, one governed system.' },
+];
 
 const COMPANY_ITEMS = [
   { title: 'About', icon: <FaBuilding />, desc: 'Our mission, vision & core team.' },
@@ -33,16 +36,13 @@ const COMPANY_ITEMS = [
   { title: 'Features', icon: <FaStar />, desc: 'Deep dive platform capabilities.' },
 ];
 
-const LEARN_ITEMS = [
-  { label: 'Documentation', icon: <FaBook /> },
-  { label: 'FAQ', icon: <FaQuestion /> },
-  { label: 'Videos', icon: <FaVideo /> },
-];
-
-const CASE_STUDY_ITEMS = [
-  { label: 'AWS S3 Cost Surge', icon: <FaFileAlt /> },
-  { label: 'Freight Manufacturer', icon: <FaBriefcase /> },
-  { label: 'API Cost Tracking', icon: <FaChartBar /> },
+const RESOURCE_ITEMS = [
+  { title: 'Documentation', icon: <FaBook />, desc: 'User guides, configurations, and reference manuals.' },
+  { title: 'FAQ', icon: <FaQuestion />, desc: 'Frequently asked questions and support notes.' },
+  { title: 'Videos', icon: <FaVideo />, desc: 'Walkthroughs, demos, and feature highlight videos.' },
+  { title: 'AWS S3 Cost Surge', icon: <FaFileAlt />, desc: 'A deep-dive cost reduction case study.' },
+  { title: 'Freight Manufacturer', icon: <FaBriefcase />, desc: 'Enterprise scaling and infrastructure savings.' },
+  { title: 'API Cost Tracking', icon: <FaChartBar />, desc: 'Anomaly detection and tracking cost leakages.' },
 ];
 
 export default function Navbar() {
@@ -129,7 +129,7 @@ export default function Navbar() {
                             <div className="mega-progress-fill green" style={{ width: '90%' }} />
                           </div>
                         </div>
-                        <Link to="/services" className="mega-cta-btn">
+                        <Link to="/services" className="hero-btn-primary mt-3">
                           Explore Platform <FaArrowRight size={10} />
                         </Link>
                       </div>
@@ -143,33 +143,54 @@ export default function Navbar() {
                   <button className="nav-link nav-btn">
                     Solutions <FaChevronDown className="arrow-icon" size={10} />
                   </button>
-                  <div className="mega-menu mega-sm">
+                  <div className="mega-menu">
                     <div className="mega-menu-content">
-                      <div className="mega-col">
-                        <span className="mega-col-label">Our Solutions</span>
-                        <ul className="mega-simple-list">
-                          {SOLUTION_ITEMS.map((item, idx) => (
-                            <li key={idx}>
-                              <Link to="/solutions" className="mega-simple-link">
-                                <span className="simple-icon">{SOLUTION_ICONS[idx]}</span>
-                                {item}
-                                <FaArrowRight size={10} className="ml-auto link-arrow" />
-                              </Link>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                      <div className="mega-divider" />
-                      <div className="mega-col">
-                        <span className="mega-col-label">Why Choose Us</span>
-                        <div className="value-prop-card">
-                          <h4>Value Proposition</h4>
-                          <p>Govern and optimize multi-cloud spending with absolute precision using neural anomaly calculations.</p>
-                          <Link to="/solutions" className="mega-cta-link">
-                            Explore Platform Value <FaArrowRight size={10} />
+
+                      {/* Grid of solutions items */}
+                      <div className="mega-menu-links grid-2">
+                        {SOLUTION_ITEMS.map((item, idx) => (
+                          <Link to="/solutions" key={idx} className="mega-link-item">
+                            <div className="icon-box">{item.icon}</div>
+                            <div>
+                              <h4>{item.title}</h4>
+                              <p>{item.desc}</p>
+                            </div>
                           </Link>
-                        </div>
+                        ))}
                       </div>
+
+                      {/* Right Visual Panel */}
+                      <div className="mega-panel-right">
+                        <div className="mega-panel-badge">
+                          <FaStar size={12} /> Core Outcomes
+                        </div>
+                        <h4 className="mega-panel-title">Solutions Value</h4>
+                        <p className="mega-panel-desc">
+                          Empower your finance, engineering, and FinOps teams to govern cloud operations collaboratively with absolute precision.
+                        </p>
+                        <div className="mega-panel-stat">
+                          <div className="mega-panel-stat-row">
+                            <span>Cost Efficiency Boost</span>
+                            <span className="stat-badge">+55% Savings</span>
+                          </div>
+                          <div className="mega-progress">
+                            <div className="mega-progress-fill" style={{ width: '85%' }} />
+                          </div>
+                        </div>
+                        <div className="mega-panel-stat mt-3">
+                          <div className="mega-panel-stat-row">
+                            <span>Time-to-Value</span>
+                            <span className="stat-badge green">Instant Day-1</span>
+                          </div>
+                          <div className="mega-progress">
+                            <div className="mega-progress-fill green" style={{ width: '95%' }} />
+                          </div>
+                        </div>
+                        <Link to="/solutions" className="hero-btn-primary mt-3">
+                          Explore Solutions <FaArrowRight size={10} />
+                        </Link>
+                      </div>
+
                     </div>
                   </div>
                 </li>
@@ -179,9 +200,11 @@ export default function Navbar() {
                   <button className="nav-link nav-btn">
                     Company <FaChevronDown className="arrow-icon" size={10} />
                   </button>
-                  <div className="mega-menu mega-sm">
+                  <div className="mega-menu">
                     <div className="mega-menu-content">
-                      <div className="mega-menu-links grid-2 full-width">
+
+                      {/* Grid of company items */}
+                      <div className="mega-menu-links grid-2">
                         {COMPANY_ITEMS.map((item, idx) => (
                           <Link to="/about" key={idx} className="mega-link-item">
                             <div className="icon-box">{item.icon}</div>
@@ -192,6 +215,39 @@ export default function Navbar() {
                           </Link>
                         ))}
                       </div>
+
+                      {/* Right Visual Panel */}
+                      <div className="mega-panel-right">
+                        <div className="mega-panel-badge">
+                          <FaBuilding size={12} /> Trust & Uptime
+                        </div>
+                        <h4 className="mega-panel-title">About CloudPi</h4>
+                        <p className="mega-panel-desc">
+                          We are building the future of autonomous cost optimization to help modern enterprise cloud control rooms run efficiently.
+                        </p>
+                        <div className="mega-panel-stat">
+                          <div className="mega-panel-stat-row">
+                            <span>Enterprise Trust Score</span>
+                            <span className="stat-badge">100% Secure</span>
+                          </div>
+                          <div className="mega-progress">
+                            <div className="mega-progress-fill" style={{ width: '100%' }} />
+                          </div>
+                        </div>
+                        <div className="mega-panel-stat mt-3">
+                          <div className="mega-panel-stat-row">
+                            <span>Standard SLA</span>
+                            <span className="stat-badge green">99.99%</span>
+                          </div>
+                          <div className="mega-progress">
+                            <div className="mega-progress-fill green" style={{ width: '99%' }} />
+                          </div>
+                        </div>
+                        <Link to="/about" className="hero-btn-primary mt-3">
+                          Learn More<FaArrowRight size={10} />
+                        </Link>
+                      </div>
+
                     </div>
                   </div>
                 </li>
@@ -206,37 +262,54 @@ export default function Navbar() {
                   <button className="nav-link nav-btn">
                     Resources <FaChevronDown className="arrow-icon" size={10} />
                   </button>
-                  <div className="mega-menu mega-sm">
+                  <div className="mega-menu">
                     <div className="mega-menu-content">
-                      <div className="mega-col">
-                        <span className="mega-col-label">Learn</span>
-                        <ul className="mega-simple-list">
-                          {LEARN_ITEMS.map((item, idx) => (
-                            <li key={idx}>
-                              <Link to="/docs" className="mega-simple-link">
-                                <span className="simple-icon">{item.icon}</span>
-                                {item.label}
-                                <FaArrowRight size={10} className="ml-auto link-arrow" />
-                              </Link>
-                            </li>
-                          ))}
-                        </ul>
+
+                      {/* Grid of resources items */}
+                      <div className="mega-menu-links grid-2">
+                        {RESOURCE_ITEMS.map((item, idx) => (
+                          <Link to="/docs" key={idx} className="mega-link-item">
+                            <div className="icon-box">{item.icon}</div>
+                            <div>
+                              <h4>{item.title}</h4>
+                              <p>{item.desc}</p>
+                            </div>
+                          </Link>
+                        ))}
                       </div>
-                      <div className="mega-divider" />
-                      <div className="mega-col">
-                        <span className="mega-col-label">Case Studies</span>
-                        <ul className="mega-simple-list">
-                          {CASE_STUDY_ITEMS.map((item, idx) => (
-                            <li key={idx}>
-                              <Link to="/docs" className="mega-simple-link">
-                                <span className="simple-icon">{item.icon}</span>
-                                {item.label}
-                                <FaArrowRight size={10} className="ml-auto link-arrow" />
-                              </Link>
-                            </li>
-                          ))}
-                        </ul>
+
+                      {/* Right Visual Panel */}
+                      <div className="mega-panel-right">
+                        <div className="mega-panel-badge">
+                          <FaBook size={12} /> Resources Hub
+                        </div>
+                        <h4 className="mega-panel-title">Learn & Grow</h4>
+                        <p className="mega-panel-desc">
+                          Explore our collection of detailed guides, video walkthroughs, and case studies to supercharge cost controls.
+                        </p>
+                        <div className="mega-panel-stat">
+                          <div className="mega-panel-stat-row">
+                            <span>Guides & Tutorials</span>
+                            <span className="stat-badge">50+ Articles</span>
+                          </div>
+                          <div className="mega-progress">
+                            <div className="mega-progress-fill" style={{ width: '80%' }} />
+                          </div>
+                        </div>
+                        <div className="mega-panel-stat mt-3">
+                          <div className="mega-panel-stat-row">
+                            <span>Demo Video Views</span>
+                            <span className="stat-badge green">10K+ Watched</span>
+                          </div>
+                          <div className="mega-progress">
+                            <div className="mega-progress-fill green" style={{ width: '92%' }} />
+                          </div>
+                        </div>
+                        <Link to="/docs" className="hero-btn-primary mt-3">
+                          Visit Learn Center <FaArrowRight size={10} />
+                        </Link>
                       </div>
+
                     </div>
                   </div>
                 </li>

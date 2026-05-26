@@ -5,6 +5,7 @@ import "../styles/CTASection.css";
 import BgImage from "../assets/images/backgrounds/cta-bg.png";
 import LeftCard from "../assets/images/cta/left-card.png";
 import RightCard from "../assets/images/cta/left-card.png";
+import AnimatedHeading from "../components/AnimatedHeading";
 
 // import { ArrowUpRight } from "lucide-react";
 import { FaArrowRight, FaRegFileAlt } from "react-icons/fa";
@@ -45,18 +46,14 @@ const CTASection = () => {
                     {/* CONTENT */}
                     <div className="cta-content text-center">
 
-                        <h2>
-                            Ready to simplify your
-                            <br />
-                            financial life?
-                        </h2>
+                        <AnimatedHeading text={"Take Control of Your\nCloud Costs"} />
 
                         <p>
                             Join thousands of users who trust Findays
                             to achieve their financial goals.
                         </p>
 
-                        <button className="cta-btn">
+                        <button className="hero-btn-secondary">
 
                             Get Started Now
 

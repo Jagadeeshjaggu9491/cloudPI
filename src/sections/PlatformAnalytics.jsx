@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, BarChart, Bar } from 'recharts';
 import { FaChartPie, FaBolt, FaServer } from 'react-icons/fa';
+import AnimatedHeading from '../components/AnimatedHeading';
 import '../styles/PlatformAnalytics.css';
 
 const data = [
@@ -22,7 +23,9 @@ export default function PlatformAnalytics() {
         
         <div className="text-center mb-5 analytics-header">
           <span className="badge-premium mb-3">INTELLIGENT INSIGHTS</span>
-          <h2 className="section-title">Deep Dive Platform <span className="text-gradient">Analytics</span></h2>
+          <AnimatedHeading className="section-title">
+            Deep Dive Platform <span className="text-gradient">Analytics</span>
+          </AnimatedHeading>
           <p className="section-desc mx-auto">
             Visualize your multi-cloud infrastructure and monitor cost reductions in real-time with our advanced AI metrics dashboard.
           </p>

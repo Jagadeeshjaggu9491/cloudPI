@@ -5,6 +5,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { FiCheck } from "react-icons/fi";
 import "../styles/VisibilitySection.css";
+import AnimatedHeading from "../components/AnimatedHeading";
 import VisibilityChart from "../assets/images/visibility-chart.png";
 import VisibilityImg from "../assets/images/visibility-img.jpg";
 
@@ -97,10 +98,10 @@ const VisibilitySection = () => {
                     {/* LEFT CONTENT */}
                     <div className="col-lg-5">
                         <div className="visibility-left">
-                            <h2 className="gradient-text">
-                                Visibility into every <br />
-                                sales action
-                            </h2>
+                            <AnimatedHeading
+                                text={"Visibility into every\nsales action"}
+                                className="gradient-text"
+                            />
 
                             <p>
                                 Qarin highlights when and where sales activity is most

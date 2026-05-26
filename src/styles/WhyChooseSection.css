@@ -5,7 +5,7 @@
 .why-section {
     position: relative;
     padding: 50px 0;
-    background: #fff;
+    background: #f9f8fc;
     overflow: hidden;
 }
 
@@ -170,27 +170,39 @@
 
 .why-item {
     position: relative;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.96) 0%, rgba(248, 250, 252, 0.88) 100%);
+    border: 1px solid rgba(111, 73, 223, 0.08);
+    border-radius: 20px;
+    padding: 0 24px;
+    margin-bottom: 20px;
+    box-shadow: 0 10px 30px rgba(74, 44, 134, 0.03);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    overflow: hidden;
+}
 
-    border-bottom: 1px solid #e7e4f2;
+.why-item:hover {
+    border-color: rgba(172, 61, 199, 0.2);
+    box-shadow: 0 15px 35px rgba(78, 39, 128, 0.06);
+}
 
-    transition: 0.4s ease;
+.why-item.active {
+    background: linear-gradient(135deg, #ffffff 0%, rgba(111, 73, 223, 0.03) 50%, rgba(172, 61, 199, 0.03) 100%);
+    border-color: rgba(172, 61, 199, 0.25);
+    box-shadow: 0 20px 45px rgba(78, 39, 128, 0.08);
 }
 
 .why-item::before {
     content: "";
-
     position: absolute;
-
     left: 0;
     top: 0;
-
     width: 0%;
-    height: 1px;
-
+    height: 4px;
     background: linear-gradient(90deg,
             #d94dff,
             #6f49df);
-
     transition: 0.7s ease;
 }
 
@@ -206,11 +218,8 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-
     gap: 30px;
-
-    padding: 42px 0;
-
+    padding: 28px 0;
     cursor: pointer;
 }
 
@@ -229,24 +238,25 @@
     letter-spacing: -3px;
 
     min-width: 110px;
+    color: white;
 
-    background: linear-gradient(180deg,
+    /* background: linear-gradient(180deg,
             rgba(217, 77, 255, 0.18),
             rgba(111, 73, 223, 0.08));
 
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    -webkit-text-fill-color: transparent; */
 
     transition: 0.4s ease;
 }
 
 .why-item.active .why-number {
-    background: linear-gradient(180deg,
+    /* background: linear-gradient(180deg,
             #d94dff,
             #6f49df);
 
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    -webkit-text-fill-color: transparent; */
 }
 
 .why-row h3 {
@@ -524,12 +534,13 @@
         display: flex;
         align-items: center;
         padding: 120px 0;
-        background: #ffffff;
+        background: #f9f8fc;
     }
 
     .why-container-wrapper {
         display: flex;
-        flex-direction: column; /* Stacked layout! */
+        flex-direction: column;
+        /* Stacked layout! */
         justify-content: flex-start;
         align-items: flex-start;
         width: 100%;
@@ -537,7 +548,8 @@
     }
 
     .why-top {
-        width: 100%; /* Spans full width! */
+        width: 100%;
+        /* Spans full width! */
         position: relative;
         top: 0;
         margin-bottom: 0;
@@ -551,10 +563,12 @@
     }
 
     .why-list {
-        width: 100%; /* Spans full width! */
+        width: 100%;
+        /* Spans full width! */
         border-top: none;
         position: relative;
-        height: 520px; /* Safe height fitting card details */
+        height: 520px;
+        /* Safe height fitting card details */
         overflow: visible;
     }
 
@@ -576,8 +590,8 @@
 
     /* Stacking card styling */
     .why-item {
-        background: #ffffff;
-        border: 1px solid rgba(78, 39, 128, 0.12) !important;
+        background: linear-gradient(180deg, #5BB4CC 0%, #EBEEFF 100%) !important;
+        border: 1px solid rgba(111, 73, 223, 0.12) !important;
         border-radius: 24px;
         padding: 40px;
         box-shadow: 0 25px 60px rgba(78, 39, 128, 0.06);
@@ -586,6 +600,8 @@
         flex-direction: column;
         justify-content: space-between;
         overflow: hidden;
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
     }
 
     /* Keep the active overlay stripe at top */
@@ -622,16 +638,16 @@
     .why-number {
         font-size: 54px !important;
         min-width: unset !important;
-        background: linear-gradient(180deg, #d94dff, #6f49df) !important;
+        /* background: linear-gradient(180deg, #d94dff, #6f49df) !important;
         -webkit-background-clip: text !important;
-        -webkit-text-fill-color: transparent !important;
+        -webkit-text-fill-color: transparent !important; */
     }
 
     .why-row h3 {
         font-size: 26px !important;
         line-height: 1.25 !important;
         max-width: 100% !important;
-        color: #16162e;
+        color: #ffffff;
     }
 
     .why-item:hover h3 {

@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import "../styles/PricingSection.css";
+import AnimatedHeading from "../components/AnimatedHeading";
 
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -128,9 +129,10 @@ export default function PricingSection() {
             <span>Pricing</span>
           </div>
 
-          <h2 className="pricing-title">
-            Simple plans. Smarter growth.
-          </h2>
+          <AnimatedHeading
+            text="Simple plans. Smarter growth."
+            className="pricing-title"
+          />
 
           {/* Toggle */}
           <div className="pricing-toggle">

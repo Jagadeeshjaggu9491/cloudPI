@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { FaRocket, FaArrowRight } from "react-icons/fa";
+import AnimatedHeading from "../components/AnimatedHeading";
 import "../styles/FeaturesGridSection.css";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -221,9 +222,10 @@ const FeaturesGridSection = () => {
                         <FaRocket className="feature-icon" />
                         <span>Key Features</span>
                     </div>
-                    <h2 className="feature-heading">
-                        Core features that power <br /> your workflow
-                    </h2>
+                    <AnimatedHeading
+                        text={"Core features that power\nyour workflow"}
+                        className="feature-heading"
+                    />
                     <p className="feature-description">
                         Qarin combines AI, automation, and CRM tools into a single platform helping teams manage customers, track deals, and scale operations without complexity.
                     </p>
