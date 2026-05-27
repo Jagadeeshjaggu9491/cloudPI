@@ -321,7 +321,7 @@ export default function Navbar() {
             <div className="navbar-actions d-none d-lg-flex">
               {/* <Link to="/contact" className="btn-contact">Contact Sales</Link> */}
               <Link to="/get-started" className="btn-premium btn-premium-primary">
-                <span>Get Started <FaArrowRight size={11} /></span>
+                <span>BOOK DEMO <FaArrowRight size={11} /></span>
               </Link>
             </div>
 
@@ -332,6 +332,7 @@ export default function Navbar() {
           </div>
         </div>
       </header>
+      <div className="navbar-backdrop" />
 
       {/* Mobile Menu Overlay */}
       <div className={`mobile-menu-overlay ${mobileMenuOpen ? 'open' : ''}`}>

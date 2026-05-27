@@ -159,6 +159,7 @@
   transform: translateX(-50%) translateY(20px) scale(0.98);
   width: 92vw;
   max-width: 1200px;
+<<<<<<< HEAD
   background:
     url("../assets//images/backgrounds/bg-noise.webp"),
     linear-gradient(180deg, #060606 0%, #090909 42%, #050505 100%);
@@ -171,6 +172,17 @@
     inset 0 1px 0 rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(30px);
   -webkit-backdrop-filter: blur(30px);
+=======
+  background: rgba(255, 255, 255, 0.75); /* Richer glassmorphic body for better presence */
+  border: 1px solid rgba(255, 255, 255, 0.65); /* More defined light-reflecting glass border */
+  border-radius: 28px;
+  box-shadow: 
+    0 30px 60px -15px rgba(78, 39, 128, 0.12),
+    0 15px 30px -10px rgba(0, 0, 0, 0.04),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6); /* Ambient light-reflection rim */
+  backdrop-filter: blur(25px); /* Heavy backdrop blur for glassmorphism */
+  -webkit-backdrop-filter: blur(25px);
+>>>>>>> 1753b65 (modified)
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
@@ -188,6 +200,29 @@
   visibility: visible;
   transform: translateX(-50%) translateY(0) scale(1);
   pointer-events: auto;
+}
+
+/* Glassy Background Page Blur Backdrop when Mega Menu is active */
+.navbar-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(15, 23, 42, 0.12); /* Very soft dark ambient overlay tint */
+  backdrop-filter: blur(8px); /* Beautiful page-wide backdrop blur */
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 98; /* Directly below mega-menu (z-index: 99) but above rest of page */
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Activate backdrop blur using highly elegant parent-has selector */
+.navbar-header:has(.nav-item.has-dropdown:hover) + .navbar-backdrop {
+  opacity: 1;
+  visibility: visible;
 }
 
 /* Background gradient blobs inside the Mega Menu */
