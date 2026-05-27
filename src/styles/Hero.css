@@ -41,7 +41,7 @@
 }
 
 .hero-title-wrap {
-  min-height: 166px;
+  /* min-height: 166px; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -51,7 +51,7 @@
 
 /* Premium Typography matching Framer mockup */
 .hero-title {
-  font-size: 72px;
+  font-size: 60px;
   font-weight: 500;
   line-height: 1.15;
   margin: 0;
@@ -90,13 +90,14 @@
 .hero-subtitle {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   max-width: 620px;
-  margin: 0 auto 36px auto;
-  font-size: 18px;
-  line-height: 1.6;
+  /* margin: 0 auto 36px auto; */
+  font-size: 16px;
+  /* line-height: 1.6; */
   color: #64748b;
   /* Sleek slate-gray text */
   text-align: center;
-  min-height: 90px; /* Space for 3 lines of text */
+  /* min-height: 90px; */
+  /* Space for 3 lines of text */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -441,17 +442,19 @@
 
 @media (max-width: 1200px) {
   .hero-title-wrap {
-    min-height: 138px; /* Proportional space for 2 lines */
+    /* min-height: 138px; */
+    /* Proportional space for 2 lines */
   }
 
   .hero-title {
-    font-size: 60px;
+    font-size: 50px;
   }
 
   .hero-subtitle {
-    font-size: 17px;
+    font-size: 14px;
     max-width: 560px;
-    min-height: 82px; /* Proportional space for 3 lines */
+    /* min-height: 82px; */
+    /* Proportional space for 3 lines */
   }
 
   .slider-nav-btn.prev-btn {
@@ -469,18 +472,20 @@
   }
 
   .hero-title-wrap {
-    min-height: 115px; /* Proportional space for 2 lines */
+    /* min-height: 115px; */
+    /* Proportional space for 2 lines */
   }
 
   .hero-title {
-    font-size: 50px;
+    font-size: 40px;
   }
 
   .hero-subtitle {
-    font-size: 16px;
+    font-size: 12px;
     max-width: 500px;
-    margin-bottom: 28px;
-    min-height: 77px; /* Proportional space for 3 lines */
+    /* margin-bottom: 28px; */
+    /* min-height: 77px; */
+    /* Proportional space for 3 lines */
   }
 
   .dashboard-glow-container {
@@ -494,20 +499,22 @@
   }
 
   .hero-title-wrap {
-    min-height: 92px; /* Proportional space for 2 lines */
+    /* min-height: 92px; */
+    /* Proportional space for 2 lines */
     margin-bottom: 20px;
   }
 
   .hero-title {
-    font-size: 38px;
+    font-size: 35px;
     line-height: 1.2;
   }
 
   .hero-subtitle {
-    font-size: 15px;
-    line-height: 1.5;
-    margin-bottom: 24px;
-    min-height: 90px; /* Mobile wraps subtitles to more lines */
+    font-size: 12px;
+    /* line-height: 1.5; */
+    /* margin-bottom: 24px; */
+    /* min-height: 90px; */
+    /* Mobile wraps subtitles to more lines */
   }
 
   .hero-buttons {
