@@ -159,10 +159,16 @@
   transform: translateX(-50%) translateY(20px) scale(0.98);
   width: 92vw;
   max-width: 1200px;
-  background: rgba(255, 255, 255, 0.9);
-  border: 1px solid rgba(255, 255, 255, 0.9);
+  background:
+    url("../assets//images/backgrounds/bg-noise.webp"),
+    linear-gradient(180deg, #060606 0%, #090909 42%, #050505 100%);
+  background-position: 0 0, center;
+  border: 1px solid rgba(255, 82, 222, 0.28);
   border-radius: 28px;
-  box-shadow: 0 40px 80px rgba(74, 44, 134, 0.1), inset 0 0 0 1px rgba(255, 255, 255, 0.8);
+  box-shadow:
+    0 40px 90px rgba(0, 0, 0, 0.32),
+    0 0 50px rgba(255, 82, 222, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(30px);
   -webkit-backdrop-filter: blur(30px);
   opacity: 0;
@@ -188,31 +194,33 @@
 .mega-menu::before {
   content: '';
   position: absolute;
-  top: -50px;
-  left: -50px;
-  width: 250px;
-  height: 250px;
-  background: linear-gradient(135deg, var(--accent-secondary), var(--accent-primary));
+  top: -220px;
+  left: -180px;
+  width: 540px;
+  height: 540px;
+  background: radial-gradient(circle, rgba(168, 85, 247, 0.18), transparent 70%);
   border-radius: 50%;
-  filter: blur(80px);
-  opacity: 0.12;
-  z-index: -1;
+  filter: blur(55px);
+  opacity: 1;
+  z-index: 0;
   animation: floatMegaShape 12s infinite alternate ease-in-out;
+  pointer-events: none;
 }
 
 .mega-menu::after {
   content: '';
   position: absolute;
-  bottom: -50px;
-  right: -50px;
-  width: 300px;
-  height: 300px;
-  background: linear-gradient(135deg, #5bb4cc, #8b5cf6);
+  bottom: -260px;
+  right: -190px;
+  width: 620px;
+  height: 620px;
+  background: radial-gradient(circle, rgba(255, 82, 222, 0.16), transparent 70%);
   border-radius: 50%;
-  filter: blur(100px);
-  opacity: 0.08;
-  z-index: -1;
+  filter: blur(60px);
+  opacity: 1;
+  z-index: 0;
   animation: floatMegaShapeReverse 15s infinite alternate ease-in-out;
+  pointer-events: none;
 }
 
 @keyframes floatMegaShape {
@@ -283,24 +291,31 @@
   gap: 1rem;
   padding: 0.85rem 1rem;
   border-radius: 16px;
-  background: rgba(255, 255, 255, 0.4);
-  border: 1px solid rgba(255, 255, 255, 0.6);
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
+  transition:
+    background 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .mega-link-item:hover {
-  background: #FFFFFF;
-  border-color: rgba(172, 61, 199, 0.25);
+  background: rgba(255, 82, 222, 0.08);
+  border-color: rgba(255, 82, 222, 0.45);
   transform: translateY(-3px) scale(1.01);
-  box-shadow: 0 15px 30px rgba(74, 44, 134, 0.06);
+  box-shadow:
+    0 0 30px rgba(255, 82, 222, 0.14),
+    0 18px 36px rgba(0, 0, 0, 0.22);
 }
 
 .mega-link-item .icon-box {
   width: 42px;
   height: 42px;
   border-radius: 12px;
-  background: rgba(74, 44, 134, 0.05);
-  color: var(--accent-primary);
+  background: rgba(255, 255, 255, 0.06);
+  color: #ff52de;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -310,41 +325,43 @@
 }
 
 .mega-link-item:hover .icon-box {
-  background: linear-gradient(135deg, #5BB4CC 0%, #8599FF 100%);
+  background: rgba(255, 82, 222, 0.16);
   color: #FFFFFF;
   transform: scale(1.08) rotate(4deg);
-  box-shadow: 0 8px 20px rgba(172, 61, 199, 0.25);
+  box-shadow: 0 8px 24px rgba(255, 82, 222, 0.22);
 }
 
 .mega-link-item h4 {
   font-size: 0.9rem;
   font-weight: 700;
-  color: var(--text-primary);
+  color: #ffffff;
   margin-bottom: 2px;
   transition: var(--transition-smooth);
 }
 
 .mega-link-item:hover h4 {
-  color: var(--accent-primary);
+  color: #ff52de;
 }
 
 .mega-link-item p {
   font-size: 0.78rem;
-  color: var(--text-secondary);
+  color: rgba(255, 255, 255, 0.66);
   line-height: 1.35;
 }
 
 /* Right Visual Panel */
 .mega-panel-right {
   width: 320px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.65) 0%, rgba(255, 255, 255, 0.3) 100%);
-  border: 1px solid rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 82, 222, 0.22);
   border-radius: 20px;
   padding: 1.75rem;
   display: flex;
   flex-direction: column;
   flex-shrink: 0;
-  box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.4);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.04),
+    0 20px 45px rgba(0, 0, 0, 0.28);
 }
 
 .mega-panel-badge {
@@ -355,8 +372,9 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: var(--accent-primary);
-  background: rgba(74, 44, 134, 0.06);
+  color: #ffffff;
+  background: rgba(255, 82, 222, 0.1);
+  border: 1px solid rgba(255, 82, 222, 0.24);
   padding: 0.25rem 0.65rem;
   border-radius: 50px;
   align-self: flex-start;
@@ -366,13 +384,13 @@
 .mega-panel-title {
   font-size: 1.15rem;
   font-weight: 800;
-  color: var(--dark-accent);
+  color: #ffffff;
   margin-bottom: 0.5rem;
 }
 
 .mega-panel-desc {
   font-size: 0.8rem;
-  color: var(--text-secondary);
+  color: rgba(255, 255, 255, 0.68);
   line-height: 1.45;
   margin-bottom: 1.25rem;
 }
@@ -389,14 +407,14 @@
   align-items: center;
   font-size: 0.75rem;
   font-weight: 600;
-  color: var(--text-muted);
+  color: rgba(255, 255, 255, 0.72);
 }
 
 .stat-badge {
   font-size: 0.7rem;
   font-weight: 700;
-  color: var(--accent-primary);
-  background: rgba(74, 44, 134, 0.06);
+  color: #ff52de;
+  background: rgba(255, 82, 222, 0.1);
   padding: 0.15rem 0.45rem;
   border-radius: 50px;
 }
@@ -409,14 +427,14 @@
 .mega-progress {
   width: 100%;
   height: 5px;
-  background: rgba(0, 0, 0, 0.05);
+  background: rgba(255, 255, 255, 0.08);
   border-radius: 10px;
   overflow: hidden;
 }
 
 .mega-progress-fill {
   height: 100%;
-  background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+  background: linear-gradient(90deg, #ff52de, #a855f7);
   border-radius: 10px;
 }
 
