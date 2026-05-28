@@ -5,7 +5,7 @@
 .platform-capabilities-section {
     position: relative;
     overflow: hidden;
-    padding: 120px 0;
+    padding: 150px 0;
     background: linear-gradient(180deg,
             #f8fbff 0%,
             #ffffff 100%);
@@ -16,27 +16,29 @@
 ===================================================== */
 
 .platform-badge {
-    width: fit-content;
-    display: flex;
+    display: inline-flex;
     align-items: center;
-    gap: 10px;
-    padding: 12px 22px;
+    padding: 8px 20px;
     border-radius: 999px;
-    border: 1px solid #cfe0ff;
-    background: rgba(255, 255, 255, 0.75);
-    backdrop-filter: blur(10px);
+    border: 1px solid rgba(168, 85, 247, 0.16);
+    background: #ffffff;
+    color: #7c3aed;
+    /* Rich purple */
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    color: #2563eb;
-    margin-bottom: 38px;
+    font-weight: 500;
+    margin-bottom: 24px;
+    box-shadow: 0 4px 12px rgba(124, 58, 237, 0.04);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    letter-spacing: -0.1px;
 }
 
 .badge-dot {
     width: 7px;
     height: 7px;
     border-radius: 50%;
-    background: #60a5fa;
+    background: #7c3aed;
+    margin-right: 5px;
 }
 
 /* =====================================================
@@ -44,7 +46,7 @@
 ===================================================== */
 
 .platform-title {
-    font-size: 78px;
+    font-size: 68px;
     line-height: 1.02;
     font-weight: 700;
     letter-spacing: 0;
@@ -126,117 +128,6 @@
 }
 
 /* =====================================================
-   FEATURE CARDS
-===================================================== */
-
-.capability-cards-wrapper {
-    margin-top: 90px;
-}
-
-.capability-card {
-    position: relative;
-    height: 100%;
-    padding: 34px;
-    border-radius: 28px;
-    border: 1px solid #e6edf7;
-    background: #ffffff;
-    transition: all 0.35s ease;
-    overflow: hidden;
-}
-
-.capability-card::before {
-    content: "";
-    position: absolute;
-    inset: 0 auto auto 0;
-    width: 100%;
-    height: 4px;
-}
-
-.capability-card:nth-child(1)::before {
-    background: linear-gradient(90deg,
-            #22c55e,
-            #34d399);
-}
-
-.capability-card:nth-child(2)::before {
-    background: linear-gradient(90deg,
-            #2563eb,
-            #38bdf8);
-}
-
-.capability-card:nth-child(3)::before {
-    background: linear-gradient(90deg,
-            #9333ea,
-            #d946ef);
-}
-
-.capability-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 25px 60px rgba(15, 23, 42, 0.08);
-}
-
-/* =====================================================
-   ICONS
-===================================================== */
-
-.capability-icon {
-    width: 68px;
-    height: 68px;
-    border-radius: 18px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 28px;
-    margin-bottom: 28px;
-}
-
-.capability-icon.green {
-    background: rgba(34, 197, 94, 0.12);
-    color: #16a34a;
-}
-
-.capability-icon.blue {
-    background: rgba(37, 99, 235, 0.12);
-    color: #2563eb;
-}
-
-.capability-icon.purple {
-    background: rgba(168, 85, 247, 0.12);
-    color: #9333ea;
-}
-
-/* =====================================================
-   CARD CONTENT
-===================================================== */
-
-.capability-card-title {
-    font-size: 24px;
-    font-weight: 650;
-    line-height: 1.25;
-    color: #0f172a;
-    margin-bottom: 18px;
-}
-
-.capability-card-title .split-word,
-.capability-card-title .split-char {
-    background: linear-gradient(90deg,
-            #4E2780,
-            #AC3BC7,
-            #E172CC);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    color: transparent;
-}
-
-.capability-card p {
-    font-size: 18px;
-    line-height: 1.8;
-    color: #64748b;
-    margin: 0;
-}
-
-/* =====================================================
    RESPONSIVE
 ===================================================== */
 
@@ -304,5 +195,242 @@
 
     .capability-card p {
         font-size: 16px;
+    }
+}
+
+/* =====================================================
+   PREMIUM FEATURE SECTION
+===================================================== */
+
+.premium-feature-section {
+    position: relative;
+    padding: 120px 0;
+    background: linear-gradient(180deg,
+            #faf8ff 0%,
+            #ffffff 100%);
+    overflow: hidden;
+}
+
+/* =====================================================
+   CARD
+===================================================== */
+
+.premium-feature-card {
+    position: relative;
+    min-height: 760px;
+    height: 100%;
+    padding: 48px;
+    border-radius: 42px;
+    background: rgba(255, 255, 255, 0.94);
+    border: 1px solid rgba(168, 85, 247, 0.12);
+    backdrop-filter: blur(18px);
+    overflow: hidden;
+    transition: all 0.45s ease;
+    box-shadow:
+        0 20px 60px rgba(124, 58, 237, 0.06),
+        inset 0 1px 0 rgba(255, 255, 255, 0.7);
+}
+
+.premium-feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow:
+        0 40px 90px rgba(124, 58, 237, 0.12),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+/* =====================================================
+   TOP BORDER
+===================================================== */
+
+.premium-feature-card::before {
+    content: "";
+    position: absolute;
+    inset: 0 auto auto 0;
+    width: 100%;
+    height: 4px;
+}
+
+.premium-feature-card.green::before {
+    background: linear-gradient(90deg,
+            #34d399,
+            #10b981);
+}
+
+.premium-feature-card.blue::before {
+    background: linear-gradient(90deg,
+            #60a5fa,
+            #2563eb);
+}
+
+.premium-feature-card.purple::before {
+    background: linear-gradient(90deg,
+            #c084fc,
+            #9333ea);
+}
+
+/* =====================================================
+   DOTS
+===================================================== */
+
+.card-dots {
+    position: absolute;
+    top: 60px;
+    right: 50px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+}
+
+.card-dots span {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: rgba(168, 85, 247, 0.22);
+}
+
+/* =====================================================
+   ICON
+===================================================== */
+
+.premium-icon-wrap {
+    margin-bottom: 24px;
+}
+
+.premium-icon {
+    width: 22px;
+    height: 22px;
+    border-radius: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 52px;
+    color: #8b5cf6;
+    background: linear-gradient(180deg,
+            rgba(255, 255, 255, 0.95),
+            rgba(244, 240, 255, 0.95));
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.9),
+        0 18px 40px rgba(124, 58, 237, 0.08);
+}
+
+/* =====================================================
+   CONTENT
+===================================================== */
+
+.premium-card-content h3 {
+    font-size: 58px;
+    line-height: 1;
+    font-weight: 700;
+    letter-spacing: -2px;
+    color: #1d1436;
+    margin-bottom: 26px;
+}
+
+.title-line {
+    width: 58px;
+    height: 5px;
+    border-radius: 999px;
+    background: linear-gradient(90deg,
+            #9333ea,
+            #7c3aed);
+    margin-bottom: 34px;
+}
+
+.premium-card-content p {
+    max-width: 92%;
+    font-size: 25px;
+    line-height: 1.75;
+    color: #67718d;
+}
+
+/* =====================================================
+   BOTTOM SVG
+===================================================== */
+
+.premium-bottom-visual {
+    position: absolute;
+    left: 50%;
+    bottom: -10px;
+    transform: translateX(-50%);
+    width: 88%;
+    pointer-events: none;
+}
+
+.premium-bottom-visual img {
+    width: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 30px 60px rgba(124, 58, 237, 0.16));
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 1400px) {
+
+    .premium-feature-card {
+        min-height: 690px;
+    }
+
+    .premium-card-content h3 {
+        font-size: 46px;
+    }
+
+    .premium-card-content p {
+        font-size: 21px;
+    }
+}
+
+@media (max-width: 991px) {
+
+    .premium-feature-section {
+        padding: 90px 0;
+    }
+
+    .premium-feature-card {
+        min-height: 640px;
+    }
+
+    .premium-card-content h3 {
+        font-size: 42px;
+    }
+
+    .premium-card-content p {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+
+    .premium-feature-card {
+        min-height: auto;
+        padding: 34px 28px 250px;
+        border-radius: 30px;
+    }
+
+    .premium-icon {
+        width: 92px;
+        height: 92px;
+        border-radius: 28px;
+        font-size: 42px;
+    }
+
+    .premium-card-content h3 {
+        font-size: 34px;
+    }
+
+    .premium-card-content p {
+        max-width: 100%;
+        font-size: 17px;
+        line-height: 1.7;
+    }
+
+    .card-dots {
+        top: 42px;
+        right: 30px;
+    }
+
+    .premium-bottom-visual {
+        width: 90%;
     }
 }

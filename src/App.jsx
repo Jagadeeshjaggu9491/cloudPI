@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './sections/Navbar';
 import Home from './pages/Home';
+import PageHero from './components/PageHero/PageHero';
 import Footer from './sections/Footer';
 import PlatformCapabilities from './pages/Platform/PlatformCapabilities/PlatformCapabilities';
 import Integrations from './pages/Platform/Integrations/Integrations';
@@ -32,6 +33,7 @@ export default function App() {
     <Router>
       <Navbar />
       <main>
+        <PageHero />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/platform/platform-capabilities" element={<PlatformCapabilities />} />

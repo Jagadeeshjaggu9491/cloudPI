@@ -1,29 +1,35 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import AnimatedHeading from "../../../components/AnimatedHeading";
 import "./PlatformCapabilities.css";
+import TrueSavings from "../../../assets/images/icons/true-savings.svg";
+import ZeroTagging from "../../../assets/images/icons/zero-tagging.svg";
+import IntelligentSavings from "../../../assets/images/icons/intelligent-savings.svg";
+
 
 gsap.registerPlugin(ScrollTrigger);
 
 const capabilities = [
     {
-        icon: "bi bi-check2-square",
         title: "True Savings",
         desc: "Every dollar verified against your actual bill — not estimates.",
         color: "green",
+        icon: "bi bi-check2-square",
+        image: TrueSavings,
     },
     {
-        icon: "bi bi-tags-fill",
         title: "Zero Tagging",
         desc: "85% cost allocation from day one. No tag compliance required.",
         color: "blue",
+        icon: "bi bi-tags-fill",
+        image: ZeroTagging,
     },
     {
-        icon: "bi bi-lightning-charge-fill",
         title: "Intelligent Savings",
         desc: "Three execution modes that adapt to risk — autonomous to gated.",
         color: "purple",
+        icon: "bi bi-lightning-charge-fill",
+        image: IntelligentSavings,
     },
 ];
 
@@ -31,27 +37,137 @@ const PlatformCapabilities = () => {
 
     const sectionRef = useRef(null);
 
+    const badgeRef = useRef(null);
+    const titleRef = useRef(null);
+    const descRef = useRef(null);
+    const buttonsRef = useRef(null);
+    const cardsRef = useRef([]);
+
     useEffect(() => {
 
         const ctx = gsap.context(() => {
 
-            gsap.set(".blur-reveal", {
+            /* ==================================================
+               INITIAL STATES
+            ================================================== */
+
+            gsap.set(
+                [
+                    badgeRef.current,
+                    titleRef.current,
+                    descRef.current,
+                    buttonsRef.current,
+                ],
+                {
+                    opacity: 0,
+                    y: 40,
+                    filter: "blur(12px)",
+                }
+            );
+
+            gsap.set(cardsRef.current, {
                 opacity: 0,
-                y: 80,
-                filter: "blur(25px)",
+                y: 70,
+                scale: 0.92,
+                rotateX: 12,
+                filter: "blur(18px)",
+                transformPerspective: 1200,
+                transformOrigin: "top center",
             });
 
-            gsap.to(".blur-reveal", {
+            /* ==================================================
+               HERO CONTENT ENTRANCE
+            ================================================== */
+
+            const heroTl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: sectionRef.current,
+                    start: "top 78%",
+                },
+                defaults: {
+                    ease: "power3.out",
+                },
+            });
+
+            heroTl
+
+                .to(badgeRef.current, {
+                    opacity: 1,
+                    y: 0,
+                    filter: "blur(0px)",
+                    duration: 0.8,
+                })
+
+                .to(
+                    titleRef.current,
+                    {
+                        opacity: 1,
+                        y: 0,
+                        filter: "blur(0px)",
+                        duration: 0.95,
+                    },
+                    "-=0.45"
+                )
+
+                .to(
+                    descRef.current,
+                    {
+                        opacity: 1,
+                        y: 0,
+                        filter: "blur(0px)",
+                        duration: 0.85,
+                    },
+                    "-=0.55"
+                )
+
+                .to(
+                    buttonsRef.current,
+                    {
+                        opacity: 1,
+                        y: 0,
+                        filter: "blur(0px)",
+                        duration: 0.75,
+                    },
+                    "-=0.55"
+                );
+
+            /* ==================================================
+               CARDS ENTRANCE ANIMATION
+            ================================================== */
+
+            gsap.to(cardsRef.current, {
                 opacity: 1,
                 y: 0,
+                scale: 1,
+                rotateX: 0,
                 filter: "blur(0px)",
-                duration: 1.2,
+                duration: 1.1,
                 stagger: 0.18,
                 ease: "power3.out",
                 scrollTrigger: {
-                    trigger: sectionRef.current,
-                    start: "top 75%",
+                    trigger: ".capability-cards-wrapper",
+                    start: "top 82%",
                 },
+            });
+
+            /* ==================================================
+               3D SCROLL TILT EFFECT
+            ================================================== */
+
+            cardsRef.current.forEach((card) => {
+
+                gsap.to(card, {
+                    rotateX: 0,
+                    y: 0,
+                    ease: "none",
+                    scrollTrigger: {
+                        trigger: card,
+                        start: "top bottom",
+                        end: "top center",
+                        scrub: 1.2,
+                    },
+                });
+
             });
 
         }, sectionRef);
@@ -74,7 +190,10 @@ const PlatformCapabilities = () => {
                     <div className="col-xl-7 col-lg-8">
 
                         {/* BADGE */}
-                        <div className="platform-badge blur-reveal">
+                        <div
+                            className="platform-badge"
+                            ref={badgeRef}
+                        >
 
                             <span className="badge-dot"></span>
 
@@ -83,16 +202,25 @@ const PlatformCapabilities = () => {
                         </div>
 
                         {/* TITLE */}
-                        <div className="blur-reveal">
-                            <AnimatedHeading
-                                text={"Allocate.\nOptimize.\nProve."}
-                                className="platform-title gradient-text"
-                                tag="h1"
-                            />
-                        </div>
+                        <h1
+                            className="platform-title"
+                            ref={titleRef}
+                        >
+
+                            Allocate.
+                            <span className="gradient-text"> Optimize.</span>
+
+                            <br />
+
+                            Prove.
+
+                        </h1>
 
                         {/* DESCRIPTION */}
-                        <p className="platform-description blur-reveal">
+                        <p
+                            className="platform-description"
+                            ref={descRef}
+                        >
 
                             CloudPi gives enterprise teams complete cloud
                             cost control — with 85% allocation from day one,
@@ -102,7 +230,10 @@ const PlatformCapabilities = () => {
                         </p>
 
                         {/* BUTTONS */}
-                        <div className="platform-buttons blur-reveal">
+                        <div
+                            className="platform-buttons"
+                            ref={buttonsRef}
+                        >
 
                             <button className="primary-platform-btn">
 
@@ -122,43 +253,115 @@ const PlatformCapabilities = () => {
 
                 </div>
 
-                {/* FEATURE CARDS */}
-                <div className="row g-4 capability-cards-wrapper">
+                {/* =====================================================
+   PREMIUM FEATURE CARDS SECTION
+===================================================== */}
 
-                    {capabilities.map((item, index) => (
+                <section className="premium-feature-section">
 
-                        <div
-                            className="col-lg-4 col-md-6"
-                            key={index}
-                        >
+                    <div className="container">
 
-                            <div className="capability-card blur-reveal">
+                        <div className="row g-4 justify-content-center">
+
+                            {capabilities.map((item, index) => (
 
                                 <div
-                                    className={`capability-icon ${item.color}`}
+                                    className="col-xl-4 col-md-6"
+                                    key={index}
                                 >
 
-                                    <i className={item.icon}></i>
+                                    <div
+                                        className={`premium-feature-card ${item.color}`}
+                                        ref={(el) =>
+                                            (cardsRef.current[index] = el)
+                                        }
+                                    >
+
+                                        {/* TOP RIGHT DOTS */}
+                                        <div className="card-dots">
+
+                                            <span></span>
+                                            <span></span>
+                                            <span></span>
+                                            <span></span>
+                                            <span></span>
+                                            <span></span>
+                                            <span></span>
+                                            <span></span>
+                                            <span></span>
+
+                                        </div>
+
+                                        {/* ICON */}
+                                        <div className="premium-icon-wrap">
+
+                                            <div
+                                                className={`premium-icon ${item.color}`}
+                                            >
+
+                                                <i className={item.icon}></i>
+
+                                            </div>
+
+                                        </div>
+
+                                        {/* CONTENT */}
+                                        <div className="premium-card-content">
+
+                                            <h3>{item.title}</h3>
+
+                                            <div className="title-line"></div>
+
+                                            <p>{item.desc}</p>
+
+                                        </div>
+
+                                        {/* BOTTOM IMAGE */}
+                                        <div className="premium-bottom-visual">
+
+                                            {index === 0 && (
+
+                                                <img
+                                                    src={item.image}
+                                                    alt=""
+                                                    className="img-fluid"
+                                                />
+
+                                            )}
+
+                                            {index === 1 && (
+
+                                                <img
+                                                    src={item.image}
+                                                    alt=""
+                                                    className="img-fluid"
+                                                />
+
+                                            )}
+
+                                            {index === 2 && (
+
+                                                <img
+                                                    src={item.image}
+                                                    alt=""
+                                                    className="img-fluid"
+                                                />
+
+                                            )}
+
+                                        </div>
+
+                                    </div>
 
                                 </div>
 
-                                <AnimatedHeading
-                                    text={item.title}
-                                    className="capability-card-title gradient-text"
-                                    tag="h3"
-                                    delay={18}
-                                    duration={0.85}
-                                />
-
-                                <p>{item.desc}</p>
-
-                            </div>
+                            ))}
 
                         </div>
 
-                    ))}
+                    </div>
 
-                </div>
+                </section>
 
             </div>
 
