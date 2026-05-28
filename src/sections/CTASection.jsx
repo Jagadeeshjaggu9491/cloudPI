@@ -1,4 +1,10 @@
-// CTASection.jsx
+// CTASection.jsx — reusable CTA component
+// Props:
+//   badge        {string}   — optional label shown above the title (omit to hide)
+//   title        {string|ReactNode} — required heading text (supports \n for line breaks)
+//   description  {string}   — required subtitle / body copy
+//   primaryBtn   {object}   — { label, onClick, href }  required
+//   secondaryBtn {object}   — { label, onClick, href }  optional (omit to show one button)
 
 import "../styles/CTASection.css";
 
@@ -8,10 +14,40 @@ import LeftCard from "../assets/images/cta/left-card.png";
 import RightCard from "../assets/images/cta/left-card.png";
 import AnimatedHeading from "../components/AnimatedHeading";
 
-// import { ArrowUpRight } from "lucide-react";
-import { FaArrowRight, FaRegFileAlt } from "react-icons/fa";
+import { FaArrowRight } from "react-icons/fa";
 
-const CTASection = () => {
+const CTASection = ({
+    badge,
+    title,
+    description,
+    primaryBtn,
+    secondaryBtn,
+}) => {
+    const renderBtn = (btn, variant = "primary") => {
+        const Tag = btn.href ? "a" : "button";
+        const props = btn.href
+            ? { href: btn.href }
+            : { onClick: btn.onClick, type: "button" };
+
+        const className = btn.className
+            ? btn.className
+            : `cta-action-btn cta-action-btn--${variant}`;
+
+        return (
+            <Tag
+                className={className}
+                {...props}
+            >
+                {btn.label}
+                {!btn.className && variant === "primary" && (
+                    <span className="cta-action-btn__icon">
+                        <FaArrowRight />
+                    </span>
+                )}
+            </Tag>
+        );
+    };
+
     return (
         <section className="cta-section">
 
@@ -27,43 +63,39 @@ const CTASection = () => {
 
                     {/* LEFT FLOAT CARD */}
                     <div className="cta-card left-card">
-
-                        <img
-                            src={LeftCard}
-                            alt="Analytics"
-                        />
-
+                        <img src={LeftCard} alt="" aria-hidden="true" />
                     </div>
 
                     {/* RIGHT FLOAT CARD */}
                     <div className="cta-card right-card">
-
-                        <img
-                            src={RightCard}
-                            alt="Saving Goal"
-                        />
-
+                        <img src={RightCard} alt="" aria-hidden="true" />
                     </div>
 
                     {/* CONTENT */}
                     <div className="cta-content text-center">
 
-                        <AnimatedHeading text={"Take Control of Your\nCloud Costs"} />
+                        {/* Optional badge */}
+                        {badge && (
+                            <span className="cta-badge">{badge}</span>
+                        )}
 
-                        <p>
-                            Join thousands of users who trust Findays
-                            to achieve their financial goals.
-                        </p>
+                        {/* Title */}
+                        <AnimatedHeading
+                            tag="h2"
+                            text={title}
+                            className="cta-heading"
+                            display="block"
+                            textAlign="center"
+                        />
 
-                        <button className="hero-btn-secondary">
+                        {/* Description */}
+                        <p className="cta-desc">{description}</p>
 
-                            Get Started Now
-
-                            <span>
-                                <FaArrowRight />
-                            </span>
-
-                        </button>
+                        {/* Buttons */}
+                        <div className="cta-actions">
+                            {primaryBtn && renderBtn(primaryBtn, "primary")}
+                            {secondaryBtn && renderBtn(secondaryBtn, "secondary")}
+                        </div>
 
                     </div>
 

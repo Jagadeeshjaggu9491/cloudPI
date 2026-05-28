@@ -1,8 +1,126 @@
 /* CTASection.css */
 
+/* ── OPTIONAL BADGE ─────────────────────────────────────── */
+
+.cta-badge {
+    display: inline-block;
+    padding: 6px 18px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 22px;
+    backdrop-filter: blur(6px);
+}
+
+/* ── HEADING ─────────────────────────────────────────────── */
+
+.cta-heading {
+    font-size: clamp(1.75rem, 4vw, 2.75rem) !important;
+    font-weight: 700 !important;
+    line-height: 1.15 !important;
+    color: #ffffff !important;
+    margin-bottom: 20px !important;
+    white-space: pre-line;
+}
+
+/* ── DESCRIPTION ─────────────────────────────────────────── */
+
+.cta-desc {
+    font-size: 17px;
+    line-height: 1.75;
+    color: rgba(255, 255, 255, 0.88);
+    max-width: 640px;
+    margin: 0 auto 38px;
+}
+
+/* ── ACTIONS ROW ─────────────────────────────────────────── */
+
+.cta-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    flex-wrap: wrap;
+    /* padding-bottom: 80px; */
+}
+
+/* ── BUTTONS ─────────────────────────────────────────────── */
+
+.cta-action-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    height: 52px;
+    padding: 0 28px;
+    border-radius: 999px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    text-decoration: none;
+    transition: transform 0.28s ease, box-shadow 0.28s ease, background 0.28s ease;
+}
+
+/* Primary — white filled */
+.cta-action-btn--primary {
+    background: #ffffff;
+    color: #1e1b4b;
+}
+
+.cta-action-btn--primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.18);
+}
+
+/* Icon circle inside primary */
+.cta-action-btn__icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: #f0f0f6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    color: #1e1b4b;
+    flex-shrink: 0;
+}
+
+/* Secondary — white outline */
+.cta-action-btn--secondary {
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    border: 1.5px solid rgba(255, 255, 255, 0.45);
+    backdrop-filter: blur(8px);
+}
+
+.cta-action-btn--secondary:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+}
+
+/* ── RESPONSIVE ──────────────────────────────────────────── */
+
+@media (max-width: 576px) {
+    .cta-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .cta-action-btn {
+        justify-content: center;
+        width: 100%;
+    }
+}
+
 .cta-section {
-    padding: 80px 0;
-    background: #f7f7fb;
+    padding-bottom: 80px;
 }
 
 /* WRAPPER */
@@ -33,7 +151,7 @@
     inset: 0;
     z-index: 1;
     background-image: var(--cta-noise-image);
-    background-size: 420px 420px;
+    background-size: cover;
     background-position: center;
     opacity: 1;
     mix-blend-mode: overlay;

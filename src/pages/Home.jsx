@@ -50,7 +50,11 @@ export default function Home() {
       <IntegrationsSection />
       <BlogsSection />
       <FAQSection />
-      <CTASection />
+      <CTASection
+        title={"Take Control of Your\nCloud Costs"}
+        description="Join thousands of users who trust CloudPi to achieve their financial goals."
+        primaryBtn={{ label: "Get Started Now", href: "/get-started", className: "hero-btn-primary" }}
+      />
       {/* <Footer /> */}
     </>
   );

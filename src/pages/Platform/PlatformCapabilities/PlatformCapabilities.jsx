@@ -13,7 +13,10 @@ import AllocateDashboard from '../../../assets/images/cap-allocate-dash.avif';
 import BadgeIcon from '../../../assets/favicon.png';
 import GovernAndSecure from "../../../sections/GovernAndSecure";
 import MultiCloudSection from "../../../sections/MultiCloudSection";
+import CTASection from "../../../sections/CTASection";
 import WhiteFavIcon from '../../../assets/cloudpi-favicon-white.png';
+import AllocateSection from "../../../sections/AllocateSection";
+import WhyCloudPI from "../../../sections/WhyCloudPI";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -584,7 +587,13 @@ const PlatformCapabilities = () => {
             </section>
             <GovernAndSecure />
             <MultiCloudSection />
-
+            <AllocateSection />
+            <WhyCloudPI />
+            <CTASection
+                title={"See 85% of your enterprise\ncloud costs allocated — in one afternoon."}
+                description="Book a 30-minute demo. We'll connect to your billing data and show your engineering team exactly where the money is going — with rules, not spreadsheets."
+                primaryBtn={{ label: "Book a Demo", href: "/get-started", className: "hero-btn-primary" }}
+                secondaryBtn={{ label: "Start Free Trail", href: "/get-started", className: "hero-btn-secondary" }} />
         </>
 
 
