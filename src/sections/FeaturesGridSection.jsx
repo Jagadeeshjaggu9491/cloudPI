@@ -181,6 +181,29 @@ const FeaturesGridSection = () => {
 
     useEffect(() => {
         const ctx = gsap.context(() => {
+            // Section Scale & Translate Entrance Animation (Linked to Scroll Scrub)
+            gsap.fromTo(sectionRef.current, 
+                {
+                    scale: 0.85,
+                    y: 80,
+                    transformOrigin: "center bottom",
+                    transformPerspective: 1200,
+                    rotateX: 5,
+                },
+                {
+                    scale: 1,
+                    y: 0,
+                    rotateX: 0,
+                    ease: "power2.out",
+                    scrollTrigger: {
+                        trigger: sectionRef.current,
+                        start: "top bottom",      // starts when the top of the section enters the bottom of the viewport
+                        end: "top 75%",          // completes when 25% of the viewport height contains the section
+                        scrub: 2,                // Luxurious, butter-smooth scroll inertia lag
+                    }
+                }
+            );
+
             // Header Animation
             const headerTl = gsap.timeline({
                 scrollTrigger: {

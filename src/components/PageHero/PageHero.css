@@ -144,10 +144,10 @@
 .page-hero__title {
   margin: 0;
   font-size: clamp(1.75rem, 5vw, 3.25rem);
-  font-weight: 800;
+  font-weight: 700;
   line-height: 1.15;
-  letter-spacing: -0.02em;
-  background: linear-gradient(135deg, #1e1b4b 0%, #4f46e5 45%, #7c3aed 100%);
+  /* letter-spacing: -0.02em; */
+  /* background: linear-gradient(135deg, #1e1b4b 0%, #4f46e5 45%, #7c3aed 100%); */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

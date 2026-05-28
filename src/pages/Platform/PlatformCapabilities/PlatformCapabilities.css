@@ -5,10 +5,10 @@
 .platform-capabilities-section {
     position: relative;
     overflow: hidden;
-    padding: 150px 0;
+    padding: 100px 0;
     background: linear-gradient(180deg,
-            #f8fbff 0%,
-            #ffffff 100%);
+            #fff 10%,
+            hsl(230, 100%, 76%) 90%);
 }
 
 /* =====================================================
@@ -33,12 +33,14 @@
     letter-spacing: -0.1px;
 }
 
-.badge-dot {
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
-    background: #7c3aed;
-    margin-right: 5px;
+.badge-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    color: #7c3aed;
+    margin-right: 7px;
+    opacity: 0.9;
 }
 
 /* =====================================================
@@ -46,19 +48,19 @@
 ===================================================== */
 
 .platform-title {
-    font-size: 68px;
+    font-size: 52px;
     line-height: 1.02;
     font-weight: 700;
     letter-spacing: 0;
     color: #020617;
-    margin-bottom: 34px;
+    margin-bottom: 30px;
 }
 
 .platform-title .split-line {
     overflow: hidden;
 }
 
-.platform-title .split-word,
+/* .platform-title .split-word,
 .platform-title .split-char {
     background: linear-gradient(90deg,
             #4E2780,
@@ -68,17 +70,17 @@
     -webkit-text-fill-color: transparent;
     background-clip: text;
     color: transparent;
-}
+} */
 
 /* =====================================================
    DESCRIPTION
 ===================================================== */
 
 .platform-description {
-    max-width: 700px;
-    font-size: 25px;
+    max-width: 600px;
+    /* font-size: 25px; */
     line-height: 1.8;
-    color: #64748b;
+    color: #000;
     margin-bottom: 50px;
 }
 
@@ -126,6 +128,8 @@
     border-color: #2563eb;
     color: #2563eb;
 }
+
+
 
 /* =====================================================
    RESPONSIVE
@@ -199,30 +203,17 @@
 }
 
 /* =====================================================
-   PREMIUM FEATURE SECTION
-===================================================== */
-
-.premium-feature-section {
-    position: relative;
-    padding: 120px 0;
-    background: linear-gradient(180deg,
-            #faf8ff 0%,
-            #ffffff 100%);
-    overflow: hidden;
-}
-
-/* =====================================================
-   CARD
+   PREMIUM CARD
 ===================================================== */
 
 .premium-feature-card {
+    margin-top: 40px;
     position: relative;
-    min-height: 760px;
     height: 100%;
-    padding: 48px;
-    border-radius: 42px;
-    background: rgba(255, 255, 255, 0.94);
-    border: 1px solid rgba(168, 85, 247, 0.12);
+    padding: 42px;
+    border-radius: 40px;
+    background: rgba(255, 255, 255, 0.92);
+    border: 1px solid rgb(168 85 247 / 30%);
     backdrop-filter: blur(18px);
     overflow: hidden;
     transition: all 0.45s ease;
@@ -234,38 +225,31 @@
 .premium-feature-card:hover {
     transform: translateY(-10px);
     box-shadow:
-        0 40px 90px rgba(124, 58, 237, 0.12),
+        0 45px 100px rgba(124, 58, 237, 0.12),
         inset 0 1px 0 rgba(255, 255, 255, 0.8);
 }
 
 /* =====================================================
-   TOP BORDER
+   TOP SVG
 ===================================================== */
 
-.premium-feature-card::before {
-    content: "";
-    position: absolute;
-    inset: 0 auto auto 0;
+.premium-top-visual {
+    position: relative;
+    width: 50%;
+    margin-bottom: 30px;
+    z-index: 2;
+}
+
+.premium-top-visual img {
     width: 100%;
-    height: 4px;
+    object-fit: contain;
+    filter:
+        drop-shadow(0 25px 40px rgba(124, 58, 237, 0.12));
+    transition: transform 0.45s ease;
 }
 
-.premium-feature-card.green::before {
-    background: linear-gradient(90deg,
-            #34d399,
-            #10b981);
-}
-
-.premium-feature-card.blue::before {
-    background: linear-gradient(90deg,
-            #60a5fa,
-            #2563eb);
-}
-
-.premium-feature-card.purple::before {
-    background: linear-gradient(90deg,
-            #c084fc,
-            #9333ea);
+.premium-feature-card:hover .premium-top-visual img {
+    transform: translateY(-6px) scale(1.02);
 }
 
 /* =====================================================
@@ -274,8 +258,8 @@
 
 .card-dots {
     position: absolute;
-    top: 60px;
-    right: 50px;
+    top: 46px;
+    right: 42px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 8px;
@@ -289,77 +273,63 @@
 }
 
 /* =====================================================
-   ICON
-===================================================== */
-
-.premium-icon-wrap {
-    margin-bottom: 24px;
-}
-
-.premium-icon {
-    width: 22px;
-    height: 22px;
-    border-radius: 34px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 52px;
-    color: #8b5cf6;
-    background: linear-gradient(180deg,
-            rgba(255, 255, 255, 0.95),
-            rgba(244, 240, 255, 0.95));
-    box-shadow:
-        inset 0 1px 0 rgba(255, 255, 255, 0.9),
-        0 18px 40px rgba(124, 58, 237, 0.08);
-}
-
-/* =====================================================
    CONTENT
 ===================================================== */
 
+.premium-card-content {
+    position: relative;
+    z-index: 2;
+}
+
 .premium-card-content h3 {
-    font-size: 58px;
+    font-size: 24px;
     line-height: 1;
-    font-weight: 700;
-    letter-spacing: -2px;
+    font-weight: 500;
+    /* letter-spacing: -2px; */
     color: #1d1436;
-    margin-bottom: 26px;
+    margin-bottom: 14px;
 }
 
 .title-line {
-    width: 58px;
+    width: 56px;
     height: 5px;
     border-radius: 999px;
     background: linear-gradient(90deg,
             #9333ea,
             #7c3aed);
-    margin-bottom: 34px;
+    margin-bottom: 20px;
+    transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.premium-feature-card:hover .title-line {
+    width: 70%;
 }
 
 .premium-card-content p {
     max-width: 92%;
-    font-size: 25px;
+    font-size: 16px;
     line-height: 1.75;
     color: #67718d;
 }
 
 /* =====================================================
-   BOTTOM SVG
+   WAVE
 ===================================================== */
 
-.premium-bottom-visual {
+.premium-card-wave {
     position: absolute;
-    left: 50%;
-    bottom: -10px;
-    transform: translateX(-50%);
-    width: 88%;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    z-index: 1;
     pointer-events: none;
 }
 
-.premium-bottom-visual img {
+.premium-card-wave svg {
     width: 100%;
-    object-fit: contain;
-    filter: drop-shadow(0 30px 60px rgba(124, 58, 237, 0.16));
+    height: auto;
+    display: block;
+    opacity: .3;
 }
 
 /* =====================================================
@@ -368,31 +338,8 @@
 
 @media (max-width: 1400px) {
 
-    .premium-feature-card {
-        min-height: 690px;
-    }
-
     .premium-card-content h3 {
-        font-size: 46px;
-    }
-
-    .premium-card-content p {
-        font-size: 21px;
-    }
-}
-
-@media (max-width: 991px) {
-
-    .premium-feature-section {
-        padding: 90px 0;
-    }
-
-    .premium-feature-card {
-        min-height: 640px;
-    }
-
-    .premium-card-content h3 {
-        font-size: 42px;
+        font-size: 20px;
     }
 
     .premium-card-content p {
@@ -404,15 +351,13 @@
 
     .premium-feature-card {
         min-height: auto;
-        padding: 34px 28px 250px;
+        padding: 32px 26px 120px;
         border-radius: 30px;
     }
 
-    .premium-icon {
-        width: 92px;
-        height: 92px;
-        border-radius: 28px;
-        font-size: 42px;
+    .premium-top-visual {
+        width: 64%;
+        margin-bottom: 40px;
     }
 
     .premium-card-content h3 {
@@ -426,11 +371,9 @@
     }
 
     .card-dots {
-        top: 42px;
-        right: 30px;
-    }
-
-    .premium-bottom-visual {
-        width: 90%;
+        top: 34px;
+        right: 28px;
     }
 }
+
+/* THE CLOUD COST SECTION */
