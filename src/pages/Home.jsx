@@ -51,7 +51,7 @@ export default function Home() {
       <BlogsSection />
       <FAQSection />
       <CTASection />
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }
