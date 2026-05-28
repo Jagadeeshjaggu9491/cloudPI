@@ -1,0 +1,308 @@
+/* =====================================================
+   PLATFORM CAPABILITIES SECTION
+===================================================== */
+
+.platform-capabilities-section {
+    position: relative;
+    overflow: hidden;
+    padding: 120px 0;
+    background: linear-gradient(180deg,
+            #f8fbff 0%,
+            #ffffff 100%);
+}
+
+/* =====================================================
+   BADGE
+===================================================== */
+
+.platform-badge {
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 22px;
+    border-radius: 999px;
+    border: 1px solid #cfe0ff;
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(10px);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #2563eb;
+    margin-bottom: 38px;
+}
+
+.badge-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #60a5fa;
+}
+
+/* =====================================================
+   TITLE
+===================================================== */
+
+.platform-title {
+    font-size: 78px;
+    line-height: 1.02;
+    font-weight: 700;
+    letter-spacing: 0;
+    color: #020617;
+    margin-bottom: 34px;
+}
+
+.platform-title .split-line {
+    overflow: hidden;
+}
+
+.platform-title .split-word,
+.platform-title .split-char {
+    background: linear-gradient(90deg,
+            #4E2780,
+            #AC3BC7,
+            #E172CC);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+}
+
+/* =====================================================
+   DESCRIPTION
+===================================================== */
+
+.platform-description {
+    max-width: 700px;
+    font-size: 25px;
+    line-height: 1.8;
+    color: #64748b;
+    margin-bottom: 50px;
+}
+
+/* =====================================================
+   BUTTONS
+===================================================== */
+
+.platform-buttons {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    flex-wrap: wrap;
+}
+
+.primary-platform-btn,
+.secondary-platform-btn {
+    height: 64px;
+    padding: 0 38px;
+    border-radius: 18px;
+    font-size: 17px;
+    font-weight: 700;
+    transition: all 0.35s ease;
+}
+
+.primary-platform-btn {
+    border: none;
+    color: #ffffff;
+    background: linear-gradient(90deg,
+            #2563eb,
+            #1d4ed8);
+    box-shadow: 0 18px 40px rgba(37, 99, 235, 0.25);
+}
+
+.primary-platform-btn:hover {
+    transform: translateY(-4px);
+}
+
+.secondary-platform-btn {
+    border: 1px solid #d6dce7;
+    background: #ffffff;
+    color: #0f172a;
+}
+
+.secondary-platform-btn:hover {
+    border-color: #2563eb;
+    color: #2563eb;
+}
+
+/* =====================================================
+   FEATURE CARDS
+===================================================== */
+
+.capability-cards-wrapper {
+    margin-top: 90px;
+}
+
+.capability-card {
+    position: relative;
+    height: 100%;
+    padding: 34px;
+    border-radius: 28px;
+    border: 1px solid #e6edf7;
+    background: #ffffff;
+    transition: all 0.35s ease;
+    overflow: hidden;
+}
+
+.capability-card::before {
+    content: "";
+    position: absolute;
+    inset: 0 auto auto 0;
+    width: 100%;
+    height: 4px;
+}
+
+.capability-card:nth-child(1)::before {
+    background: linear-gradient(90deg,
+            #22c55e,
+            #34d399);
+}
+
+.capability-card:nth-child(2)::before {
+    background: linear-gradient(90deg,
+            #2563eb,
+            #38bdf8);
+}
+
+.capability-card:nth-child(3)::before {
+    background: linear-gradient(90deg,
+            #9333ea,
+            #d946ef);
+}
+
+.capability-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 60px rgba(15, 23, 42, 0.08);
+}
+
+/* =====================================================
+   ICONS
+===================================================== */
+
+.capability-icon {
+    width: 68px;
+    height: 68px;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    margin-bottom: 28px;
+}
+
+.capability-icon.green {
+    background: rgba(34, 197, 94, 0.12);
+    color: #16a34a;
+}
+
+.capability-icon.blue {
+    background: rgba(37, 99, 235, 0.12);
+    color: #2563eb;
+}
+
+.capability-icon.purple {
+    background: rgba(168, 85, 247, 0.12);
+    color: #9333ea;
+}
+
+/* =====================================================
+   CARD CONTENT
+===================================================== */
+
+.capability-card-title {
+    font-size: 24px;
+    font-weight: 650;
+    line-height: 1.25;
+    color: #0f172a;
+    margin-bottom: 18px;
+}
+
+.capability-card-title .split-word,
+.capability-card-title .split-char {
+    background: linear-gradient(90deg,
+            #4E2780,
+            #AC3BC7,
+            #E172CC);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+}
+
+.capability-card p {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #64748b;
+    margin: 0;
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 1200px) {
+
+    .platform-title {
+        font-size: 66px;
+    }
+
+    .platform-description {
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 991px) {
+
+    .platform-capabilities-section {
+        padding: 90px 0;
+    }
+
+    .platform-title {
+        font-size: 52px;
+        line-height: 1;
+        letter-spacing: 0;
+    }
+
+    .platform-description {
+        font-size: 18px;
+    }
+
+    .capability-cards-wrapper {
+        margin-top: 70px;
+    }
+}
+
+@media (max-width: 576px) {
+
+    .platform-title {
+        font-size: 40px;
+    }
+
+    .platform-description {
+        font-size: 16px;
+        line-height: 1.7;
+    }
+
+    .platform-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .primary-platform-btn,
+    .secondary-platform-btn {
+        width: 100%;
+    }
+
+    .capability-card {
+        padding: 28px 24px;
+        border-radius: 24px;
+    }
+
+    .capability-card-title {
+        font-size: 22px;
+    }
+
+    .capability-card p {
+        font-size: 16px;
+    }
+}

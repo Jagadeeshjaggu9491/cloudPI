@@ -12,37 +12,37 @@ import '../styles/Navbar.css';
 import Logo from '../assets/logo.png'
 
 const PLATFORM_ITEMS = [
-  { title: 'Platform Capabilities', icon: <FaBolt />, desc: 'Full-stack cloud control layer' },
-  { title: 'Integrations', icon: <FaProjectDiagram />, desc: 'Connect 200+ cloud services' },
-  { title: 'Intelligent Workflows', icon: <FaLayerGroup />, desc: 'Event-driven task scheduling' },
-  { title: 'Multi Cloud Cost', icon: <FaCloud />, desc: 'Unified cost visibility' },
-  { title: 'Policy Engine', icon: <FaShieldAlt />, desc: 'Compliance at enterprise scale' },
-  { title: 'Cost Allocation', icon: <FaDollarSign />, desc: 'Tag-based allocation & chargeback' },
-  { title: 'Billing Analysis', icon: <FaChartBar />, desc: 'Deep-dive usage anomalies' },
-  { title: 'Rightsizing', icon: <FaCrop />, desc: 'AI-powered resource sizing' },
-  { title: 'Dashboards & Reports', icon: <FaChartPie />, desc: 'Real-time custom reporting' },
+  { title: 'Platform Capabilities', icon: <FaBolt />, desc: 'Full-stack cloud control layer', path: '/platform/platform-capabilities' },
+  { title: 'Integrations', icon: <FaProjectDiagram />, desc: 'Connect 200+ cloud services', path: '/platform/integrations' },
+  { title: 'Intelligent Workflows', icon: <FaLayerGroup />, desc: 'Event-driven task scheduling', path: '/platform/workflow-automation' },
+  { title: 'Multi Cloud Cost', icon: <FaCloud />, desc: 'Unified cost visibility', path: '/platform/cloud-cost-analytics' },
+  { title: 'Policy Engine', icon: <FaShieldAlt />, desc: 'Compliance at enterprise scale', path: '/platform/governance' },
+  { title: 'Cost Allocation', icon: <FaDollarSign />, desc: 'Tag-based allocation & chargeback', path: '/platform/cost-allocation' },
+  { title: 'Billing Analysis', icon: <FaChartBar />, desc: 'Deep-dive usage anomalies', path: '/platform/billing-analysis' },
+  { title: 'Rightsizing', icon: <FaCrop />, desc: 'AI-powered resource sizing', path: '/platform/rightsizing' },
+  { title: 'Dashboards & Reports', icon: <FaChartPie />, desc: 'Real-time custom reporting', path: '/platform/dashboards-reports' },
 ];
 
 const SOLUTION_ITEMS = [
-  { title: 'Solutions by Role', icon: <FaUserTie />, desc: 'Custom tools designed for FinOps, Engineering, and Finance.' },
-  { title: 'Solutions by Persona', icon: <FaUsers />, desc: 'Aligned with executives, managers, and system operators.' },
-  { title: 'Why CloudPi', icon: <FaQuestion />, desc: 'Four core challenges, four answers, one governed system.' },
+  { title: 'Solutions by Role', icon: <FaUserTie />, desc: 'Custom tools designed for FinOps, Engineering, and Finance.', path: '/solutions/by-role' },
+  { title: 'Solutions by Persona', icon: <FaUsers />, desc: 'Aligned with executives, managers, and system operators.', path: '/solutions/by-persona' },
+  { title: 'Why CloudPi', icon: <FaQuestion />, desc: 'Four core challenges, four answers, one governed system.', path: '/solutions/why-cloudpi' },
 ];
 
 const COMPANY_ITEMS = [
-  { title: 'About', icon: <FaBuilding />, desc: 'Our mission, vision & core team.' },
-  { title: 'Book Demo', icon: <FaCalendarCheck />, desc: 'Schedule a custom walkthrough.' },
-  { title: 'Security', icon: <FaLock />, desc: 'Zero-trust enterprise protection.' },
-  { title: 'Features', icon: <FaStar />, desc: 'Deep dive platform capabilities.' },
+  { title: 'About', icon: <FaBuilding />, desc: 'Our mission, vision & core team.', path: '/company/about-us' },
+  { title: 'Book Demo', icon: <FaCalendarCheck />, desc: 'Schedule a custom walkthrough.', path: '/company/contact-us' },
+  { title: 'Security', icon: <FaLock />, desc: 'Zero-trust enterprise protection.', path: '/company/security' },
+  { title: 'Features', icon: <FaStar />, desc: 'Deep dive platform capabilities.', path: '/company/features' },
 ];
 
 const RESOURCE_ITEMS = [
-  { title: 'Documentation', icon: <FaBook />, desc: 'User guides, configurations, and reference manuals.' },
-  { title: 'FAQ', icon: <FaQuestion />, desc: 'Frequently asked questions and support notes.' },
-  { title: 'Videos', icon: <FaVideo />, desc: 'Walkthroughs, demos, and feature highlight videos.' },
-  { title: 'AWS S3 Cost Surge', icon: <FaFileAlt />, desc: 'A deep-dive cost reduction case study.' },
-  { title: 'Freight Manufacturer', icon: <FaBriefcase />, desc: 'Enterprise scaling and infrastructure savings.' },
-  { title: 'API Cost Tracking', icon: <FaChartBar />, desc: 'Anomaly detection and tracking cost leakages.' },
+  { title: 'Documentation', icon: <FaBook />, desc: 'User guides, configurations, and reference manuals.', path: '/resources/user-guide' },
+  { title: 'FAQ', icon: <FaQuestion />, desc: 'Frequently asked questions and support notes.', path: '/resources/faqs' },
+  { title: 'Videos', icon: <FaVideo />, desc: 'Walkthroughs, demos, and feature highlight videos.', path: '/resources/press-releases' },
+  { title: 'AWS S3 Cost Surge', icon: <FaFileAlt />, desc: 'A deep-dive cost reduction case study.', path: '/resources/case-studies' },
+  { title: 'Freight Manufacturer', icon: <FaBriefcase />, desc: 'Enterprise scaling and infrastructure savings.', path: '/resources/case-studies' },
+  { title: 'API Cost Tracking', icon: <FaChartBar />, desc: 'Anomaly detection and tracking cost leakages.', path: '/resources/blogs' },
 ];
 
 export default function Navbar() {
@@ -92,7 +92,7 @@ export default function Navbar() {
                       {/* Grid of platform items */}
                       <div className="mega-menu-links grid-3">
                         {PLATFORM_ITEMS.map((item, idx) => (
-                          <Link to="/services" key={idx} className="mega-link-item">
+                          <Link to={item.path} key={idx} className="mega-link-item">
                             <div className="icon-box">{item.icon}</div>
                             <div>
                               <h4>{item.title}</h4>
@@ -129,7 +129,7 @@ export default function Navbar() {
                             <div className="mega-progress-fill green" style={{ width: '90%' }} />
                           </div>
                         </div>
-                        <Link to="/services" className="hero-btn-primary mt-3">
+                        <Link to="/platform/platform-capabilities" className="hero-btn-primary mt-3">
                           Explore Platform <FaArrowRight size={10} />
                         </Link>
                       </div>
@@ -149,7 +149,7 @@ export default function Navbar() {
                       {/* Grid of solutions items */}
                       <div className="mega-menu-links grid-2">
                         {SOLUTION_ITEMS.map((item, idx) => (
-                          <Link to="/solutions" key={idx} className="mega-link-item">
+                          <Link to={item.path} key={idx} className="mega-link-item">
                             <div className="icon-box">{item.icon}</div>
                             <div>
                               <h4>{item.title}</h4>
@@ -186,7 +186,7 @@ export default function Navbar() {
                             <div className="mega-progress-fill green" style={{ width: '95%' }} />
                           </div>
                         </div>
-                        <Link to="/solutions" className="hero-btn-primary mt-3">
+                        <Link to="/solutions/by-role" className="hero-btn-primary mt-3">
                           Explore Solutions <FaArrowRight size={10} />
                         </Link>
                       </div>
@@ -206,7 +206,7 @@ export default function Navbar() {
                       {/* Grid of company items */}
                       <div className="mega-menu-links grid-2">
                         {COMPANY_ITEMS.map((item, idx) => (
-                          <Link to="/about" key={idx} className="mega-link-item">
+                          <Link to={item.path} key={idx} className="mega-link-item">
                             <div className="icon-box">{item.icon}</div>
                             <div>
                               <h4>{item.title}</h4>
@@ -243,7 +243,7 @@ export default function Navbar() {
                             <div className="mega-progress-fill green" style={{ width: '99%' }} />
                           </div>
                         </div>
-                        <Link to="/about" className="hero-btn-primary mt-3">
+                        <Link to="/company/about-us" className="hero-btn-primary mt-3">
                           Learn More<FaArrowRight size={10} />
                         </Link>
                       </div>
@@ -268,7 +268,7 @@ export default function Navbar() {
                       {/* Grid of resources items */}
                       <div className="mega-menu-links grid-2">
                         {RESOURCE_ITEMS.map((item, idx) => (
-                          <Link to="/docs" key={idx} className="mega-link-item">
+                          <Link to={item.path} key={idx} className="mega-link-item">
                             <div className="icon-box">{item.icon}</div>
                             <div>
                               <h4>{item.title}</h4>
@@ -305,7 +305,7 @@ export default function Navbar() {
                             <div className="mega-progress-fill green" style={{ width: '92%' }} />
                           </div>
                         </div>
-                        <Link to="/docs" className="hero-btn-primary mt-3">
+                        <Link to="/resources/user-guide" className="hero-btn-primary mt-3">
                           Visit Learn Center <FaArrowRight size={10} />
                         </Link>
                       </div>
@@ -321,7 +321,7 @@ export default function Navbar() {
             <div className="navbar-actions d-none d-lg-flex">
               {/* <Link to="/contact" className="btn-contact">Contact Sales</Link> */}
               <Link to="/get-started" className="btn-premium btn-premium-primary">
-                <span>Get Started <FaArrowRight size={11} /></span>
+                <span>BOOK DEMO <FaArrowRight size={11} /></span>
               </Link>
             </div>
 
@@ -332,6 +332,7 @@ export default function Navbar() {
           </div>
         </div>
       </header>
+      <div className="navbar-backdrop" />
 
       {/* Mobile Menu Overlay */}
       <div className={`mobile-menu-overlay ${mobileMenuOpen ? 'open' : ''}`}>
@@ -350,10 +351,10 @@ export default function Navbar() {
               <Link to="/" className="mobile-nav-link" onClick={() => setMobileMenuOpen(false)}>Home</Link>
             </li>
             {[
-              { label: 'Platform', idx: 1, links: [{ label: 'Platform Capabilities', to: '/services' }, { label: 'Integrations', to: '/services' }, { label: 'Intelligent Workflows', to: '/services' }, { label: 'Multi Cloud Cost', to: '/services' }] },
-              { label: 'Solutions', idx: 2, links: [{ label: 'Solutions by Role', to: '/solutions' }, { label: 'Solutions by Persona', to: '/solutions' }, { label: 'Why CloudPi', to: '/solutions' }] },
-              { label: 'Company', idx: 3, links: [{ label: 'About', to: '/about' }, { label: 'Book Demo', to: '/about' }, { label: 'Security', to: '/about' }] },
-              { label: 'Resources', idx: 4, links: [{ label: 'Documentation', to: '/docs' }, { label: 'FAQ', to: '/docs' }, { label: 'Case Studies', to: '/docs' }] },
+              { label: 'Platform', idx: 1, links: PLATFORM_ITEMS.map((item) => ({ label: item.title, to: item.path })) },
+              { label: 'Solutions', idx: 2, links: SOLUTION_ITEMS.map((item) => ({ label: item.title, to: item.path })) },
+              { label: 'Company', idx: 3, links: COMPANY_ITEMS.map((item) => ({ label: item.title, to: item.path })) },
+              { label: 'Resources', idx: 4, links: RESOURCE_ITEMS.map((item) => ({ label: item.title, to: item.path })) },
             ].map(({ label, idx, links }) => (
               <li key={idx}>
                 <button className="mobile-nav-link" onClick={() => toggleDropdown(idx)}>

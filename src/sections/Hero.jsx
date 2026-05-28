@@ -31,7 +31,7 @@ const slideData = [
   },
   {
     badge: "Zero Pre-requisites ↗",
-    title: "Zero Tagging Pre-requisite",
+    title: "Zero Tagging\nPre-requisite",
     subtitle: "Get meaningful cloud cost visibility from day one without waiting for perfect resource tags. CloudPi maps spend across AWS, Azure, and GCP using billing, usage, and metadata signals so teams can allocate and act faster.",
     primary: "Book a Demo",
     secondary: "Start Your Trail ↗",
@@ -39,7 +39,7 @@ const slideData = [
   },
   {
     badge: "Automated Savings ↗",
-    title: "TRUE Automated Savings",
+    title: "TRUE Automated\nSavings",
     subtitle: "Automatically identify optimization opportunities, eliminate idle resources, and implement cost-saving actions across AWS, Azure, and GCP — without manual effort.",
     primary: "Book a Demo",
     secondary: "Start Your Trail ↗",
