@@ -1,27 +1,18 @@
-// FeaturesGridSection.jsx
+// GovernAndSecure.jsx
 import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { FaRocket, FaArrowRight } from "react-icons/fa";
+import { FaShieldAlt, FaArrowRight } from "react-icons/fa";
 import AnimatedHeading from "../components/AnimatedHeading";
-import "../styles/FeaturesGridSection.css";
+import "../styles/FeaturesGridSection.css"; // Reuse the premium dark features grid style directly
 
 gsap.registerPlugin(ScrollTrigger);
 
-const FeaturesGridSection = () => {
+const GovernAndSecure = () => {
     const sectionRef = useRef(null);
 
-    // Animated SVG Icons
-    const CRMIcon = () => (
-        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="animated-svg icon-crm">
-            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
-            <circle cx="9" cy="7" r="4" />
-            <path className="user-2" d="M22 21v-2a4 4 0 0 0-3-3.87" />
-            <path className="user-2" d="M16 3.13a4 4 0 0 1 0 7.75" />
-        </svg>
-    );
-
+    // Cloned Animated SVG Icons from FeaturesGridSection
     const ChartIcon = () => (
         <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="animated-svg icon-chart">
             <path d="M3 3v18h18" />
@@ -54,28 +45,11 @@ const FeaturesGridSection = () => {
         </svg>
     );
 
-    const AnalyticsIcon = () => (
-        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="animated-svg icon-analytics">
-            <path d="M3 3v18h18" />
-            <rect x="7" y="12" width="3" height="6" rx="1" className="bar bar-1" />
-            <rect x="12" y="8" width="3" height="10" rx="1" className="bar bar-2" />
-            <rect x="17" y="5" width="3" height="13" rx="1" className="bar bar-3" />
-        </svg>
-    );
-
     const WorkflowIcon = () => (
         <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="animated-svg icon-workflow">
             <path d="M4 7h11" className="workflow-line" />
             <path d="M4 17h11" className="workflow-line" />
             <path d="M15 7l5 5-5 5" className="workflow-arrow" />
-        </svg>
-    );
-
-    const CloudIcon = () => (
-        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="animated-svg icon-cloud">
-            <path d="M20 17.58A5 5 0 0 0 18 8h-1.26A8 8 0 1 0 4 16.25" className="cloud-main" />
-            <path d="M8 16h8" className="cloud-line" />
-            <path d="M8 20h8" className="cloud-line" />
         </svg>
     );
 
@@ -94,88 +68,42 @@ const FeaturesGridSection = () => {
         </svg>
     );
 
-    const RocketIcon = () => (
-        <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="40"
-            height="40"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="1.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            className="animated-svg icon-rocket"
-        >
-            <path d="M4.5 16.5c-1.5 1.5-2 4.5-2 4.5s3-.5 4.5-2l2-2-2.5-2.5-2 2z" />
-            <path d="M14 10l-4-4" />
-            <path d="M16 8c1.5-1.5 2-4.5 2-4.5S15 4 13.5 5.5L10 9l5 5 1-1z" />
-            <path d="M9 15l-4 4" />
-        </svg>
-    );
-
     const features = [
         {
-            icon: <HandshakeIcon />,
-            title: "Business Hierarchy",
-            description:
-                "Organize your cloud into structured units so every team owns and manages their spend. Map spend to business units, portfolios, and cost centers.",
-        },
-
-        {
-            icon: <RocketIcon />,
-            title: "Cost Assignment",
-            description:
-                "Assign every cloud dollar to the right project using rule-based mappings. Assign spend to projects, teams, or cost centers.",
-        },
-
-        {
             icon: <ChartIcon />,
-            title: "Financial Planning",
+            title: "Budget & Forecast",
             description:
-                "ML-driven models compare projected vs actual spend. Surface variance trends before overruns occur.",
+                "Set budgets at any level — org, BU, team, or account. Early warnings at 70%, 85%, 95%. Daily spend forecasting with variance analysis.",
         },
-
-        {
-            icon: <SecurityIcon />,
-            title: "Zero Tagging",
-            description:
-                "Allocate cloud costs accurately even when resource tags are missing. Map spend to projects accurately without relying on tags.",
-        },
-
-        {
-            icon: <AnalyticsIcon />,
-            title: "Billing Analysis",
-            description:
-                "Break down cloud spend into clear, actionable insights across your entire estate. Analyze costs across AWS, Azure, and GCP.",
-        },
-
         {
             icon: <WorkflowIcon />,
-            title: "Workflow Automations",
+            title: "Tag Governance",
             description:
-                "Automate optimization and governance actions with event-driven precision based on policies and cost signals.",
+                "Track tag compliance, enforce tagging policies, and surface untagged resources. Tag coverage improves without blocking cost visibility.",
         },
-
+        {
+            icon: <BellIcon />,
+            title: "Anomaly Detection",
+            description:
+                "Policy-based anomaly detection on daily, weekly, and monthly cadences. Catch cost spikes before they become surprises at month-end.",
+        },
+        {
+            icon: <SecurityIcon />,
+            title: "Role-Based Access",
+            description:
+                "Seven built-in roles, hierarchy-scoped. A BU Admin sees only their BU. SSO via Okta, Azure AD, SAML 2.0, OIDC. SCIM provisioning.",
+        },
+        {
+            icon: <HandshakeIcon />,
+            title: "Approval Workflows",
+            description:
+                "Savings actions, budget changes, and policy modifications require sign-off. Configurable approvers and approval tiers per team or environment.",
+        },
         {
             icon: <CPUIcon />,
-            title: "Dashboards & FinOps KPIs",
+            title: "Immutable Audit Trail",
             description:
-                "Monitor real-time performance with executive-ready dashboards built around industry-standard KPIs.",
-        },
-
-        {
-            icon: <ChartIcon />,
-            title: "Tag Governance & Security",
-            description:
-                "Maintain data integrity and platform security with automated policies and robust access controls.",
-        },
-
-        {
-            icon: <CloudIcon />,
-            title: "Cloud & Enterprise Integrations",
-            description:
-                "Seamlessly connect your entire cloud ecosystem for unified visibility and automation across systems.",
+                "Every action logged, immutable, searchable, and exportable. SOC 2 audit questions answered in seconds, not hours.",
         },
     ];
 
@@ -203,7 +131,6 @@ const FeaturesGridSection = () => {
                     }
                 }
             );
-
             // Header Animation
             const headerTl = gsap.timeline({
                 scrollTrigger: {
@@ -242,22 +169,22 @@ const FeaturesGridSection = () => {
                 {/* Header */}
                 <div className="text-center features-top-content">
                     <div className="feature-badge">
-                        <FaRocket className="feature-icon" />
-                        <span>Key Features</span>
+                        <FaShieldAlt className="feature-icon" />
+                        <span>Govern & Secure</span>
                     </div>
                     <AnimatedHeading
-                        // text={"Core features that power\nyour workflow"}
-                        text={"CloudPi FEATURES"}
+                        text={"Enterprise-Grade Cloud Cost Governance at Every Layer"}
                         className="feature-heading"
                     />
                     <p className="feature-description">
-                        Everything you need to organize, allocate, optimize and control cloud costs.
+                        Set guardrails before costs spiral. Budget controls, tag policies, approval
+                        workflows, and role-based access — purpose-built for enterprise cloud
+                        cost management at scale.
                     </p>
                     {/* CTA / Action */}
                     <div className="navbar-actions d-none d-lg-flex justify-content-center gap-3 my-4">
-                        {/* <Link to="/contact" className="btn-contact">Contact Sales</Link> */}
                         <Link to="/get-started" className="btn-premium btn-premium-primary">
-                            <span>Get Started <FaArrowRight size={11} /></span>
+                            <span>Book Demo <FaArrowRight size={11} /></span>
                         </Link>
                     </div>
                 </div>
@@ -282,4 +209,4 @@ const FeaturesGridSection = () => {
     );
 };
 
-export default FeaturesGridSection;
+export default GovernAndSecure;

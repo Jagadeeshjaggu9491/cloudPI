@@ -11,6 +11,8 @@ import ZeroTagging from "../../../assets/images/icons/zero-tagging.svg";
 import IntelligentSavings from "../../../assets/images/icons/intelligent-savings.svg";
 import AllocateDashboard from '../../../assets/images/cap-allocate-dash.avif';
 import BadgeIcon from '../../../assets/favicon.png';
+import GovernAndSecure from "../../../sections/GovernAndSecure";
+import MultiCloudSection from "../../../sections/MultiCloudSection";
 import WhiteFavIcon from '../../../assets/cloudpi-favicon-white.png';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -559,23 +561,30 @@ const PlatformCapabilities = () => {
                     </div>
 
                     {/* Stats Grid */}
-                    <div className="insight-stats-grid sales-stats" ref={statsRef}>
+                    <div className="capabilities-stats-grid" ref={statsRef}>
 
                         {stats.map((stat, index) => {
                             const IconComp = stat.icon;
                             return (
-                                <div className="cap-stat-card" key={index}>
-                                    <div className="cap-stat-icon">
+                                <div className="insight-stat-card" key={index}>
+                                    <div className="insight-icon">
                                         <IconComp />
                                     </div>
-                                    <h4 className="cap-stat-title">{stat.title}</h4>
-                                    <p className="cap-stat-desc">{stat.description}</p>
+                                    <h4 className="insight-stat-title" style={{ fontSize: "20px", fontWeight: "600", color: "#0f172a", marginBottom: "12px" }}>
+                                        {stat.title}
+                                    </h4>
+                                    <p className="insight-desc">
+                                        {stat.description}
+                                    </p>
                                 </div>
                             );
                         })}
                     </div>
                 </div>
             </section>
+            <GovernAndSecure />
+            <MultiCloudSection />
+
         </>
 
 

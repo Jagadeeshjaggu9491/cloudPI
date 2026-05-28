@@ -377,3 +377,28 @@
 }
 
 /* THE CLOUD COST SECTION */
+
+.capabilities-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 24px;
+}
+
+@media (max-width: 1200px) {
+    .capabilities-stats-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 991px) {
+    .capabilities-stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .capabilities-stats-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+}
