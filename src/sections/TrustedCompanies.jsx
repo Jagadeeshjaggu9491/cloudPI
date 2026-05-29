@@ -5,6 +5,7 @@ import logo03 from '../assets/images/partners/logo-03.svg';
 import logo04 from '../assets/images/partners/logo-04.svg';
 import logo05 from '../assets/images/partners/logo-05.svg';
 import logo06 from '../assets/images/partners/logo-06.svg';
+import DataBricks from '../assets/images/partners/data.svg';
 import '../styles/TrustedCompanies.css';
 
 export default function TrustedCompanies() {
@@ -12,7 +13,7 @@ export default function TrustedCompanies() {
     { logo: logo01, name: 'AWS' },
     { logo: logo02, name: 'Google Cloud' },
     { logo: logo03, name: 'Microsoft Azure' },
-    { logo: logo04, name: 'Salesforce' },
+    { logo: DataBricks, name: 'DataBricks' },
     { logo: logo05, name: 'Dropbox' },
     { logo: logo06, name: 'Docker' }
   ];
