@@ -49,10 +49,9 @@
 
 .platform-title {
     font-size: 52px;
-    line-height: 1.02;
-    font-weight: 700;
-    letter-spacing: 0;
-    color: #020617;
+    /* line-height: 1.02; */
+    /* font-weight: 500; */
+    color: #4a2c86;
     margin-bottom: 30px;
 }
 

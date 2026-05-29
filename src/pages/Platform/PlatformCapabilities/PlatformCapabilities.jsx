@@ -344,7 +344,7 @@ const PlatformCapabilities = () => {
                             {/* TITLE */}
                             <AnimatedHeading
                                 tag="h1"
-                                className="platform-title"
+                                className="platform-title display-4 fw-semibold"
                                 display="block"
                                 delay={30}
                                 duration={1.0}
@@ -585,9 +585,9 @@ const PlatformCapabilities = () => {
                     </div>
                 </div>
             </section>
+            <AllocateSection />
             <GovernAndSecure />
             <MultiCloudSection />
-            <AllocateSection />
             <WhyCloudPI />
             <CTASection
                 title={"See 85% of your enterprise\ncloud costs allocated — in one afternoon."}

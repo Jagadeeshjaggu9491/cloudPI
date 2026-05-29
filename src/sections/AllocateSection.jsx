@@ -56,7 +56,7 @@ const AllocateSection = () => (
                     {/* TITLE */}
                     <AnimatedHeading
                         tag="h2"
-                        className="allocate-title"
+                        className="platform-title display-4 fw-semibold"
                         display="block"
                         delay={22}
                         duration={0.9}

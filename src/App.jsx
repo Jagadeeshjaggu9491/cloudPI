@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import ScrollToTop from './components/ScrollToTop';
 import Navbar from './sections/Navbar';
 import Home from './pages/Home';
 import PageHero from './components/PageHero/PageHero';
@@ -31,6 +32,7 @@ import WhyColouPi from './pages/Solutions/WhyColouPi/WhyColouPi';
 export default function App() {
   return (
     <Router>
+      <ScrollToTop />
       <Navbar />
       <main>
         <PageHero />
