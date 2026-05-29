@@ -104,7 +104,7 @@ const IndustryInsights = () => {
 
                     <AnimatedHeading
                         text={"Cloud Waste is Costing Companies\nMillions Every Year"}
-                        className="insights-title gradient-text"
+                        className="insights-title display-5 fw-semibold gradient-text"
                     />
 
                     <p className="insights-subtitle">

@@ -174,7 +174,7 @@ const GovernAndSecure = () => {
                     </div>
                     <AnimatedHeading
                         text={"Enterprise-Grade Cloud Cost Governance at Every Layer"}
-                        className="feature-heading"
+                        className="feature-heading display-5 fw-semibold"
                     />
                     <p className="feature-description">
                         Set guardrails before costs spiral. Budget controls, tag policies, approval

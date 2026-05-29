@@ -116,9 +116,9 @@
 
 .feature-heading {
     color: #ffffff;
-    font-size: 42px;
-    font-weight: 500;
-    line-height: 1.05;
+    /* font-size: 42px; */
+    /* font-weight: 500; */
+    /* line-height: 1.05; */
     margin-bottom: 24px;
 }
 
@@ -215,7 +215,7 @@
 
 @media (max-width: 1199px) {
     .feature-heading {
-        font-size: 58px;
+        /* font-size: 58px; */
     }
 
     .feature-card h4 {
@@ -229,7 +229,7 @@
     }
 
     .feature-heading {
-        font-size: 48px;
+        /* font-size: 48px; */
     }
 
     .feature-description {
@@ -247,8 +247,8 @@
     }
 
     .feature-heading {
-        font-size: 38px;
-        line-height: 1.15;
+        /* font-size: 38px;
+        line-height: 1.15; */
     }
 
     .feature-description {
@@ -276,7 +276,7 @@
 
 @media (max-width: 575px) {
     .feature-heading {
-        font-size: 32px;
+        /* font-size: 32px; */
     }
 
     .feature-description {

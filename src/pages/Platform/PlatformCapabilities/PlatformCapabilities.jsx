@@ -344,7 +344,7 @@ const PlatformCapabilities = () => {
                             {/* TITLE */}
                             <AnimatedHeading
                                 tag="h1"
-                                className="platform-title display-4 fw-semibold"
+                                className="platform-title display-5 fw-semibold"
                                 display="block"
                                 delay={30}
                                 duration={1.0}
@@ -555,7 +555,7 @@ const PlatformCapabilities = () => {
 
                         <AnimatedHeading
                             text={"The Cloud Cost Tool\nBuilt for Enterprise Engineering Teams"}
-                            className="insights-title gradient-text"
+                            className="insights-title display-5 fw-semibold gradient-text"
                         />
 
                         <p className="insights-subtitle">

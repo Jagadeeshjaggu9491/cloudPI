@@ -3,6 +3,8 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "../styles/MultiCloudSection.css";
 
+import AnimatedHeading from "../components/AnimatedHeading";
+
 // Logos 
 import AwsLogo from '../assets/images/partners/logo-06.svg';
 import AzureLogo from '../assets/images/partners/logo-05.svg';
@@ -126,10 +128,18 @@ const MultiCloudSection = () => {
                         MULTI-CLOUD
                     </div>
 
-                    <h2 className="mc-title">
-                        AWS. Azure. GCP.{" "}
-                        <span className="mc-title-accent">One Cloud Cost Tool.</span>
-                    </h2>
+                    <AnimatedHeading
+                        tag="h2"
+                        className="platform-title display-5 fw-semibold"
+                        display="block"
+                        delay={30}
+                        duration={1.0}
+                        from={{ opacity: 0, y: 40, filter: "blur(8px)" }}
+                        to={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                    >
+                        AWS. Azure. GCP.{" "} <br />
+                        <span className="gradient-text">One Cloud Cost Tool.</span>
+                    </AnimatedHeading>
 
                     <p className="mc-subtitle">
                         All capabilities — allocation, anomaly detection, savings execution, budgets,

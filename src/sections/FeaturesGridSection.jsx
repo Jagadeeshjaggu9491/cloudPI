@@ -248,7 +248,7 @@ const FeaturesGridSection = () => {
                     <AnimatedHeading
                         // text={"Core features that power\nyour workflow"}
                         text={"CloudPi FEATURES"}
-                        className="feature-heading"
+                        className="feature-heading display-5 fw-semibold"
                     />
                     <p className="feature-description">
                         Everything you need to organize, allocate, optimize and control cloud costs.

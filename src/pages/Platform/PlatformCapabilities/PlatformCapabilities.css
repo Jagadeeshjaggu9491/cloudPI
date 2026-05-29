@@ -48,7 +48,7 @@
 ===================================================== */
 
 .platform-title {
-    font-size: 52px;
+    /* font-size: 52px; */
     /* line-height: 1.02; */
     /* font-weight: 500; */
     color: #4a2c86;
@@ -137,7 +137,7 @@
 @media (max-width: 1200px) {
 
     .platform-title {
-        font-size: 66px;
+        /* font-size: 66px; */
     }
 
     .platform-description {
@@ -152,9 +152,9 @@
     }
 
     .platform-title {
-        font-size: 52px;
-        line-height: 1;
-        letter-spacing: 0;
+        /* font-size: 52px; */
+        /* line-height: 1;
+        letter-spacing: 0; */
     }
 
     .platform-description {
@@ -169,7 +169,7 @@
 @media (max-width: 576px) {
 
     .platform-title {
-        font-size: 40px;
+        /* font-size: 40px; */
     }
 
     .platform-description {
