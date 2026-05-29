@@ -2,8 +2,10 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { FaShieldAlt, FaLayerGroup, FaChartBar, FaBolt, FaGavel, FaLock } from "react-icons/fa";
+import { HiOutlineDocumentArrowDown, HiOutlineCreditCard, HiOutlineShieldCheck, HiShieldCheck } from "react-icons/hi2";
 import AnimatedHeading from "../../../components/AnimatedHeading";
 import "./PlatformCapabilities.css";
+import "../../../styles/TrueSavingsSection.css"
 import "../../../styles/SalesSection.css";
 import "../../../styles/IndustryInsights.css";
 import TrueSavings from "../../../assets/images/icons/true-savings.svg";
@@ -16,6 +18,7 @@ import MultiCloudSection from "../../../sections/MultiCloudSection";
 import CTASection from "../../../sections/CTASection";
 import WhiteFavIcon from '../../../assets/cloudpi-favicon-white.png';
 import AllocateSection from "../../../sections/AllocateSection";
+import IntelligentSection from "../../../sections/IntelligentSection";
 import WhyCloudPI from "../../../sections/WhyCloudPI";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -586,6 +589,115 @@ const PlatformCapabilities = () => {
                 </div>
             </section>
             <AllocateSection />
+            <IntelligentSection />
+
+            {/* =====================================================
+                TRUE SAVINGS SECTION
+            ===================================================== */}
+            <section className="ts-section">
+                <div className="container">
+
+                    {/* HEADER */}
+                    <div className="ts-header">
+                        <div className="ts-badge">
+                            <span className="ts-badge-dot"></span>
+                            TRUE SAVINGS
+                        </div>
+
+                        <AnimatedHeading
+                            tag="h2"
+                            className="ts-title display-5 fw-bold"
+                            display="block"
+                            delay={20}
+                            duration={0.9}
+                            from={{ opacity: 0, y: 30, filter: "blur(6px)" }}
+                            to={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                        >
+                            Prove Every Dollar Saved.
+                            <br />
+                            Against the{" "}
+                            <span className="gradient-text">Actual Bill.</span>
+                        </AnimatedHeading>
+
+                        <div className="ts-title-underline"></div>
+
+                        <p className="ts-description">
+                            Most CTO cloud cost tools report &ldquo;potential savings&rdquo; &mdash; the theoretical value if every
+                            recommendation were implemented. CloudPi reports{" "}
+                            <span className="ts-highlight">TRUE Savings:</span> verified by
+                            comparing actual billing data before and after each action,
+                            with a full evidence chain your CFO can audit.
+                        </p>
+
+                        <p className="ts-sub-desc">
+                            Three tiers, always reported separately. No mixing, no inflated totals.
+                        </p>
+
+                        <div class="my-4"><button class="hero-btn-primary">See the methodology<span>→</span></button></div>
+                    </div>
+
+                    {/* TIER CARDS */}
+                    <div className="ts-cards-grid">
+
+                        {/* Card 1 — Hard Savings */}
+                        <div className="ts-card ts-card--green">
+                            <span className="ts-card-number ts-num--green">01</span>
+                            <div className="ts-card-icon-wrap ts-icon--green">
+                                <HiOutlineDocumentArrowDown />
+                            </div>
+                            <h3 className="ts-card-title ts-title--green">Hard Savings</h3>
+                            <p className="ts-card-subtitle">The bill went down.</p>
+                            <p className="ts-card-desc">Rightsizing, scheduling, terminations.</p>
+                            <div className="ts-card-wave-bg"></div>
+                        </div>
+
+                        {/* Card 2 — Rate Savings */}
+                        <div className="ts-card ts-card--blue">
+                            <span className="ts-card-number ts-num--blue">02</span>
+                            <div className="ts-card-icon-wrap ts-icon--blue">
+                                <HiOutlineCreditCard />
+                            </div>
+                            <h3 className="ts-card-title ts-title--blue">Rate Savings</h3>
+                            <p className="ts-card-subtitle">Same resources, lower rate.</p>
+                            <p className="ts-card-desc">RIs, Savings Plans, EDP commitments.</p>
+                            <div className="ts-card-wave-bg"></div>
+                        </div>
+
+                        {/* Card 3 — Cost Avoidance */}
+                        <div className="ts-card ts-card--purple">
+                            <span className="ts-card-number ts-num--purple">03</span>
+                            <div className="ts-card-icon-wrap ts-icon--purple">
+                                <HiOutlineShieldCheck />
+                            </div>
+                            <h3 className="ts-card-title ts-title--purple">Cost Avoidance</h3>
+                            <p className="ts-card-subtitle">Prevented spend.</p>
+                            <p className="ts-card-desc">Guardrails, auto-scaling, shutdown policies.</p>
+                            <div className="ts-card-wave-bg"></div>
+                        </div>
+
+                    </div>
+
+                    {/* FOOTER BANNER */}
+                    <div className="ts-footer-banner">
+                        <div className="ts-footer-dot-grid">
+                            {Array.from({ length: 12 }).map((_, i) => <span key={i}></span>)}
+                        </div>
+                        <div className="ts-footer-icon-wrap">
+                            <HiShieldCheck />
+                        </div>
+                        <p className="ts-footer-text">
+                            Every savings claim is{" "}
+                            <span className="ts-footer-highlight">billing-verified</span>{" "}
+                            and attributed to the specific policy, team, and engineer who drove it.
+                        </p>
+                        <div className="ts-footer-dot-grid">
+                            {Array.from({ length: 12 }).map((_, i) => <span key={i}></span>)}
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
             <GovernAndSecure />
             <MultiCloudSection />
             <WhyCloudPI />

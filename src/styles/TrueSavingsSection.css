@@ -1,0 +1,411 @@
+/* =========================================================
+   TRUE SAVINGS SECTION
+========================================================= */
+
+.ts-section {
+    position: relative;
+    padding: 110px 0 90px;
+    overflow: hidden;
+    background:
+        radial-gradient(ellipse at 20% 0%, rgba(99, 102, 241, 0.06) 0%, transparent 55%),
+        radial-gradient(ellipse at 80% 100%, rgba(168, 85, 247, 0.07) 0%, transparent 55%),
+        linear-gradient(180deg, #f5f7ff 0%, #eef1fb 100%);
+}
+
+/* floating decorative orbs */
+.true-savings-section::before,
+.true-savings-section::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.true-savings-section::before {
+    width: 340px;
+    height: 340px;
+    top: -80px;
+    left: -80px;
+    background: radial-gradient(circle, rgba(99, 102, 241, 0.08), transparent 70%);
+}
+
+.true-savings-section::after {
+    width: 260px;
+    height: 260px;
+    bottom: -60px;
+    right: -60px;
+    background: radial-gradient(circle, rgba(168, 85, 247, 0.10), transparent 70%);
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.ts-header {
+    text-align: center;
+    max-width: 680px;
+    margin: 0 auto 64px;
+}
+
+/* BADGE */
+.ts-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 16px;
+    border-radius: 999px;
+    border: 1px solid rgba(99, 102, 241, 0.22);
+    background: rgba(99, 102, 241, 0.06);
+    color: #a855f7;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+}
+
+.ts-badge-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #a855f7;
+    box-shadow: 0 0 6px rgba(99, 102, 241, 0.6);
+}
+
+/* TITLE */
+.ts-title {
+    color: #0f172a;
+    line-height: 1.15;
+    margin-bottom: 16px;
+    letter-spacing: -1px;
+}
+
+.ts-gradient-text {
+    background: linear-gradient(90deg, #6366f1, #a855f7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* UNDERLINE */
+.ts-title-underline {
+    width: 56px;
+    height: 4px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, #6366f1, #a855f7);
+    margin: 0 auto 28px;
+}
+
+/* DESCRIPTION */
+.ts-description {
+    font-size: 15px;
+    line-height: 1.85;
+    color: #4b5563;
+    margin-bottom: 12px;
+}
+
+.ts-highlight {
+    color: #4f46e5;
+    font-weight: 700;
+}
+
+.ts-sub-desc {
+    font-size: 14px;
+    color: #6b7280;
+    margin-bottom: 32px;
+}
+
+/* CTA BUTTON */
+.ts-cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 14px 32px;
+    border-radius: 999px;
+    border: none;
+    background: linear-gradient(90deg, #4f46e5, #7c3aed);
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 10px 30px rgba(79, 70, 229, 0.30);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ts-cta-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 16px 40px rgba(79, 70, 229, 0.40);
+}
+
+/* =========================================================
+   TIER CARDS GRID
+========================================================= */
+
+.ts-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-bottom: 28px;
+}
+
+/* CARD BASE */
+.ts-card {
+    position: relative;
+    text-align: center;
+    padding: 36px 32px 44px;
+    border-radius: 28px;
+    background: rgba(255, 255, 255, 0.88);
+    border: 1px solid rgba(99, 102, 241, 0.09);
+    backdrop-filter: blur(14px);
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(99, 102, 241, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ts-card:hover {
+    transform: translateY(-8px);
+    box-shadow:
+        0 24px 60px rgba(99, 102, 241, 0.12),
+        inset 0 1px 0 rgba(255, 255, 255, 1);
+}
+
+/* CARD NUMBER (top-right) */
+.ts-card-number {
+    position: absolute;
+    top: 24px;
+    right: 28px;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    opacity: 0.8;
+}
+
+.ts-num--green {
+    color: #a855f7;
+}
+
+.ts-num--blue {
+    color: #a855f7;
+}
+
+.ts-num--purple {
+    color: #a855f7;
+}
+
+/* ICON WRAP */
+.ts-card-icon-wrap {
+    width: 72px;
+    height: 72px;
+    border-radius: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    margin-bottom: 28px;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ts-card:hover .ts-card-icon-wrap {
+    transform: scale(1.08) rotate(4deg);
+}
+
+/* icon color variants — exact AllocateSection palette */
+.ts-icon--green {
+    background: rgba(139, 92, 246, 0.08);
+    border: 1px solid rgba(139, 92, 246, 0.16);
+    color: #c084fc;
+}
+
+.ts-icon--blue {
+    background: rgba(139, 92, 246, 0.08);
+    border: 1px solid rgba(139, 92, 246, 0.16);
+    color: #c084fc;
+}
+
+.ts-icon--purple {
+    /* background: rgba(168, 85, 247, 0.12); */
+    background: rgba(139, 92, 246, 0.08);
+    border: 1px solid rgba(139, 92, 246, 0.16);
+    color: #c084fc;
+    /* border: 1.5px solid rgba(168, 85, 247, 0.22); */
+}
+
+/* CARD TITLE */
+.ts-card-title {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.ts-title--green {
+    color: #7c3aed;
+}
+
+.ts-title--blue {
+    color: #7c3aed;
+}
+
+.ts-title--purple {
+    color: #7c3aed;
+}
+
+/* CARD TEXT */
+.ts-card-subtitle {
+    font-size: 14px;
+    font-weight: 600;
+    color: #1e293b;
+    margin-bottom: 6px;
+}
+
+.ts-card-desc {
+    font-size: 13.5px;
+    line-height: 1.65;
+    color: #64748b;
+    margin: 0;
+    text-align: center;
+}
+
+/* WAVE BG — subtle wave at card bottom */
+.ts-card-wave-bg {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    pointer-events: none;
+    opacity: 0.04;
+    background: linear-gradient(180deg, transparent, #6366f1);
+    border-radius: 0 0 28px 28px;
+}
+
+/* =========================================================
+   FOOTER BANNER
+========================================================= */
+
+.ts-footer-banner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    width: 70%;
+    margin: 0 auto;
+    padding: 28px 40px;
+    border-radius: 22px;
+    background: rgba(255, 255, 255, 0.80);
+    border: 1px solid rgba(99, 102, 241, 0.12);
+    backdrop-filter: blur(14px);
+    box-shadow: 0 8px 28px rgba(99, 102, 241, 0.06);
+    position: relative;
+    overflow: hidden;
+}
+
+/* dot grids decorations */
+.ts-footer-dot-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px;
+    opacity: 0.25;
+}
+
+.ts-footer-dot-grid--right {
+    /* mirror of left grid */
+}
+
+.ts-footer-dot-grid span {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: #6366f1;
+}
+
+/* shield icon */
+.ts-footer-icon-wrap {
+    width: 52px;
+    height: 52px;
+    min-width: 52px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    background: #a955f730;
+    color: #a855f7;
+    border: 1.5px solid rgba(59, 130, 246, 0.22);
+    flex-shrink: 0;
+}
+
+.ts-footer-text {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #374151;
+    margin: 0;
+    /* text-align: center; */
+}
+
+.ts-footer-highlight {
+    color: #a855f7;
+    font-weight: 700;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 991px) {
+    .true-savings-section {
+        padding: 80px 0 70px;
+    }
+
+    .ts-cards-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+        max-width: 480px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .ts-footer-banner {
+        width: 100%;
+        flex-direction: column;
+        text-align: center;
+        padding: 28px 24px;
+    }
+
+    .ts-footer-dot-grid {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .ts-title {
+        font-size: clamp(28px, 6vw, 40px);
+    }
+
+    .ts-header {
+        margin-bottom: 40px;
+    }
+}
+
+@media (max-width: 576px) {
+    .true-savings-section {
+        padding: 64px 0 56px;
+    }
+
+    .ts-description {
+        font-size: 14px;
+    }
+
+    .ts-card {
+        padding: 28px 24px 36px;
+    }
+
+    .ts-card-icon-wrap {
+        width: 58px;
+        height: 58px;
+        font-size: 24px;
+        border-radius: 16px;
+    }
+}

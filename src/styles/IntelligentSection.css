@@ -1,0 +1,415 @@
+/* =========================================================
+   INTELLIGENT SECTION
+========================================================= */
+
+.intelligent-section {
+    position: relative;
+    padding: 100px 0;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at top left,
+            rgba(99, 102, 241, 0.10),
+            transparent 35%),
+        linear-gradient(180deg,
+            #f8f6ff 0%,
+            #fcfbff 100%);
+}
+
+/* =========================================================
+   BADGE
+========================================================= */
+
+.intelligent-badge {
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border-radius: 999px;
+    background: rgba(99, 102, 241, 0.08);
+    border: 1px solid rgba(99, 102, 241, 0.18);
+    color: #4f46e5;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+}
+
+/* =========================================================
+   DESC
+========================================================= */
+
+.intelligent-description {
+    font-size: 15px;
+    line-height: 1.8;
+    color: #596780;
+    margin-bottom: 32px;
+    max-width: 520px;
+}
+
+/* =========================================================
+   MODE DETAIL LIST (right column)
+========================================================= */
+
+.intelligent-detail-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 8px;
+}
+
+.intelligent-detail-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 18px 20px;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.80);
+    border: 1px solid rgba(99, 102, 241, 0.08);
+    backdrop-filter: blur(12px);
+    box-shadow:
+        0 4px 18px rgba(99, 102, 241, 0.04),
+        inset 0 1px 0 rgba(255, 255, 255, 0.85);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    cursor: pointer;
+}
+
+.intelligent-detail-card:hover {
+    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.97);
+    border-color: rgba(99, 102, 241, 0.22);
+    box-shadow:
+        0 10px 28px rgba(99, 102, 241, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 1);
+}
+
+.intelligent-detail-icon {
+    width: 46px;
+    height: 46px;
+    min-width: 46px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    flex-shrink: 0;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.intelligent-detail-card:hover .intelligent-detail-icon {
+    transform: scale(1.08) rotate(4deg);
+}
+
+/* exact AllocateSection result-info-icon colors */
+.intelligent-detail-icon.green {
+    background: rgba(16, 185, 129, 0.18);
+    color: #34d399;
+}
+
+.intelligent-detail-card:hover .intelligent-detail-icon.green {
+    box-shadow: 0 0 16px rgba(52, 211, 153, 0.30);
+}
+
+.intelligent-detail-icon.blue {
+    background: rgba(59, 130, 246, 0.18);
+    color: #60a5fa;
+}
+
+.intelligent-detail-card:hover .intelligent-detail-icon.blue {
+    box-shadow: 0 0 16px rgba(96, 165, 250, 0.30);
+}
+
+.intelligent-detail-icon.purple {
+    background: rgba(168, 85, 247, 0.18);
+    color: #c084fc;
+}
+
+.intelligent-detail-card:hover .intelligent-detail-icon.purple {
+    box-shadow: 0 0 16px rgba(192, 132, 252, 0.30);
+}
+
+.intelligent-detail-content h4 {
+    font-size: 15px;
+    font-weight: 700;
+    color: #17142d;
+    margin-bottom: 5px;
+}
+
+.intelligent-detail-content p {
+    font-size: 13px;
+    line-height: 1.6;
+    color: #5e6882;
+    margin: 0;
+}
+
+/* =========================================================
+   RESULT CARD  (left column — dark card)
+========================================================= */
+
+.intelligent-result-card {
+    position: relative;
+    padding: 38px 38px 42px;
+    border-radius: 36px;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at top left,
+            rgba(99, 102, 241, 0.40),
+            transparent 35%),
+        radial-gradient(circle at bottom right,
+            rgba(168, 85, 247, 0.25),
+            transparent 40%),
+        linear-gradient(180deg,
+            #0f1235 0%,
+            #0a0d28 100%);
+    box-shadow:
+        0 40px 100px rgba(30, 27, 75, 0.30),
+        inset 0 1px 0 rgba(255, 255, 255, 0.07);
+}
+
+/* =========================================================
+   TOP
+========================================================= */
+
+.intelligent-result-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 14px;
+}
+
+.intelligent-result-label {
+    color: rgba(255, 255, 255, 0.78);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.intelligent-result-label::after {
+    content: "";
+    display: block;
+    width: 24px;
+    height: 2px;
+    border-radius: 2px;
+    background: #6366f1;
+    margin-top: 5px;
+}
+
+/* =========================================================
+   HERO ROW
+========================================================= */
+
+.intelligent-result-hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 4px;
+}
+
+.intelligent-result-main-number {
+    font-size: 110px;
+    line-height: 1;
+    font-weight: 800;
+    letter-spacing: -4px;
+    color: #a5b4fc;
+    flex-shrink: 0;
+}
+
+.intelligent-result-main-number span {
+    font-size: 56px;
+    letter-spacing: -1px;
+}
+
+.intelligent-result-cloud img {
+    width: 230px;
+}
+
+.intelligent-cloud-float {
+    animation: intelligentFloat 4s ease-in-out infinite;
+}
+
+@keyframes intelligentFloat {
+    0%, 100% { transform: translateY(0px); }
+    50%       { transform: translateY(-12px); }
+}
+
+.intelligent-result-main-text {
+    font-size: 14px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.65);
+    margin-bottom: 28px;
+}
+
+/* =========================================================
+   EXECUTION MODE LIST (inside dark card)
+========================================================= */
+
+.intelligent-mode-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.intelligent-mode-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 16px 20px;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(14px);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    cursor: pointer;
+}
+
+.intelligent-mode-card:hover {
+    background: rgba(255, 255, 255, 0.09);
+    border-color: rgba(255, 255, 255, 0.14);
+    transform: translateX(4px);
+}
+
+/* ── EXECUTION MODE ICON BOX (inside dark card) ── */
+.intelligent-mode-icon {
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    flex-shrink: 0;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.intelligent-mode-card:hover .intelligent-mode-icon {
+    transform: scale(1.08) rotate(4deg);
+}
+
+/* same result-info-icon palette from AllocateSection */
+.intelligent-mode-icon.green {
+    background: rgba(16, 185, 129, 0.18);
+    color: #34d399;
+}
+
+.intelligent-mode-icon.blue {
+    background: rgba(59, 130, 246, 0.18);
+    color: #60a5fa;
+}
+
+.intelligent-mode-icon.purple {
+    background: rgba(168, 85, 247, 0.18);
+    color: #c084fc;
+}
+
+.intelligent-mode-badge {
+    display: inline-block;
+    padding: 3px 9px;
+    border-radius: 7px;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    margin-bottom: 5px;
+}
+
+.intelligent-mode-badge.green {
+    background: rgba(16, 185, 129, 0.15);
+    color: #34d399;
+    border: 1px solid rgba(16, 185, 129, 0.25);
+}
+
+.intelligent-mode-badge.blue {
+    background: rgba(59, 130, 246, 0.15);
+    color: #60a5fa;
+    border: 1px solid rgba(59, 130, 246, 0.25);
+}
+
+.intelligent-mode-badge.purple {
+    background: rgba(168, 85, 247, 0.15);
+    color: #c084fc;
+    border: 1px solid rgba(168, 85, 247, 0.25);
+}
+
+.intelligent-mode-content h4 {
+    font-size: 14px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 4px;
+}
+
+.intelligent-mode-content p {
+    font-size: 12.5px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.60);
+    margin: 0;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1200px) {
+    .intelligent-result-main-number {
+        font-size: 90px;
+    }
+
+    .intelligent-result-cloud img {
+        width: 160px;
+    }
+}
+
+@media (max-width: 991px) {
+    .intelligent-section {
+        padding: 80px 0;
+    }
+
+    .intelligent-result-card {
+        margin-top: 30px;
+    }
+}
+
+@media (max-width: 576px) {
+    .intelligent-description {
+        font-size: 13px;
+        line-height: 1.7;
+    }
+
+    .intelligent-detail-card {
+        flex-direction: row;
+    }
+
+    .intelligent-detail-content h4 {
+        font-size: 14px;
+    }
+
+    .intelligent-detail-content p {
+        font-size: 12px;
+    }
+
+    .intelligent-result-card {
+        padding: 24px;
+        border-radius: 26px;
+    }
+
+    .intelligent-result-main-number {
+        font-size: 72px;
+    }
+
+    .intelligent-result-main-number span {
+        font-size: 38px;
+    }
+
+    .intelligent-result-main-text {
+        font-size: 13px;
+    }
+
+    .intelligent-mode-card {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
